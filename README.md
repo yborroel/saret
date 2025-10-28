@@ -51,6 +51,7 @@ Enlace	Descripción
 📧 Correo de contacto	saret.consulting@outlook.mx
 
 💼 LinkedIn	https://www.linkedin.com/in/yaritza-borroel/
+
 🧾 Créditos y Licencia
 
 © 2025 SARET – Scientific Applications and Research in Engineering Technologies.
