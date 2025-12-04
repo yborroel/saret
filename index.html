@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SARET | Optical and Scientific Engineering</title>
+  <title>SARET | Scientific Applications and Research in Engineering Technologies</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -84,7 +84,7 @@
         <div class="flex flex-col space-y-4 w-full lg:w-72 sticky top-24">
           <button id="opticalBtn" onclick="updateContent('optical')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
           <button id="metrologyBtn" onclick="updateContent('metrology')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
-          <button id="solarBtn" onclick="updateContent('solar')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
+          <button id="optical coatingsBtn" onclick="updateContent('coatings')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
           <button id="semiconductorBtn" onclick="updateContent('semiconductor')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
         </div>
 
@@ -183,7 +183,7 @@
         navServices: "Services",
         navContact: "Contact",
 
-        heroTitle: "Optical and Scientific Engineering for Advanced Instrumentation",
+        heroTitle: "Scientific Applications and Research in Engineering Technologies",
         heroDesc: "SARET is a private engineering company specialized in the development of scientific instrumentation, optical systems, and custom software for research and industry.",
         heroBtn: "Schedule a call",
 
@@ -211,8 +211,8 @@
         navServices: "Servicios",
         navContact: "Contacto",
 
-        heroTitle: "Ingeniería Óptica y Científica para Proyectos de Alto Impacto",
-        heroDesc: "SARET es una empresa privada especializada en el desarrollo de instrumentación científica, sistemas ópticos y software a la medida para proyectos de investigación e industria.",
+        heroTitle: "Scientific Applications and Research in Engineering Technologies",
+        heroDesc: "SARET es una empresa privada especializada en el desarrollo de instrumentación avanzada, sistemas ópticos y software a la medida para proyectos de investigación e industria.",
         heroBtn: "Agenda una llamada",
 
         expertiseTitle: "Del laboratorio a la aplicación real",
@@ -224,7 +224,7 @@
         contactTitle: "Ponte en contacto",
         contactInfoTitle: "Conversemos sobre tu proyecto",
         contactInfoDesc:
-          "Ya sea que estés en la fase de concepto o definiendo requerimientos técnicos, podemos ayudarte a diseñar, simular, prototipar y validar sistemas ópticos y científicos avanzados.",
+          "Ya sea que estés en la fase de concepto o definiendo requerimientos técnicos, podemos ayudarte a diseñar, simular, prototipar y validar sistemas tecnológicos y científicos altamente especializados.",
 
         formTitle: "Envíanos un mensaje",
         labelName: "Nombre",
@@ -256,31 +256,29 @@
             "We support the characterization and validation of optical components and systems to ensure they meet demanding scientific and industrial requirements.",
           bullets: [
             "Metrology strategies for high-precision optical surfaces and assemblies.",
-            "Integration of interferometry, profilometry and transmission measurements.",
             "Data analysis, uncertainty estimation and test procedure development.",
             "Feedback from measurements to improve design and manufacturing processes."
           ]
         },
-        solar: {
-          title: "Solar, Radiometric & Environmental Systems",
-          desc:
-            "We develop and support optical and electronic solutions for solar monitoring, radiometry and environmental measurements in scientific and industrial contexts.",
-          bullets: [
-            "Optical design for solar irradiance and spectral measurement systems.",
-            "Instrument concepts for atmospheric, environmental and field measurements.",
-            "Calibration strategies and long-term stability considerations.",
-            "Integration of sensors, optics and embedded software."
-          ]
-        },
-        semiconductor: {
-          title: "Semiconductor Devices & Thin-Film Coatings",
-          desc:
-            "We provide expertise in thin-film interference coatings and semiconductor-based devices for optical, sensing and energy applications.",
-          bullets: [
-            "Design and optimization of multilayer anti-reflective and functional coatings.",
-            "Support for thin-film deposition processes (e-beam evaporation, sputtering).",
-            "Optical modeling of semiconductor devices and material selection.",
-            "Characterization strategies for transmission, reflection and uniformity."
+        coatings: {
+      title: "Thin Film Technology and Manufacturing",
+      desc:
+      "We design and provide specialized support for the development of optical coatings, including optical filters, anti-reflective coatings, high-reflective coatings, beam splitters, and polarizers.",
+      bullets: [
+      "Design and optimization of multilayer coatings for scientific and industrial optical applications.",
+      "Support for thin-film deposition processes (PVD: e-beam evaporation, sputtering, etc.).",
+      "Characterization strategies for transmission, reflection, and thickness uniformity of deposited films."
+      ]
+      },
+
+      semiconductor: {
+      title: "Semiconductor Devices & Solar Cells",
+      desc:
+      "We provide expertise in the development and characterization of semiconductor-based devices for sensing and solar energy applications.",
+      bullets: [
+      "Design and modeling of semiconductor devices.",
+      "Deposition and electrical characterization techniques for semiconductor and thin-film materials.",
+      "Research and development of solar cells."
           ]
         }
       },
@@ -288,7 +286,7 @@
         optical: {
           title: "Diseño Óptico y Optomecánico",
           desc:
-            "Diseñamos sistemas ópticos y optomecánicos para instrumentos científicos y aplicaciones industriales, desde la definición del concepto y especificaciones hasta el diseño detallado listo para fabricación.",
+            "Diseñamos sistemas ópticos y optomecánicos para proyectos científicos y aplicaciones industriales, desde la definición del concepto y especificaciones hasta el diseño detallado listo para fabricación.",
           bullets: [
             "Diseño de sistemas ópticos para imagen y espectroscopía.",
             "Conjuntos de lentes y espejos, colimadores, cámaras y óptica de iluminación.",
@@ -302,31 +300,30 @@
             "Apoyamos la caracterización y validación de componentes y sistemas ópticos para asegurar que cumplan con los requerimientos científicos e industriales más exigentes.",
           bullets: [
             "Estrategias de metrología para superficies y ensamblajes ópticos de alta precisión.",
-            "Integración de interferometría, perfilometría y mediciones de transmitancia/reflejtancia.",
             "Análisis de datos, estimación de incertidumbre y desarrollo de procedimientos de prueba.",
             "Retroalimentación de las mediciones hacia el diseño y la manufactura."
           ]
         },
-        solar: {
-          title: "Sistemas Solares, Radiométricos y Ambientales",
-          desc:
-            "Desarrollamos e integramos soluciones ópticas y electrónicas para monitoreo solar, radiometría y mediciones ambientales en contextos científicos e industriales.",
-          bullets: [
-            "Diseño óptico para sistemas de medición de irradiancia y espectro solar.",
-            "Conceptos de instrumentos para mediciones atmosféricas, ambientales y de campo.",
-            "Estrategias de calibración y consideraciones de estabilidad a largo plazo.",
-            "Integración de sensores, óptica y software embebido."
-          ]
-        },
-        semiconductor: {
-          title: "Dispositivos Semiconductores y Recubrimientos Delgados",
-          desc:
-            "Ofrecemos experiencia en recubrimientos delgados por interferencia y dispositivos basados en semiconductores para aplicaciones ópticas, de sensado y energía.",
-          bullets: [
-            "Diseño y optimización de recubrimientos antirreflejantes y funcionales multicapa.",
-            "Soporte a procesos de deposición de películas delgadas (evaporación e-beam, sputtering).",
-            "Modelado óptico de dispositivos semiconductores y selección de materiales.",
-            "Estrategias de caracterización de transmitancia, reflectancia y uniformidad."
+       coatings: {
+  title: "Recubrimientos Ópticos y Manufactura",
+  desc:
+    "Diseñamos y ofrecemos consultoría especializada en el desarrollo y fabricación de recubrimientos ópticos: filtros ópticos, recubrimientos antirreflejantes, recubrimientos altamente reflectantes, divisores de haz y polarizadores.",
+  bullets: [
+    "Diseño óptico y optimización de recubrimientos multicapa para aplicaciones científicas e industriales.",
+    "Soporte para procesos de depósito de películas delgadas (PVD: evaporación por haz de electrones, sputtering, etc.).",
+    "Estrategias de caracterización de transmitancia, reflectancia y uniformidad de espesor en las películas depositadas."
+      ]
+    },
+
+  semiconductor: {
+  title: "Dispositivos Semiconductores y Celdas Solares",
+  desc:
+    "Contamos con amplia experiencia en el desarrollo y caracterización de dispositivos basados en semiconductores para aplicaciones de sensado y energía solar.",
+  bullets: [
+    "Diseño y modelado de dispositivos semiconductores.",
+    "Técnicas de depósito y caracterización eléctrica de materiales semiconductores y películas delgadas.",
+    "Investigación y desarrollo de celdas solares."
+      
           ]
         }
       }
@@ -457,5 +454,6 @@
 
 </body>
 </html>
+
 
 
