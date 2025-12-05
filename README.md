@@ -46,7 +46,7 @@ Abre el archivo index.html en cualquier navegador web.
 
 🔗 Enlaces Importantes
 Enlace	Descripción
-🌐 Sitio publicado	https://yborroel.github.io/saret.github.io/
+🌐 Sitio publicado	https://yborroel.github.io/saret
 
 📧 Correo de contacto	saret.consulting@outlook.mx
 
