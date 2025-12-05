@@ -176,6 +176,8 @@
     document.getElementById("contactEmail").href = "mailto:" + CONTACT_EMAIL;
     document.getElementById("contactPhone").textContent = CONTACT_TELEPHONE;
     document.getElementById("contactLinkedin").href = CONTACT_LINKEDIN;
+    // --- Clave para guardar el idioma ---
+    const LANG_KEY = "saretLang";
 
     // --- Text content for both languages ---
     const contentTexts = {
@@ -335,7 +337,7 @@
       const mapping = {
         optical: 'opticalBtn',
         metrology: 'metrologyBtn',
-        solar: 'solarBtn',
+        coatings: 'coatingsBtn',
         semiconductor: 'semiconductorBtn'
       };
 
@@ -368,7 +370,7 @@
         currentLang === 'en' ? "Semiconductors Technology" : "Tecnología de semiconductores";
     }
 
-    function updateContent(key) {
+     function updateContent(key) {
       const contentDiv = document.getElementById("serviceContent");
       const service = services[currentLang][key];
       if (!service) return;
@@ -386,74 +388,76 @@
         contentDiv.innerHTML = `
           <h4 class="text-2xl font-bold mb-4 text-blue-700">${service.title}</h4>
           <p class="text-lg text-gray-700 mb-4">${service.desc}</p>
-          ${bulletsHTML}
-        `;
+        ${bulletsHTML}
+      `;
 
-        contentDiv.style.opacity = 1;
-        contentDiv.style.transform = 'translateY(0)';
-        setActiveButton(key);
-      }, 150);
+      contentDiv.style.opacity = 1;
+      contentDiv.style.transform = 'translateY(0)';
+      setActiveButton(key);
+    }, 150);
+  }
+
+  function switchLang(lang) {
+    if (!contentTexts[lang]) return;
+    currentLang = lang;
+
+    // 👉 Guardar idioma elegido
+    localStorage.setItem(LANG_KEY, lang);
+
+    const t = contentTexts[lang];
+
+    // Header nav
+    document.getElementById("navServices").textContent = t.navServices;
+    document.getElementById("navContact").textContent = t.navContact;
+
+    // Hero
+    document.getElementById("heroTitle").textContent = t.heroTitle;
+    document.getElementById("heroDesc").textContent = t.heroDesc;
+    document.getElementById("heroBtn").textContent = t.heroBtn;
+
+    // Expertise
+    document.getElementById("expertiseTitle").textContent = t.expertiseTitle;
+    document.getElementById("expertiseDesc").textContent = t.expertiseDesc;
+
+    // Services title
+    document.getElementById("servicesTitle").textContent = t.servicesTitle;
+
+    // Contact section
+    document.getElementById("contactTitle").textContent = t.contactTitle;
+    document.getElementById("contactInfoTitle").textContent = t.contactInfoTitle;
+    document.getElementById("contactInfoDesc").textContent = t.contactInfoDesc;
+
+    document.getElementById("formTitle").textContent = t.formTitle;
+    document.getElementById("labelName").textContent = t.labelName;
+    document.getElementById("labelEmail").textContent = t.labelEmail;
+    document.getElementById("labelPhone").textContent = t.labelPhone;
+    document.getElementById("labelMessage").textContent = t.labelMessage;
+    document.getElementById("formSubmitBtn").textContent = t.formSubmitBtn;
+
+    document.getElementById("contactLinkedin").textContent = t.contactLinkedin;
+
+    // Language button styles
+    const btnEN = document.getElementById("btnEN");
+    const btnES = document.getElementById("btnES");
+    if (lang === 'en') {
+      btnEN.classList.add("bg-gray-800");
+      btnES.classList.remove("bg-gray-800");
+    } else {
+      btnES.classList.add("bg-gray-800");
+      btnEN.classList.remove("bg-gray-800");
     }
 
-    function switchLang(lang) {
-      if (!contentTexts[lang]) return;
-      currentLang = lang;
+    // Update service buttons text and current content
+    updateServiceButtonsText();
+    updateContent('optical');
+  }
 
-      const t = contentTexts[lang];
-
-      // Header nav
-      document.getElementById("navServices").textContent = t.navServices;
-      document.getElementById("navContact").textContent = t.navContact;
-
-      // Hero
-      document.getElementById("heroTitle").textContent = t.heroTitle;
-      document.getElementById("heroDesc").textContent = t.heroDesc;
-      document.getElementById("heroBtn").textContent = t.heroBtn;
-
-      // Expertise
-      document.getElementById("expertiseTitle").textContent = t.expertiseTitle;
-      document.getElementById("expertiseDesc").textContent = t.expertiseDesc;
-
-      // Services title
-      document.getElementById("servicesTitle").textContent = t.servicesTitle;
-
-      // Contact section
-      document.getElementById("contactTitle").textContent = t.contactTitle;
-      document.getElementById("contactInfoTitle").textContent = t.contactInfoTitle;
-      document.getElementById("contactInfoDesc").textContent = t.contactInfoDesc;
-
-      document.getElementById("formTitle").textContent = t.formTitle;
-      document.getElementById("labelName").textContent = t.labelName;
-      document.getElementById("labelEmail").textContent = t.labelEmail;
-      document.getElementById("labelPhone").textContent = t.labelPhone;
-      document.getElementById("labelMessage").textContent = t.labelMessage;
-      document.getElementById("formSubmitBtn").textContent = t.formSubmitBtn;
-
-      document.getElementById("contactLinkedin").textContent = t.contactLinkedin;
-
-      // Language button styles
-      const btnEN = document.getElementById("btnEN");
-      const btnES = document.getElementById("btnES");
-      if (lang === 'en') {
-        btnEN.classList.add("bg-gray-800");
-        btnES.classList.remove("bg-gray-800");
-      } else {
-        btnES.classList.add("bg-gray-800");
-        btnEN.classList.remove("bg-gray-800");
-      }
-
-      // Update service buttons text and current content
-      updateServiceButtonsText();
-      updateContent('optical');
-    }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      switchLang('en');
-    });
-  </script>
-
-</body>
-</html>
+  window.addEventListener("DOMContentLoaded", () => {
+    // 👉 Leer idioma guardado o poner 'en' por defecto
+    const savedLang = localStorage.getItem(LANG_KEY) || 'en';
+    switchLang(savedLang);
+  });
+</script>
 
 
 
