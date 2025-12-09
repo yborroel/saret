@@ -25,7 +25,7 @@
     }
 
     .service-btn-active {
-      background-color: #1d4ed8; /* blue-700 */
+      background-color: #1d4ed8;
       color: white;
       border-color: #1d4ed8;
     }
@@ -83,8 +83,12 @@
       <div class="flex flex-col lg:flex-row justify-center items-start space-y-12 lg:space-y-0 lg:space-x-12">
         <div class="flex flex-col space-y-4 w-full lg:w-72 sticky top-24">
           <button id="opticalBtn" onclick="updateContent('optical')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
+
           <button id="metrologyBtn" onclick="updateContent('metrology')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
-          <button id="optical coatingsBtn" onclick="updateContent('coatings')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
+
+          <!-- FIX: ID CORREGIDO -->
+          <button id="coatingsBtn" onclick="updateContent('coatings')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
+
           <button id="semiconductorBtn" onclick="updateContent('semiconductor')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
         </div>
 
@@ -107,21 +111,24 @@
           <div class="space-y-4">
             <p class="text-gray-700 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               Email: <a id="contactEmail" href="#" class="ml-2 text-blue-700 font-semibold hover:text-blue-500"></a>
             </p>
 
             <p class="text-gray-700 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               Phone: <span id="contactPhone" class="ml-2 font-semibold"></span>
             </p>
 
             <p class="text-gray-700 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
               </svg>
               <a id="contactLinkedin" href="#" target="_blank" rel="noopener" class="text-blue-700 font-semibold hover:text-blue-500"></a>
             </p>
@@ -158,7 +165,8 @@
             </div>
 
             <button type="submit" id="formSubmitBtn"
-              class="w-full py-3 px-4 rounded-md shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 transition">
+              class="w-full py-3 px-4 rounded-md shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 
+              focus:ring-2 focus:ring-blue-500 transition">
             </button>
           </form>
         </div>
@@ -166,233 +174,223 @@
     </div>
   </section>
 
-  <script>
-    // --- Contact Info ---
-    const CONTACT_EMAIL = "saret.consulting@outlook.mx";
-    const CONTACT_TELEPHONE = "+52 477 536 14 43";
-    const CONTACT_LINKEDIN = "https://www.linkedin.com/in/yaritza-borroel/";
+<script>
+  const CONTACT_EMAIL = "saret.consulting@outlook.mx";
+  const CONTACT_TELEPHONE = "+52 477 536 14 43";
+  const CONTACT_LINKEDIN = "https://www.linkedin.com/in/yaritza-borroel/";
 
-    document.getElementById("contactEmail").textContent = CONTACT_EMAIL;
-    document.getElementById("contactEmail").href = "mailto:" + CONTACT_EMAIL;
-    document.getElementById("contactPhone").textContent = CONTACT_TELEPHONE;
-    document.getElementById("contactLinkedin").href = CONTACT_LINKEDIN;
-    // --- Clave para guardar el idioma ---
-    const LANG_KEY = "saretLang";
+  document.getElementById("contactEmail").textContent = CONTACT_EMAIL;
+  document.getElementById("contactEmail").href = "mailto:" + CONTACT_EMAIL;
+  document.getElementById("contactPhone").textContent = CONTACT_TELEPHONE;
+  document.getElementById("contactLinkedin").href = CONTACT_LINKEDIN;
 
-    // --- Text content for both languages ---
-    const contentTexts = {
-      en: {
-        navServices: "Services",
-        navContact: "Contact",
+  const LANG_KEY = "saretLang";
 
-        heroTitle: "Scientific Applications and Research in Engineering Technologies",
-        heroDesc: "SARET is a private engineering company specialized in the development of scientific instrumentation, optical systems, and custom software for research and industry.",
-        heroBtn: "Schedule a call",
+  const contentTexts = {
+    en: {
+      navServices: "Services",
+      navContact: "Contact",
 
-        expertiseTitle: "From research labs to real-world applications",
-        expertiseDesc:
-          "With more than 10 years of experience in public research centers and universities in Mexico and abroad, SARET bridges the gap between scientific ideas and robust, manufacturable engineering solutions. We support research groups, technology-based companies, and industrial partners that need reliable optical, optomechanical, and software developments for high-impact projects.",
+      heroTitle: "Scientific Applications and Research in Engineering Technologies",
+      heroDesc: "SARET is a private engineering company specialized in the development of scientific instrumentation, optical systems, and custom software for research and industry.",
+      heroBtn: "Schedule a call",
 
-        servicesTitle: "Core areas of expertise",
+      expertiseTitle: "From research labs to real-world applications",
+      expertiseDesc:
+        "With more than 10 years of experience in public research centers and universities in Mexico and abroad, SARET bridges the gap between scientific ideas and robust, manufacturable engineering solutions. We support research groups, technology-based companies, and industrial partners that need reliable optical, optomechanical, and software developments for high-impact projects.",
 
-        contactTitle: "Get in touch",
-        contactInfoTitle: "Let’s talk about your project",
-        contactInfoDesc:
-          "Whether you are in the early concept stage or already defining technical requirements, we can help you design, simulate, prototype, and validate advanced optical and scientific systems.",
+      servicesTitle: "Core areas of expertise",
 
-        formTitle: "Send us a message",
-        labelName: "Name",
-        labelEmail: "Email",
-        labelPhone: "Phone (optional)",
-        labelMessage: "Tell us about your project or technical needs",
-        formSubmitBtn: "Send message",
+      contactTitle: "Get in touch",
+      contactInfoTitle: "Let’s talk about your project",
+      contactInfoDesc:
+        "Whether you are in the early concept stage or already defining technical requirements, we can help you design, simulate, prototype, and validate advanced optical and scientific systems.",
 
-        contactLinkedin: "Visit our LinkedIn profile"
+      formTitle: "Send us a message",
+      labelName: "Name",
+      labelEmail: "Email",
+      labelPhone: "Phone (optional)",
+      labelMessage: "Tell us about your project or technical needs",
+      formSubmitBtn: "Send message",
+
+      contactLinkedin: "Visit our LinkedIn profile"
+    },
+    es: {
+      navServices: "Servicios",
+      navContact: "Contacto",
+
+      heroTitle: "Scientific Applications and Research in Engineering Technologies",
+      heroDesc: "SARET es una empresa privada especializada en el desarrollo de instrumentación avanzada, sistemas ópticos y software a la medida para proyectos de investigación e industria.",
+      heroBtn: "Agenda una llamada",
+
+      expertiseTitle: "Del laboratorio a la aplicación real",
+      expertiseDesc:
+        "Con más de 10 años de experiencia en Centros Públicos de Investigación y universidades, en México y en el extranjero, SARET conecta las ideas científicas con soluciones de ingeniería robustas y fabricables. Acompañamos a grupos de investigación, empresas de base tecnológica e industria que requieren desarrollos confiables en óptica, optomecánica y software para proyectos de alto impacto.",
+
+      servicesTitle: "Áreas principales de especialización",
+
+      contactTitle: "Ponte en contacto",
+      contactInfoTitle: "Conversemos sobre tu proyecto",
+      contactInfoDesc:
+        "Ya sea que estés en la fase de concepto o definiendo requerimientos técnicos, podemos ayudarte a diseñar, simular, prototipar y validar sistemas tecnológicos y científicos altamente especializados.",
+
+      formTitle: "Envíanos un mensaje",
+      labelName: "Nombre",
+      labelEmail: "Correo electrónico",
+      labelPhone: "Teléfono (opcional)",
+      labelMessage: "Cuéntanos sobre tu proyecto o necesidades técnicas",
+      formSubmitBtn: "Enviar mensaje",
+
+      contactLinkedin: "Visita nuestro perfil en LinkedIn"
+    }
+  };
+
+  const services = {
+    en: {
+      optical: {
+        title: "Optical & Optomechanical Design",
+        desc:
+          "We design optical and optomechanical systems for scientific instruments and industrial applications, from concept definition and specification to detailed design ready for manufacturing.",
+        bullets: [
+          "Optical system design for imaging and spectroscopic instruments.",
+          "Lens and mirror assemblies, collimators, cameras and illumination optics.",
+          "Optomechanical mounts, alignment strategies and athermal designs.",
+          "Tolerance analysis and performance optimization using industry-standard tools."
+        ]
       },
-      es: {
-        navServices: "Servicios",
-        navContact: "Contacto",
-
-        heroTitle: "Scientific Applications and Research in Engineering Technologies",
-        heroDesc: "SARET es una empresa privada especializada en el desarrollo de instrumentación avanzada, sistemas ópticos y software a la medida para proyectos de investigación e industria.",
-        heroBtn: "Agenda una llamada",
-
-        expertiseTitle: "Del laboratorio a la aplicación real",
-        expertiseDesc:
-          "Con más de 10 años de experiencia en Centros Públicos de Investigación y universidades, en México y en el extranjero, SARET conecta las ideas científicas con soluciones de ingeniería robustas y fabricables. Acompañamos a grupos de investigación, empresas de base tecnológica e industria que requieren desarrollos confiables en óptica, optomecánica y software para proyectos de alto impacto.",
-
-        servicesTitle: "Áreas principales de especialización",
-
-        contactTitle: "Ponte en contacto",
-        contactInfoTitle: "Conversemos sobre tu proyecto",
-        contactInfoDesc:
-          "Ya sea que estés en la fase de concepto o definiendo requerimientos técnicos, podemos ayudarte a diseñar, simular, prototipar y validar sistemas tecnológicos y científicos altamente especializados.",
-
-        formTitle: "Envíanos un mensaje",
-        labelName: "Nombre",
-        labelEmail: "Correo electrónico",
-        labelPhone: "Teléfono (opcional)",
-        labelMessage: "Cuéntanos sobre tu proyecto o necesidades técnicas",
-        formSubmitBtn: "Enviar mensaje",
-
-        contactLinkedin: "Visita nuestro perfil en LinkedIn"
-      }
-    };
-
-    const services = {
-      en: {
-        optical: {
-          title: "Optical & Optomechanical Design",
-          desc:
-            "We design optical and optomechanical systems for scientific instruments and industrial applications, from concept definition and specification to detailed design ready for manufacturing.",
-          bullets: [
-            "Optical system design for imaging and spectroscopic instruments.",
-            "Lens and mirror assemblies, collimators, cameras and illumination optics.",
-            "Optomechanical mounts, alignment strategies and athermal designs.",
-            "Tolerance analysis and performance optimization using industry-standard tools."
-          ]
-        },
-        metrology: {
-          title: "Metrology & High-Precision Manufacturing Support",
-          desc:
-            "We support the characterization and validation of optical components and systems to ensure they meet demanding scientific and industrial requirements.",
-          bullets: [
-            "Metrology strategies for high-precision optical surfaces and assemblies.",
-            "Data analysis, uncertainty estimation and test procedure development.",
-            "Feedback from measurements to improve design and manufacturing processes."
-          ]
-        },
-        coatings: {
-      title: "Thin Film Technology and Manufacturing",
-      desc:
-      "We design and provide specialized support for the development of optical coatings, including optical filters, anti-reflective coatings, high-reflective coatings, beam splitters, and polarizers.",
-      bullets: [
-      "Design and optimization of multilayer coatings for scientific and industrial optical applications.",
-      "Support for thin-film deposition processes (PVD: e-beam evaporation, sputtering, etc.).",
-      "Characterization strategies for transmission, reflection, and thickness uniformity of deposited films."
-      ]
+      metrology: {
+        title: "Metrology & High-Precision Manufacturing Support",
+        desc:
+          "We support the characterization and validation of optical components and systems to ensure they meet demanding scientific and industrial requirements.",
+        bullets: [
+          "Metrology strategies for high-precision optical surfaces and assemblies.",
+          "Data analysis, uncertainty estimation and test procedure development.",
+          "Feedback from measurements to improve design and manufacturing processes."
+        ]
       },
-
+      coatings: {
+        title: "Thin Film Technology and Manufacturing",
+        desc:
+          "We design and provide specialized support for the development of optical coatings, including optical filters, anti-reflective coatings, high-reflective coatings, beam splitters, and polarizers.",
+        bullets: [
+          "Design and optimization of multilayer coatings for scientific and industrial optical applications.",
+          "Support for thin-film deposition processes (PVD: e-beam evaporation, sputtering, etc.).",
+          "Characterization strategies for transmission, reflection, and thickness uniformity of deposited films."
+        ]
+      },
       semiconductor: {
-      title: "Semiconductor Devices & Solar Cells",
-      desc:
-      "We provide expertise in the development and characterization of semiconductor-based devices for sensing and solar energy applications.",
-      bullets: [
-      "Design and modeling of semiconductor devices.",
-      "Deposition and electrical characterization techniques for semiconductor and thin-film materials.",
-      "Research and development of solar cells."
-          ]
-        }
-      },
-      es: {
-        optical: {
-          title: "Diseño Óptico y Optomecánico",
-          desc:
-            "Diseñamos sistemas ópticos y optomecánicos para proyectos científicos y aplicaciones industriales, desde la definición del concepto y especificaciones hasta el diseño detallado listo para fabricación.",
-          bullets: [
-            "Diseño de sistemas ópticos para imagen y espectroscopía.",
-            "Conjuntos de lentes y espejos, colimadores, cámaras y óptica de iluminación.",
-            "Monturas optomecánicas, estrategias de alineación y diseños atermo-compensados.",
-            "Análisis de tolerancias y optimización de desempeño con herramientas de la industria."
-          ]
-        },
-        metrology: {
-          title: "Metrología y Soporte a Manufactura de Alta Precisión",
-          desc:
-            "Apoyamos la caracterización y validación de componentes y sistemas ópticos para asegurar que cumplan con los requerimientos científicos e industriales más exigentes.",
-          bullets: [
-            "Estrategias de metrología para superficies y ensamblajes ópticos de alta precisión.",
-            "Análisis de datos, estimación de incertidumbre y desarrollo de procedimientos de prueba.",
-            "Retroalimentación de las mediciones hacia el diseño y la manufactura."
-          ]
-        },
-       coatings: {
-  title: "Recubrimientos Ópticos y Manufactura",
-  desc:
-    "Diseñamos y ofrecemos consultoría especializada en el desarrollo y fabricación de recubrimientos ópticos: filtros ópticos, recubrimientos antirreflejantes, recubrimientos altamente reflectantes, divisores de haz y polarizadores.",
-  bullets: [
-    "Diseño óptico y optimización de recubrimientos multicapa para aplicaciones científicas e industriales.",
-    "Soporte para procesos de depósito de películas delgadas (PVD: evaporación por haz de electrones, sputtering, etc.).",
-    "Estrategias de caracterización de transmitancia, reflectancia y uniformidad de espesor en las películas depositadas."
-      ]
+        title: "Semiconductor Devices & Solar Cells",
+        desc:
+          "We provide expertise in the development and characterization of semiconductor-based devices for sensing and solar energy applications.",
+        bullets: [
+          "Design and modeling of semiconductor devices.",
+          "Deposition and electrical characterization techniques for semiconductor and thin-film materials.",
+          "Research and development of solar cells."
+        ]
+      }
     },
 
-  semiconductor: {
-  title: "Dispositivos Semiconductores y Celdas Solares",
-  desc:
-    "Contamos con amplia experiencia en el desarrollo y caracterización de dispositivos basados en semiconductores para aplicaciones de sensado y energía solar.",
-  bullets: [
-    "Diseño y modelado de dispositivos semiconductores.",
-    "Técnicas de depósito y caracterización eléctrica de materiales semiconductores y películas delgadas.",
-    "Investigación y desarrollo de celdas solares."
-      
-          ]
-        }
+    es: {
+      optical: {
+        title: "Diseño Óptico y Optomecánico",
+        desc:
+          "Diseñamos sistemas ópticos y optomecánicos para proyectos científicos y aplicaciones industriales, desde la definición del concepto y especificaciones hasta el diseño detallado listo para fabricación.",
+        bullets: [
+          "Diseño de sistemas ópticos para imagen y espectroscopía.",
+          "Conjuntos de lentes y espejos, colimadores, cámaras y óptica de iluminación.",
+          "Monturas optomecánicas, estrategias de alineación y diseños atermocompensados.",
+          "Análisis de tolerancias y optimización de desempeño con herramientas de la industria."
+        ]
+      },
+      metrology: {
+        title: "Metrología y Soporte a Manufactura de Alta Precisión",
+        desc:
+          "Apoyamos la caracterización y validación de componentes y sistemas ópticos para asegurar que cumplan con los requerimientos científicos e industriales más exigentes.",
+        bullets: [
+          "Estrategias de metrología para superficies y ensamblajes ópticos de alta precisión.",
+          "Análisis de datos, estimación de incertidumbre y desarrollo de procedimientos de prueba.",
+          "Retroalimentación de las mediciones hacia el diseño y la manufactura."
+        ]
+      },
+      coatings: {
+        title: "Recubrimientos Ópticos y Manufactura",
+        desc:
+          "Diseñamos y ofrecemos consultoría especializada en el desarrollo y fabricación de recubrimientos ópticos: filtros ópticos, recubrimientos antirreflejantes, recubrimientos altamente reflectantes, divisores de haz y polarizadores.",
+        bullets: [
+          "Diseño óptico y optimización de recubrimientos multicapa para aplicaciones científicas e industriales.",
+          "Soporte para procesos de depósito de películas delgadas (PVD: evaporación por haz de electrones, sputtering, etc.).",
+          "Estrategias de caracterización de transmitancia, reflectancia y uniformidad de espesor en las películas depositadas."
+        ]
+      },
+      semiconductor: {
+        title: "Dispositivos Semiconductores y Celdas Solares",
+        desc:
+          "Contamos con amplia experiencia en el desarrollo y caracterización de dispositivos basados en semiconductores para aplicaciones de sensado y energía solar.",
+        bullets: [
+          "Diseño y modelado de dispositivos semiconductores.",
+          "Técnicas de depósito y caracterización eléctrica de materiales semiconductores y películas delgadas.",
+          "Investigación y desarrollo de celdas solares."
+        ]
       }
+    }
+  };
+
+  let currentLang = "en";
+
+  function setActiveButton(key) {
+    const mapping = {
+      optical: "opticalBtn",
+      metrology: "metrologyBtn",
+      coatings: "coatingsBtn",
+      semiconductor: "semiconductorBtn"
     };
 
-    let currentLang = 'en';
+    Object.values(mapping).forEach(id => {
+      const btn = document.getElementById(id);
+      if (btn) btn.classList.remove("service-btn-active");
+    });
 
-    function setActiveButton(key) {
-      const mapping = {
-        optical: 'opticalBtn',
-        metrology: 'metrologyBtn',
-        coatings: 'coatingsBtn',
-        semiconductor: 'semiconductorBtn'
-      };
+    const activeBtn = document.getElementById(mapping[key]);
+    if (activeBtn) activeBtn.classList.add("service-btn-active");
+  }
 
-      Object.values(mapping).forEach(id => {
-        const btn = document.getElementById(id);
-        if (!btn) return;
-        btn.classList.remove('service-btn-active');
-      });
+  function updateServiceButtonsText() {
+    document.getElementById("opticalBtn").textContent =
+      currentLang === "en" ? "Optical & Optomechanical Design" : "Diseño Óptico y Optomecánico";
 
-      const activeId = mapping[key];
-      const activeBtn = document.getElementById(activeId);
-      if (activeBtn) {
-        activeBtn.classList.add('service-btn-active');
-      }
-    }
+    document.getElementById("metrologyBtn").textContent =
+      currentLang === "en" ? "Metrology & Precision Testing" : "Metrología y Pruebas de Precisión";
 
-    function updateServiceButtonsText() {
-      const t = contentTexts[currentLang];
+    document.getElementById("coatingsBtn").textContent =
+      currentLang === "en" ? "Optical Coatings" : "Recubrimientos Ópticos";
 
-      document.getElementById("opticalBtn").textContent =
-        currentLang === 'en' ? "Optical & Optomechanical Design" : "Diseño Óptico y Optomecánico";
+    document.getElementById("semiconductorBtn").textContent =
+      currentLang === "en" ? "Semiconductor Devices & Solar Cells" : "Dispositivos Semiconductores y Celdas Solares";
+  }
 
-      document.getElementById("metrologyBtn").textContent =
-        currentLang === 'en' ? "Metrology & Precision Testing" : "Metrología y Pruebas de Precisión";
+  function updateContent(key) {
+    const contentDiv = document.getElementById("serviceContent");
+    const service = services[currentLang][key];
+    if (!service) return;
 
-      document.getElementById("coatingsBtn").textContent =
-        currentLang === 'en' ? "Optical Coatings" : "Recubrimientos Ópticos";
+    contentDiv.style.opacity = 0;
+    contentDiv.style.transform = "translateY(4px)";
 
-      document.getElementById("semiconductorBtn").textContent =
-        currentLang === 'en' ? "Semiconductors Technology" : "Tecnología de semiconductores";
-    }
+    setTimeout(() => {
+      const bulletsHTML = service.bullets?.length
+        ? `<ul class="list-disc pl-5 space-y-2 text-gray-700 text-base">
+             ${service.bullets.map(item => `<li>${item}</li>`).join("")}
+           </ul>`
+        : "";
 
-     function updateContent(key) {
-      const contentDiv = document.getElementById("serviceContent");
-      const service = services[currentLang][key];
-      if (!service) return;
-
-      contentDiv.style.opacity = 0;
-      contentDiv.style.transform = 'translateY(4px)';
-
-      setTimeout(() => {
-        const bulletsHTML = service.bullets && service.bullets.length
-          ? `<ul class="list-disc pl-5 space-y-2 text-gray-700 text-base">
-              ${service.bullets.map(item => `<li>${item}</li>`).join('')}
-             </ul>`
-          : '';
-
-        contentDiv.innerHTML = `
-          <h4 class="text-2xl font-bold mb-4 text-blue-700">${service.title}</h4>
-          <p class="text-lg text-gray-700 mb-4">${service.desc}</p>
+      contentDiv.innerHTML = `
+        <h4 class="text-2xl font-bold mb-4 text-blue-700">${service.title}</h4>
+        <p class="text-lg text-gray-700 mb-4">${service.desc}</p>
         ${bulletsHTML}
       `;
 
       contentDiv.style.opacity = 1;
-      contentDiv.style.transform = 'translateY(0)';
+      contentDiv.style.transform = "translateY(0)";
       setActiveButton(key);
     }, 150);
   }
@@ -401,28 +399,22 @@
     if (!contentTexts[lang]) return;
     currentLang = lang;
 
-    // 👉 Guardar idioma elegido
     localStorage.setItem(LANG_KEY, lang);
 
     const t = contentTexts[lang];
 
-    // Header nav
     document.getElementById("navServices").textContent = t.navServices;
     document.getElementById("navContact").textContent = t.navContact;
 
-    // Hero
     document.getElementById("heroTitle").textContent = t.heroTitle;
     document.getElementById("heroDesc").textContent = t.heroDesc;
     document.getElementById("heroBtn").textContent = t.heroBtn;
 
-    // Expertise
     document.getElementById("expertiseTitle").textContent = t.expertiseTitle;
     document.getElementById("expertiseDesc").textContent = t.expertiseDesc;
 
-    // Services title
     document.getElementById("servicesTitle").textContent = t.servicesTitle;
 
-    // Contact section
     document.getElementById("contactTitle").textContent = t.contactTitle;
     document.getElementById("contactInfoTitle").textContent = t.contactInfoTitle;
     document.getElementById("contactInfoDesc").textContent = t.contactInfoDesc;
@@ -436,28 +428,19 @@
 
     document.getElementById("contactLinkedin").textContent = t.contactLinkedin;
 
-    // Language button styles
-    const btnEN = document.getElementById("btnEN");
-    const btnES = document.getElementById("btnES");
-    if (lang === 'en') {
-      btnEN.classList.add("bg-gray-800");
-      btnES.classList.remove("bg-gray-800");
-    } else {
-      btnES.classList.add("bg-gray-800");
-      btnEN.classList.remove("bg-gray-800");
-    }
-
-    // Update service buttons text and current content
     updateServiceButtonsText();
-    updateContent('optical');
+    updateContent("optical");
   }
 
   window.addEventListener("DOMContentLoaded", () => {
-    // 👉 Leer idioma guardado o poner 'en' por defecto
-    const savedLang = localStorage.getItem(LANG_KEY) || 'en';
+    const savedLang = localStorage.getItem(LANG_KEY) || "en";
     switchLang(savedLang);
   });
 </script>
+
+</body>
+</html>
+
 
 
 
