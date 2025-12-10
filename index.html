@@ -67,7 +67,7 @@
     </div>
   </section>
 
-  <!-- EXPERTISE -->
+  <!-- EXPERTISE / ABOUT -->
   <section id="expertise" class="py-20 bg-gray-50 border-t border-gray-200">
     <div class="container mx-auto px-6 text-center">
       <h3 class="text-4xl font-bold mb-12 text-gray-800" id="expertiseTitle"></h3>
@@ -86,10 +86,12 @@
 
           <button id="metrologyBtn" onclick="updateContent('metrology')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
 
-          <!-- FIX: ID CORREGIDO -->
           <button id="coatingsBtn" onclick="updateContent('coatings')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
 
           <button id="semiconductorBtn" onclick="updateContent('semiconductor')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
+
+          <!-- NUEVO: Formación / Training -->
+          <button id="trainingBtn" onclick="updateContent('training')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
         </div>
 
         <div id="serviceContent" class="w-full max-w-3xl bg-gray-50 p-8 rounded-2xl shadow-xl opacity-0 transform translate-y-2"></div>
@@ -192,19 +194,20 @@
       navContact: "Contact",
 
       heroTitle: "Scientific Applications and Research in Engineering Technologies",
-      heroDesc: "SARET is a private engineering company specialized in the development of scientific instrumentation, optical systems, and custom software for research and industry.",
+      heroDesc:
+        "SARET is a 100% privately owned engineering company, founded in 2025 and operating in the technological innovation sector. We specialize in advanced engineering services for scientific and industrial projects, connecting applied science with robust, manufacturable technology.",
       heroBtn: "Schedule a call",
 
-      expertiseTitle: "From research labs to real-world applications",
+      expertiseTitle: "Who we are",
       expertiseDesc:
-        "With more than 10 years of experience in public research centers and universities in Mexico and abroad, SARET bridges the gap between scientific ideas and robust, manufacturable engineering solutions. We support research groups, technology-based companies, and industrial partners that need reliable optical, optomechanical, and software developments for high-impact projects.",
+        "SARET is a private company operating in the technological activities sector, focused on engineering services for scientific and industrial projects. Our goals are to consolidate as a specialized engineering partner for science and technology, orient our work towards the development of technology and applied scientific projects for industry, collaborate with companies, universities and research centers in joint R&D&I initiatives, and contribute to applied science projects in the face of current scientific and technological challenges.",
 
-      servicesTitle: "Core areas of expertise",
+      servicesTitle: "Technical assistance, engineering services and training",
 
       contactTitle: "Get in touch",
       contactInfoTitle: "Let’s talk about your project",
       contactInfoDesc:
-        "Whether you are in the early concept stage or already defining technical requirements, we can help you design, simulate, prototype, and validate advanced optical and scientific systems.",
+        "Whether you are defining a new technological concept or structuring an R&D project, we support you with optical engineering, scientific instrumentation and thin-film and semiconductor technologies.",
 
       formTitle: "Send us a message",
       labelName: "Name",
@@ -220,19 +223,20 @@
       navContact: "Contacto",
 
       heroTitle: "Scientific Applications and Research in Engineering Technologies",
-      heroDesc: "SARET es una empresa privada especializada en el desarrollo de instrumentación avanzada, sistemas ópticos y software a la medida para proyectos de investigación e industria.",
+      heroDesc:
+        "SARET es una empresa de capital 100 % privado, fundada en 2025, enmarcada en el sector de actividades tecnológicas. Ofrecemos servicios de ingeniería altamente especializados para proyectos científicos y tecnológicos, conectando la ciencia aplicada con soluciones tecnológicas robustas y fabricables.",
       heroBtn: "Agenda una llamada",
 
-      expertiseTitle: "Del laboratorio a la aplicación real",
+      expertiseTitle: "Quiénes somos",
       expertiseDesc:
-        "Con más de 10 años de experiencia en Centros Públicos de Investigación y universidades, en México y en el extranjero, SARET conecta las ideas científicas con soluciones de ingeniería robustas y fabricables. Acompañamos a grupos de investigación, empresas de base tecnológica e industria que requieren desarrollos confiables en óptica, optomecánica y software para proyectos de alto impacto.",
+        "SARET es una empresa privada orientada a servicios de ingeniería para proyectos con objetivos científicos y tecnológicos. Nuestros objetivos son consolidarnos como una empresa especializada en ingeniería para ciencia y tecnología, orientar nuestros servicios al desarrollo de tecnología y proyectos científicos con aplicación industrial, colaborar con empresas, universidades y centros de investigación en proyectos conjuntos de I+D+i, y contribuir al desarrollo de proyectos de ciencia aplicada ante los retos científico-tecnológicos actuales.",
 
-      servicesTitle: "Áreas principales de especialización",
+      servicesTitle: "Asistencia técnica, servicios de ingeniería y formación",
 
       contactTitle: "Ponte en contacto",
       contactInfoTitle: "Conversemos sobre tu proyecto",
       contactInfoDesc:
-        "Ya sea que estés en la fase de concepto o definiendo requerimientos técnicos, podemos ayudarte a diseñar, simular, prototipar y validar sistemas tecnológicos y científicos altamente especializados.",
+        "Ya sea que estés definiendo un nuevo concepto tecnológico o estructurando un proyecto de I+D, podemos apoyarte con ingeniería óptica, instrumentación científica y tecnologías de recubrimientos y semiconductores.",
 
       formTitle: "Envíanos un mensaje",
       labelName: "Nombre",
@@ -248,88 +252,116 @@
   const services = {
     en: {
       optical: {
-        title: "Optical & Optomechanical Design",
+        title: "Optics and Optomechanics",
         desc:
-          "We design optical and optomechanical systems for scientific instruments and industrial applications, from concept definition and specification to detailed design ready for manufacturing.",
+          "Engineering services in optical and optomechanical design for scientific and industrial systems, from conceptual definition to specifications ready for manufacturing.",
         bullets: [
-          "Optical system design for imaging and spectroscopic instruments.",
+          "Optical design for imaging and spectroscopic systems.",
           "Lens and mirror assemblies, collimators, cameras and illumination optics.",
-          "Optomechanical mounts, alignment strategies and athermal designs.",
-          "Tolerance analysis and performance optimization using industry-standard tools."
+          "Optomechanical interfaces, mounts and alignment strategies.",
+          "Support in tolerances, ISO-based specifications and design-for-manufacturing."
         ]
       },
       metrology: {
-        title: "Metrology & High-Precision Manufacturing Support",
+        title: "Engineering Studies, Consulting and Project Development",
         desc:
-          "We support the characterization and validation of optical components and systems to ensure they meet demanding scientific and industrial requirements.",
+          "Technical assistance and engineering consulting for projects with scientific and technological objectives, including feasibility, design studies and project support.",
         bullets: [
-          "Metrology strategies for high-precision optical surfaces and assemblies.",
-          "Data analysis, uncertainty estimation and test procedure development.",
-          "Feedback from measurements to improve design and manufacturing processes."
+          "Technical studies for optical, mechanical and semiconductor-based systems.",
+          "Specialized engineering consulting for R&D and industrial technology projects.",
+          "Support in the definition, planning and technical follow-up of development projects.",
+          "Collaboration in joint R&D&I initiatives with companies, universities and research centers."
         ]
       },
       coatings: {
-        title: "Thin Film Technology and Manufacturing",
+        title: "Optical Coatings and Thin-Film Technology",
         desc:
-          "We design and provide specialized support for the development of optical coatings, including optical filters, anti-reflective coatings, high-reflective coatings, beam splitters, and polarizers.",
+          "Design and support for the development and manufacturing of optical coatings: filters, anti-reflective and high-reflective coatings, beam splitters and polarizers.",
         bullets: [
-          "Design and optimization of multilayer coatings for scientific and industrial optical applications.",
+          "Design and optimization of multilayer coatings for scientific and industrial applications.",
           "Support for thin-film deposition processes (PVD: e-beam evaporation, sputtering, etc.).",
-          "Characterization strategies for transmission, reflection, and thickness uniformity of deposited films."
+          "Characterization strategies for transmission, reflection and thickness uniformity.",
+          "Process feedback to improve spectral performance and reproducibility."
         ]
       },
       semiconductor: {
-        title: "Semiconductor Devices & Solar Cells",
+        title: "Semiconductor Technology and Devices",
         desc:
-          "We provide expertise in the development and characterization of semiconductor-based devices for sensing and solar energy applications.",
+          "Engineering and consulting in semiconductor-based devices for sensing and solar-energy applications.",
         bullets: [
-          "Design and modeling of semiconductor devices.",
+          "Design and modeling of semiconductor devices and structures.",
           "Deposition and electrical characterization techniques for semiconductor and thin-film materials.",
-          "Research and development of solar cells."
+          "Support for R&D in solar cells and optoelectronic devices."
+        ]
+      },
+      training: {
+        title: "Specialized Training and Technical Courses",
+        desc:
+          "Technical training for engineers, researchers and technical staff who require solid foundations in optical design, thin-film technology, mechanical design and semiconductor technology.",
+        bullets: [
+          "Fundamentals of optical design (basic level).",
+          "Advanced optical design (tolerances, optimization, software-based design).",
+          "Design of optical coatings: basic and advanced.",
+          "Thin-film deposition technologies for optical applications.",
+          "Advanced mechanical design and semiconductor technology topics for scientific and industrial systems."
         ]
       }
     },
 
     es: {
       optical: {
-        title: "Diseño Óptico y Optomecánico",
+        title: "Óptica y Optomecánica",
         desc:
-          "Diseñamos sistemas ópticos y optomecánicos para proyectos científicos y aplicaciones industriales, desde la definición del concepto y especificaciones hasta el diseño detallado listo para fabricación.",
+          "Servicios de ingeniería en diseño óptico y optomecánico para sistemas científicos e industriales, desde la definición conceptual hasta especificaciones listas para fabricación.",
         bullets: [
           "Diseño de sistemas ópticos para imagen y espectroscopía.",
           "Conjuntos de lentes y espejos, colimadores, cámaras y óptica de iluminación.",
-          "Monturas optomecánicas, estrategias de alineación y diseños atermocompensados.",
-          "Análisis de tolerancias y optimización de desempeño con herramientas de la industria."
+          "Interfaces optomecánicas, monturas y estrategias de alineación.",
+          "Apoyo en tolerancias, especificaciones basadas en normas ISO y diseño orientado a manufactura."
         ]
       },
       metrology: {
-        title: "Metrología y Soporte a Manufactura de Alta Precisión",
+        title: "Estudios de Ingeniería, Consultoría y Desarrollo de Proyectos",
         desc:
-          "Apoyamos la caracterización y validación de componentes y sistemas ópticos para asegurar que cumplan con los requerimientos científicos e industriales más exigentes.",
+          "Asistencia técnica y consultoría de ingeniería para proyectos con objetivos científicos y tecnológicos, incluyendo estudios de viabilidad, diseño y soporte a proyectos de desarrollo.",
         bullets: [
-          "Estrategias de metrología para superficies y ensamblajes ópticos de alta precisión.",
-          "Análisis de datos, estimación de incertidumbre y desarrollo de procedimientos de prueba.",
-          "Retroalimentación de las mediciones hacia el diseño y la manufactura."
+          "Estudios técnicos para sistemas ópticos, mecánicos y basados en semiconductores.",
+          "Consultoría especializada en proyectos de I+D y tecnología industrial.",
+          "Apoyo en la definición, planeación y seguimiento técnico de proyectos de desarrollo.",
+          "Colaboración en iniciativas de I+D+i con empresas, universidades y centros de investigación."
         ]
       },
       coatings: {
-        title: "Recubrimientos Ópticos y Manufactura",
+        title: "Recubrimientos Ópticos y Tecnología de Películas Delgadas",
         desc:
-          "Diseñamos y ofrecemos consultoría especializada en el desarrollo y fabricación de recubrimientos ópticos: filtros ópticos, recubrimientos antirreflejantes, recubrimientos altamente reflectantes, divisores de haz y polarizadores.",
+          "Diseño y consultoría especializada en el desarrollo y la manufactura de recubrimientos ópticos: filtros ópticos, recubrimientos antirreflejantes y altamente reflectantes, divisores de haz y polarizadores.",
         bullets: [
           "Diseño óptico y optimización de recubrimientos multicapa para aplicaciones científicas e industriales.",
           "Soporte para procesos de depósito de películas delgadas (PVD: evaporación por haz de electrones, sputtering, etc.).",
-          "Estrategias de caracterización de transmitancia, reflectancia y uniformidad de espesor en las películas depositadas."
+          "Estrategias de caracterización de transmitancia, reflectancia y uniformidad de espesor.",
+          "Retroalimentación de resultados de metrología hacia el ajuste de procesos de deposición."
         ]
       },
       semiconductor: {
-        title: "Dispositivos Semiconductores y Celdas Solares",
+        title: "Tecnología de Semiconductores y Dispositivos",
         desc:
-          "Contamos con amplia experiencia en el desarrollo y caracterización de dispositivos basados en semiconductores para aplicaciones de sensado y energía solar.",
+          "Servicios de ingeniería y consultoría en dispositivos basados en semiconductores para aplicaciones de sensado y energía solar.",
         bullets: [
-          "Diseño y modelado de dispositivos semiconductores.",
+          "Diseño y modelado de dispositivos semiconductores y estructuras activas.",
           "Técnicas de depósito y caracterización eléctrica de materiales semiconductores y películas delgadas.",
-          "Investigación y desarrollo de celdas solares."
+          "Apoyo en investigación y desarrollo de celdas solares y dispositivos optoelectrónicos."
+        ]
+      },
+      training: {
+        title: "Formación Técnica y Cursos Especializados",
+        desc:
+          "Ofrecemos cursos abiertos y a la medida en México, dirigidos a ingenieros, personal técnico y grupos de I+D que requieran bases sólidas en diseño óptico, recubrimientos y tecnología de materiales.",
+        bullets: [
+          "Fundamentos de diseño óptico.",
+          "Diseño de recubrimientos ópticos: básico y avanzado.",
+          "Tecnologías de depósito de películas delgadas.",
+          "Diseño mecánico avanzado orientado a instrumentación.",
+          "Tecnología de semiconductores aplicada a dispositivos científicos e industriales."
         ]
       }
     }
@@ -342,7 +374,8 @@
       optical: "opticalBtn",
       metrology: "metrologyBtn",
       coatings: "coatingsBtn",
-      semiconductor: "semiconductorBtn"
+      semiconductor: "semiconductorBtn",
+      training: "trainingBtn"
     };
 
     Object.values(mapping).forEach(id => {
@@ -356,16 +389,19 @@
 
   function updateServiceButtonsText() {
     document.getElementById("opticalBtn").textContent =
-      currentLang === "en" ? "Optical & Optomechanical Design" : "Diseño Óptico y Optomecánico";
+      currentLang === "en" ? "Optics & Optomechanics" : "Óptica y Optomecánica";
 
     document.getElementById("metrologyBtn").textContent =
-      currentLang === "en" ? "Metrology & Precision Testing" : "Metrología y Pruebas de Precisión";
+      currentLang === "en" ? "Engineering Services" : "Servicios de ingeniería";
 
     document.getElementById("coatingsBtn").textContent =
-      currentLang === "en" ? "Optical Coatings" : "Recubrimientos Ópticos";
+      currentLang === "en" ? "Optical Coatings" : "Recubrimientos ópticos";
 
     document.getElementById("semiconductorBtn").textContent =
-      currentLang === "en" ? "Semiconductor Devices & Solar Cells" : "Dispositivos Semiconductores y Celdas Solares";
+      currentLang === "en" ? "Semiconductor Technology" : "Tecnología de semiconductores";
+
+    document.getElementById("trainingBtn").textContent =
+      currentLang === "en" ? "Training & Courses" : "Formación y cursos";
   }
 
   function updateContent(key) {
@@ -440,6 +476,8 @@
 
 </body>
 </html>
+
+
 
 
 
