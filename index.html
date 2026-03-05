@@ -80,19 +80,39 @@
     <div class="container mx-auto px-6">
       <h3 class="text-4xl font-bold text-center mb-16 text-gray-800" id="servicesTitle"></h3>
 
-      <div class="flex flex-col lg:flex-row justify-center items-start space-y-12 lg:space-y-0 lg:space-x-12">
-        <div class="flex flex-col space-y-4 w-full lg:w-72 sticky top-24">
-          <button id="opticalBtn" onclick="updateContent('optical')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
+      <div class="flex flex-col space-y-4 w-full lg:w-72 sticky top-24">
 
-          <button id="metrologyBtn" onclick="updateContent('metrology')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
+  <!-- 1) STAR SERVICE -->
+  <button id="trainingBtn" onclick="updateContent('training')"
+    class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold">
+  </button>
 
-          <button id="coatingsBtn" onclick="updateContent('coatings')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
+  <!-- 2) Optical design -->
+  <button id="opticalBtn" onclick="updateContent('optical')"
+    class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold">
+  </button>
 
-          <button id="semiconductorBtn" onclick="updateContent('semiconductor')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
+  <!-- 3) Coatings design -->
+  <button id="coatingsBtn" onclick="updateContent('coatings')"
+    class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold">
+  </button>
 
-          <!-- NUEVO: Formación / Training -->
-          <button id="trainingBtn" onclick="updateContent('training')" class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold"></button>
-        </div>
+  <!-- 4) Thin-film deposition consulting -->
+  <button id="thinfilmsBtn" onclick="updateContent('thinfilms')"
+    class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold">
+  </button>
+
+  <!-- 5) Semiconductor devices -->
+  <button id="semiconductorBtn" onclick="updateContent('semiconductor')"
+    class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold">
+  </button>
+
+  <!-- 6) General consulting -->
+  <button id="consultingBtn" onclick="updateContent('consulting')"
+    class="service-btn w-full text-left px-4 py-3 rounded-xl border border-gray-300 bg-white shadow-sm text-base font-semibold">
+  </button>
+
+</div>
 
         <div id="serviceContent" class="w-full max-w-3xl bg-gray-50 p-8 rounded-2xl shadow-xl opacity-0 transform translate-y-2"></div>
       </div>
@@ -250,133 +270,165 @@
   };
 
   const services = {
-    en: {
-      optical: {
-        title: "Optics and Optomechanics",
-        desc:
-          "Engineering services in optical and optomechanical design for scientific and industrial systems, from conceptual definition to specifications ready for manufacturing.",
-        bullets: [
-          "Optical design for imaging and spectroscopic systems.",
-          "Lens and mirror assemblies, collimators, cameras and illumination optics.",
-          "Optomechanical interfaces, mounts and alignment strategies.",
-          "Support in tolerances, ISO-based specifications and design-for-manufacturing."
-        ]
-      },
-      metrology: {
-        title: "Engineering Studies, Consulting and Project Development",
-        desc:
-          "Technical assistance and engineering consulting for projects with scientific and technological objectives, including feasibility, design studies and project support.",
-        bullets: [
-          "Technical studies for optical, mechanical and semiconductor-based systems.",
-          "Specialized engineering consulting for R&D and industrial technology projects.",
-          "Support in the definition, planning and technical follow-up of development projects.",
-          "Collaboration in joint R&D&I initiatives with companies, universities and research centers."
-        ]
-      },
-      coatings: {
-        title: "Optical Coatings and Thin-Film Technology",
-        desc:
-          "Design and support for the development and manufacturing of optical coatings: filters, anti-reflective and high-reflective coatings, beam splitters and polarizers.",
-        bullets: [
-          "Design and optimization of multilayer coatings for scientific and industrial applications.",
-          "Support for thin-film deposition processes (PVD: e-beam evaporation, sputtering, etc.).",
-          "Characterization strategies for transmission, reflection and thickness uniformity.",
-          "Process feedback to improve spectral performance and reproducibility."
-        ]
-      },
-      semiconductor: {
-        title: "Semiconductor Technology and Devices",
-        desc:
-          "Engineering and consulting in semiconductor-based devices for sensing and solar-energy applications.",
-        bullets: [
-          "Design and modeling of semiconductor devices and structures.",
-          "Deposition and electrical characterization techniques for semiconductor and thin-film materials.",
-          "Support for R&D in solar cells and optoelectronic devices."
-        ]
-      },
-      training: {
-        title: "Specialized Training and Technical Courses",
-        desc:
-          "Technical training for engineers, researchers and technical staff who require solid foundations in optical design, thin-film technology, mechanical design and semiconductor technology.",
-        bullets: [
-          "Fundamentals of optical design (basic level).",
-          "Advanced optical design (tolerances, optimization, software-based design).",
-          "Design of optical coatings: basic and advanced.",
-          "Thin-film deposition technologies for optical applications.",
-          "Advanced mechanical design and semiconductor technology topics for scientific and industrial systems."
-        ]
-      }
+  en: {
+    training: {
+      title: "Specialized Training and Technical Courses",
+      desc:
+        "Our main service is hands-on technical training for engineers, researchers and R&D teams. Courses are available online or on-site, and can be customized to your project needs.",
+      bullets: [
+        "Optical design fundamentals (imaging systems, aberrations, practical design workflow).",
+        "Advanced optical design (optimization, tolerances, manufacturable specifications).",
+        "Thin-film technologies for optical applications (process understanding, troubleshooting and QA).",
+        "Semiconductor devices and optoelectronics (device physics for sensing and energy applications)."
+      ]
     },
 
-    es: {
-      optical: {
-        title: "Óptica y Optomecánica",
-        desc:
-          "Servicios de ingeniería en diseño óptico y optomecánico para sistemas científicos e industriales, desde la definición conceptual hasta especificaciones listas para fabricación.",
-        bullets: [
-          "Diseño de sistemas ópticos para imagen y espectroscopía.",
-          "Conjuntos de lentes y espejos, colimadores, cámaras y óptica de iluminación.",
-          "Interfaces optomecánicas, monturas y estrategias de alineación.",
-          "Apoyo en tolerancias, especificaciones basadas en normas ISO y diseño orientado a manufactura."
-        ]
-      },
-      metrology: {
-        title: "Estudios de Ingeniería, Consultoría y Desarrollo de Proyectos",
-        desc:
-          "Asistencia técnica y consultoría de ingeniería para proyectos con objetivos científicos y tecnológicos, incluyendo estudios de viabilidad, diseño y soporte a proyectos de desarrollo.",
-        bullets: [
-          "Estudios técnicos para sistemas ópticos, mecánicos y basados en semiconductores.",
-          "Consultoría especializada en proyectos de I+D y tecnología industrial.",
-          "Apoyo en la definición, planeación y seguimiento técnico de proyectos de desarrollo.",
-          "Colaboración en iniciativas de I+D+i con empresas, universidades y centros de investigación."
-        ]
-      },
-      coatings: {
-        title: "Recubrimientos Ópticos y Tecnología de Películas Delgadas",
-        desc:
-          "Diseño y consultoría especializada en el desarrollo y la manufactura de recubrimientos ópticos: filtros ópticos, recubrimientos antirreflejantes y altamente reflectantes, divisores de haz y polarizadores.",
-        bullets: [
-          "Diseño óptico y optimización de recubrimientos multicapa para aplicaciones científicas e industriales.",
-          "Soporte para procesos de depósito de películas delgadas (PVD: evaporación por haz de electrones, sputtering, etc.).",
-          "Estrategias de caracterización de transmitancia, reflectancia y uniformidad de espesor.",
-          "Retroalimentación de resultados de metrología hacia el ajuste de procesos de deposición."
-        ]
-      },
-      semiconductor: {
-        title: "Tecnología de Semiconductores y Dispositivos",
-        desc:
-          "Servicios de ingeniería y consultoría en dispositivos basados en semiconductores para aplicaciones de sensado y energía solar.",
-        bullets: [
-          "Diseño y modelado de dispositivos semiconductores y estructuras activas.",
-          "Técnicas de depósito y caracterización eléctrica de materiales semiconductores y películas delgadas.",
-          "Apoyo en investigación y desarrollo de celdas solares y dispositivos optoelectrónicos."
-        ]
-      },
-      training: {
-        title: "Formación Técnica y Cursos Especializados",
-        desc:
-          "Ofrecemos cursos abiertos y a la medida en México, dirigidos a ingenieros, personal técnico y grupos de I+D que requieran bases sólidas en diseño óptico, recubrimientos y tecnología de materiales.",
-        bullets: [
-          "Fundamentos de diseño óptico.",
-          "Diseño de recubrimientos ópticos: básico y avanzado.",
-          "Tecnologías de depósito de películas delgadas.",
-          "Diseño mecánico avanzado orientado a instrumentación.",
-          "Tecnología de semiconductores aplicada a dispositivos científicos e industriales."
-        ]
-      }
-    }
-  };
+    optical: {
+      title: "Optical and Optomechanical Design",
+      desc:
+        "Engineering services in optical system design for scientific and industrial applications, from conceptual definition to manufacturable specifications.",
+      bullets: [
+        "Optical design for imaging and spectroscopic systems.",
+        "Collimators, cameras, relay optics and illumination optics.",
+        "Tolerance analysis and sensitivity studies.",
+        "Interface recommendations for alignment and optomechanical integration."
+      ]
+    },
 
+    coatings: {
+      title: "Optical Coatings Design",
+      desc:
+        "Design and optimization of multilayer coatings for scientific and industrial optics: anti-reflective coatings, high-reflective coatings, filters and polarizing components.",
+      bullets: [
+        "Multilayer thin-film design.",
+        "Angle and polarization sensitivity analysis.",
+        "Robustness and thickness tolerance studies.",
+        "Deliverables: design files + performance report and recommendations."
+      ]
+    },
+
+    thinfilms: {
+      title: "Thin-Film Deposition Consulting (Process Support)",
+      desc:
+        "Consulting and troubleshooting for PVD thin-film deposition carried out at client facilities or partner labs. Focused on improving repeatability, uniformity and optical performance.",
+      bullets: [
+        "Process review: materials, monitoring strategy, and run planning.",
+        "Root-cause analysis for spectral mismatch and drift.",
+        "Uniformity and reproducibility strategies (process feedback loops).",
+        "Measurement plan recommendations (R/T, thickness, mapping)."
+      ]
+    },
+
+    semiconductor: {
+      title: "Semiconductor Devices and Applied Device Physics",
+      desc:
+        "Engineering consulting for semiconductor-based devices and structures for sensing and energy applications.",
+      bullets: [
+        "Device physics guidance for optoelectronic and sensing concepts.",
+        "Modeling and feasibility studies for device structures.",
+        "Support in experimental planning and characterization strategy."
+      ]
+    },
+
+    consulting: {
+      title: "Engineering Consulting and Project Development",
+      desc:
+        "Technical consulting for scientific and technological projects: feasibility studies, requirements definition and engineering planning for R&D initiatives.",
+      bullets: [
+        "Feasibility and trade studies for optical / thin-film / semiconductor-related systems.",
+        "Support to structure R&D projects: requirements, milestones and technical risks.",
+        "Technical review of documents, specifications and experimental plans.",
+        "Collaboration with universities, labs and industry partners."
+      ]
+    }
+  },
+
+  es: {
+    training: {
+      title: "Formación técnica y cursos especializados",
+      desc:
+        "Nuestro servicio principal es la formación técnica práctica para ingenieros, investigadores y equipos de I+D. Los cursos pueden impartirse en línea o presencialmente, y se personalizan según las necesidades del proyecto.",
+      bullets: [
+        "Fundamentos de diseño óptico (imagen, aberraciones y flujo de trabajo práctico).",
+        "Diseño óptico avanzado (optimización, tolerancias y especificaciones fabricables).",
+        "Diseño de recubrimientos ópticos básico a avanzado.",
+        "Tecnologías de depósito de películas delgadas para aplicaciones ópticas (proceso, troubleshooting y control de calidad).",
+        "Dispositivos semiconductores y optoelectrónica (física de dispositivos aplicada a sensado y energía)."
+      ]
+    },
+
+    optical: {
+      title: "Diseño óptico e interfaces optomecánicas",
+      desc:
+        "Servicios de ingeniería en diseño de sistemas ópticos para aplicaciones científicas e industriales, desde la definición conceptual hasta especificaciones listas para fabricación.",
+      bullets: [
+        "Diseño óptico para sistemas de imagen y espectroscopía.",
+        "Colimadores, cámaras, relés ópticos y óptica de iluminación.",
+        "Análisis de tolerancias y sensibilidad.",
+        "Recomendaciones de integración: alineación e interfaces optomecánicas."
+      ]
+    },
+
+    coatings: {
+      title: "Diseño de recubrimientos ópticos (optimización multicapa)",
+      desc:
+        "Diseño y optimización de recubrimientos multicapa para óptica científica e industrial: antirreflejantes, altamente reflectantes, filtros y componentes polarizantes.",
+      bullets: [
+        "Diseño multicapa y optimización espectral (objetivos de R/T).",
+        "Análisis de sensibilidad",
+        "Estudios de robustez y tolerancias de fabricación.",
+        "Entregables: archivos de diseño + reporte técnico y recomendaciones."
+      ]
+    },
+
+    thinfilms: {
+      title: "Consultoría en depósito de películas delgadas (soporte de proceso)",
+      desc:
+        "Consultoría y troubleshooting para depósito PVD realizado en instalaciones del cliente o laboratorios colaboradores. Enfocado en repetibilidad, uniformidad y desempeño óptico.",
+      bullets: [
+        "Revisión del proceso: planeación de caracterización de materiales y estrategias de monitoreo.",
+        "Análisis de causa raíz para desajustes entre la curva espectral nominal y la curva espectral medida.",
+        "Estrategias de uniformidad y reproducibilidad (ciclos de retroalimentación).",
+        "Recomendaciones de metrología (R/T, espesor y mapeo)."
+      ]
+    },
+
+    semiconductor: {
+      title: "Dispositivos semiconductores y física aplicada de dispositivos",
+      desc:
+        "Consultoría de ingeniería para dispositivos y estructuras basadas en semiconductores para aplicaciones de sensado y energía.",
+      bullets: [
+        "Asesoría en física de dispositivos para conceptos optoelectrónicos y de sensado.",
+        "Modelado y estudios de viabilidad de estructuras.",
+        "Apoyo en planeación experimental y estrategia de caracterización."
+      ]
+    },
+
+    consulting: {
+      title: "Consultoría de ingeniería y desarrollo de proyectos",
+      desc:
+        "Consultoría técnica para proyectos con objetivos científicos y tecnológicos: viabilidad, definición de requerimientos y planeación de ingeniería para iniciativas de I+D.",
+      bullets: [
+        "Estudios de viabilidad y trade studies para sistemas ópticos / películas delgadas / semiconductores.",
+        "Estructuración de proyectos de I+D: requerimientos, hitos y riesgos técnicos.",
+        "Revisión técnica de documentos, especificaciones y planes experimentales.",
+        "Colaboración con universidades, laboratorios e industria."
+      ]
+    }
+  }
+};
+    
   let currentLang = "en";
 
   function setActiveButton(key) {
-    const mapping = {
-      optical: "opticalBtn",
-      metrology: "metrologyBtn",
-      coatings: "coatingsBtn",
-      semiconductor: "semiconductorBtn",
-      training: "trainingBtn"
-    };
+const mapping = {
+  training: "trainingBtn",
+  optical: "opticalBtn",
+  coatings: "coatingsBtn",
+  thinfilms: "thinfilmsBtn",
+  semiconductor: "semiconductorBtn",
+  consulting: "consultingBtn"
+};
 
     Object.values(mapping).forEach(id => {
       const btn = document.getElementById(id);
@@ -388,22 +440,24 @@
   }
 
   function updateServiceButtonsText() {
-    document.getElementById("opticalBtn").textContent =
-      currentLang === "en" ? "Optics & Optomechanics" : "Óptica y Optomecánica";
+  document.getElementById("trainingBtn").textContent =
+    currentLang === "en" ? "Training & Courses" : "Formación y cursos";
 
-    document.getElementById("metrologyBtn").textContent =
-      currentLang === "en" ? "Engineering Services" : "Servicios de ingeniería";
+  document.getElementById("opticalBtn").textContent =
+    currentLang === "en" ? "Optical Design" : "Diseño óptico";
 
-    document.getElementById("coatingsBtn").textContent =
-      currentLang === "en" ? "Optical Coatings" : "Recubrimientos ópticos";
+  document.getElementById("coatingsBtn").textContent =
+    currentLang === "en" ? "Optical Coatings Design" : "Diseño de recubrimientos ópticos";
 
-    document.getElementById("semiconductorBtn").textContent =
-      currentLang === "en" ? "Semiconductor Technology" : "Tecnología de semiconductores";
+  document.getElementById("thinfilmsBtn").textContent =
+    currentLang === "en" ? "Thin-Film Deposition Consulting" : "Consultoría en depósito de películas delgadas";
 
-    document.getElementById("trainingBtn").textContent =
-      currentLang === "en" ? "Training & Courses" : "Formación y cursos";
-  }
+  document.getElementById("semiconductorBtn").textContent =
+    currentLang === "en" ? "Semiconductor Devices" : "Dispositivos semiconductores";
 
+  document.getElementById("consultingBtn").textContent =
+    currentLang === "en" ? "Engineering Consulting" : "Consultoría de ingeniería";
+}
   function updateContent(key) {
     const contentDiv = document.getElementById("serviceContent");
     const service = services[currentLang][key];
@@ -465,7 +519,7 @@
     document.getElementById("contactLinkedin").textContent = t.contactLinkedin;
 
     updateServiceButtonsText();
-    updateContent("optical");
+    updateContent("training");
   }
 
   window.addEventListener("DOMContentLoaded", () => {
@@ -476,6 +530,7 @@
 
 </body>
 </html>
+
 
 
 
