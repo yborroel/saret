@@ -724,20 +724,29 @@
 <div class="hero">
   <div class="hero-wash"></div>
   <div class="hero-wash2"></div>
+
   <div class="hero-inner">
-  <div class="hero-tag">Applied scientific engineering</div>
-  <h1 class="hero-h1">
-  Engineering solutions for<br>
-  <em>complex optical and thin-film systems</em>
-  </h1>
-  <p class="hero-sub">
-  SARET provides specialized engineering services in optical design, optical coatings, and thin-film technologies for industrial and R&D applications.
-  </p>
-  <a href="#contact" class="btn-primary">Request technical consultation</a>
-<a href="#services" class="btn-ghost">Explore services →</a>
+    <div class="hero-tag" id="heroTag">Applied scientific engineering</div>
+
+    <h1 class="hero-h1" id="heroH1">
+      Engineering solutions for<br>
+      <em>complex optical and thin-film systems</em>
+    </h1>
+
+    <p class="hero-sub" id="heroSub">
+      SARET provides specialized engineering services in optical design, optical coatings, and thin-film technologies for industrial and R&D applications.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary" id="heroCta1">Request technical consultation</a>
+      <a href="#services" class="btn-ghost" id="heroCta2">Explore services →</a>
+    </div>
   </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span id="scrollHint">scroll</span>
   </div>
-  <div class="hero-scroll"><div class="scroll-line"></div><span id="scrollHint">scroll</span></div>
 </div>
 
 <!-- ── EXPERTISE STRIP ── -->
@@ -785,6 +794,50 @@
       <div class="about-right reveal">
         <div class="about-stat-grid">
           <div class="about-stat">
+            <div id="about">
+  <div class="section-wrap">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <div class="section-label" id="aboutLabel">About SARET</div>
+
+        <h2 class="section-title" id="aboutTitle">
+          Advanced engineering capabilities,<br><em>adapted to industrial applications</em>
+        </h2>
+
+        <p class="section-body" id="aboutBody">
+          SARET provides engineering services across different stages of technological development, from conceptual definition to system validation.
+        </p>
+
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">🔬</div>
+            <div class="pillar-text">
+              <strong id="p1t">Engineering developed in high-demand environments</strong>
+              <span id="p1d">Experience built in scientific instrumentation projects with strict performance and validation requirements.</span>
+            </div>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-icon">🤝</div>
+            <div class="pillar-text">
+              <strong id="p2t">Multidisciplinary technical network</strong>
+              <span id="p2d">Specialists in optics, coatings, semiconductors, and mechanical design working in coordinated collaboration.</span>
+            </div>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-icon">⚡</div>
+            <div class="pillar-text">
+              <strong id="p3t">Direct technical engagement</strong>
+              <span id="p3d">Projects are executed through direct interaction with technical specialists, ensuring clarity and efficiency in decision-making.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right reveal">
+        <div class="about-stat-grid">
+          <div class="about-stat">
             <div class="stat-num">6</div>
             <div class="stat-label" id="s1">Specialized service areas</div>
           </div>
@@ -793,12 +846,8 @@
             <div class="stat-label" id="s2">Target industries</div>
           </div>
           <div class="about-stat">
-            <div class="stat-num">EN<br>ES</div>
-            <div class="stat-label" id="s3">Bilingual service delivery</div>
-          </div>
-          <div class="about-stat">
             <div class="stat-num">MX</div>
-            <div class="stat-label" id="s4">Based in León, Guanajuato</div>
+            <div class="stat-label" id="s3">Based in León, Guanajuato</div>
           </div>
         </div>
       </div>
@@ -1019,337 +1068,335 @@
 const T = {
   en: {
     navAbout:"About", 
-navServices:"Services", 
-navContact:"Contact",
+    navServices:"Services", 
+    navContact:"Contact",
 
-heroTag:"Applied scientific engineering",
+    heroTag:"Applied scientific engineering",
 
-heroH1:"Engineering for<br><em>optical and thin-film systems</em>",
+    heroH1:"Engineering for<br><em>optical and thin-film systems</em>",
 
-heroSub:"SARET provides specialized engineering capabilities in optical design, optical coatings, and thin-film technologies for industrial and R&D applications.",
+    heroSub:"SARET provides specialized engineering capabilities in optical design, optical coatings, and thin-film technologies for industrial and R&D applications.",
 
-heroCta1:"Request technical consultation", 
-heroCta2:"Explore services →",
+    heroCta1:"Request technical consultation", 
+    heroCta2:"Explore services →",
 
-scrollHint:"scroll",
+    scrollHint:"scroll",
 
-strip1:"Optical design", 
-strip2:"Optical coatings", 
-strip3:"Thin-film technologies",
-strip4:"Semiconductor devices", 
-strip5:"Technical training", 
-strip6:"R&D consulting",
+    strip1:"Optical design", 
+    strip2:"Optical coatings", 
+    strip3:"Thin-film technologies",
+    strip4:"Semiconductor devices", 
+    strip5:"Technical training", 
+    strip6:"R&D consulting",
 
-aboutLabel:"About SARET",
+    aboutLabel:"About SARET",
 
-aboutTitle:"Engineering capabilities,<br><em>applied to industrial environments</em>",
+    aboutTitle:"Engineering capabilities,<br><em>applied to industrial environments</em>",
 
-aboutBody:"SARET operates at the intersection of scientific instrumentation and applied engineering. It provides access to specialized capabilities in optics, coatings, and thin-film technologies, supporting the development and optimization of systems in industrial and research environments.",
+    aboutBody:"SARET operates at the intersection of scientific instrumentation and applied engineering. It provides access to specialized capabilities in optics, coatings, and thin-film technologies, supporting the development and optimization of systems in industrial and research environments.",
 
-p1t:"High-precision engineering",
-p1d:"Developed in scientific instrumentation environments with strict performance and validation requirements.",
+    p1t:"High-precision engineering",
+    p1d:"Developed in scientific instrumentation environments with strict performance and validation requirements.",
 
-p2t:"Integrated technical capabilities",
-p2d:"Optics, coatings, semiconductor technologies, and mechanical design addressed in a coordinated engineering framework.",
+    p2t:"Integrated technical capabilities",
+    p2d:"Optics, coatings, semiconductor technologies, and mechanical design addressed in a coordinated engineering framework.",
 
-p3t:"Direct technical engagement",
-p3d:"Project execution through direct interaction with technical specialists, supporting efficient decision-making and clear technical definition.",
+    p3t:"Direct technical engagement",
+    p3d:"Project execution through direct interaction with technical specialists, supporting efficient decision-making and clear technical definition.",
 
-s1:"Areas of specialization",
-s2:"Industrial applications",
-s3:"León, Guanajuato, Mexico"
+    s1:"Areas of specialization",
+    s2:"Industrial applications",
+    s3:"León, Guanajuato, Mexico"
     svcLabel:"Services",
 
-svcTitle:"Engineering capabilities<br><em>for technology development</em>",
+    svcTitle:"Engineering capabilities<br><em>for technology development</em>",
 
-svcBody:"SARET provides engineering services across different stages of technology development, from conceptual definition to system validation.",
+    svcBody:"SARET provides engineering services across different stages of technology development, from conceptual definition to system validation.",
 
 
-"nb-training":"Technical training",
-"nb-optical":"Optical design",
-"nb-coatings":"Optical coatings",
-"nb-thinfilms":"Thin-film processes",
-"nb-semiconductor":"Semiconductor devices",
-"nb-consulting":"Engineering consulting",
+    "nb-training":"Technical training",
+    "nb-optical":"Optical design",
+    "nb-coatings":"Optical coatings",
+    "nb-thinfilms":"Thin-film processes",
+    "nb-semiconductor":"Semiconductor devices",
+    "nb-consulting":"Engineering consulting",
 
 
 // ─── TRAINING ───
-"t-tag":"Technical training · Online & On-site",
-"t-title":"Specialized technical training",
+    "t-tag":"Technical training · Online & On-site",
+    "t-title":"Specialized technical training",
 
-"t-pl":"Typical context",
-"t-ps":"Engineering teams requiring reinforcement of fundamentals in optics, coatings, or thin-film technologies for system development.",
+    "t-pl":"Typical context",
+    "t-ps":"Engineering teams requiring reinforcement of fundamentals in optics, coatings, or thin-film technologies for system development.",
 
-"t-desc":"Technical training programs for engineers and R&D teams, with content adapted to the project context and required level of specialization.",
+    "t-desc":"Technical training programs for engineers and R&D teams, with content adapted to the project context and required level of specialization.",
 
-"t-cta-hint":"Custom training request",
-"t-cta":"Request proposal →",
+    "t-cta-hint":"Custom training request",
+    "t-cta":"Request proposal →",
 
 
 // ─── OPTICAL ───
-"o-tag":"Design engineering",
-"o-title":"Optical and optomechanical design",
+    "o-tag":"Design engineering",
+    "o-title":"Optical and optomechanical design",
 
-"o-pl":"Typical context",
-"o-ps":"Development of optical systems requiring architectural definition, performance analysis, and fabrication-ready specifications.",
+    "o-pl":"Typical context",
+    "o-ps":"Development of optical systems requiring architectural definition, performance analysis, and fabrication-ready specifications.",
 
-"o-desc":"Design and development of optical systems for industrial and scientific applications, from conceptual architecture to manufacturable specifications.",
+    "o-desc":"Design and development of optical systems for industrial and scientific applications, from conceptual architecture to manufacturable specifications.",
 
-"o-cta-hint":"Technical project consultation",
-"o-cta":"Start discussion →",
+    "o-cta-hint":"Technical project consultation",
+    "o-cta":"Start discussion →",
 
 
 // ─── COATINGS ───
-"c-tag":"Design engineering",
-"c-title":"Optical coatings design",
+    "c-tag":"Design engineering",
+    "c-title":"Optical coatings design",
 
-"c-pl":"Typical context",
-"c-ps":"Optical systems requiring spectral control and performance optimization under angular constraints and manufacturing tolerances.",
+    "c-pl":"Typical context",
+    "c-ps":"Optical systems requiring spectral control and performance optimization under angular constraints and manufacturing tolerances.",
 
-"c-desc":"Design and optimization of multilayer optical coatings, considering spectral performance, angular sensitivity, and process robustness.",
+    "c-desc":"Design and optimization of multilayer optical coatings, considering spectral performance, angular sensitivity, and process robustness.",
 
-"c-cta-hint":"Coating performance evaluation",
-"c-cta":"Request analysis →",
+    "c-cta-hint":"Coating performance evaluation",
+    "c-cta":"Request analysis →",
 
 
 // ─── THINFILMS ───
-"tf-tag":"Process engineering",
-"tf-title":"Thin-film deposition processes",
+    "tf-tag":"Process engineering",
+    "tf-title":"Thin-film deposition processes",
 
-"tf-pl":"Typical context",
-"tf-ps":"PVD processes requiring control of repeatability, uniformity, and coating performance stability.",
+    "tf-pl":"Typical context",
+    "tf-ps":"PVD processes requiring control of repeatability, uniformity, and coating performance stability.",
 
-"tf-desc":"Analysis and optimization of thin-film deposition processes, focused on process stability, reproducibility, and performance validation.",
+    "tf-desc":"Analysis and optimization of thin-film deposition processes, focused on process stability, reproducibility, and performance validation.",
 
-"tf-cta-hint":"Process review",
-"tf-cta":"Request review →",
+    "tf-cta-hint":"Process review",
+    "tf-cta":"Request review →",
 
 
 // ─── SEMICONDUCTOR ───
-"sm-tag":"Applied physics",
-"sm-title":"Semiconductor devices",
+    "sm-tag":"Applied physics",
+    "sm-title":"Semiconductor devices",
 
-"sm-pl":"Typical context",
-"sm-ps":"Development of optoelectronic devices or semiconductor structures requiring physical modeling and definition.",
+    "sm-pl":"Typical context",
+    "sm-ps":"Development of optoelectronic devices or semiconductor structures requiring physical modeling and definition.",
 
-"sm-desc":"Engineering consulting for the design and analysis of semiconductor devices for sensing and energy applications, including modeling and feasibility studies.",
+    "sm-desc":"Engineering consulting for the design and analysis of semiconductor devices for sensing and energy applications, including modeling and feasibility studies.",
 
-"sm-cta-hint":"Device concept discussion",
-"sm-cta":"Consult →",
+    "sm-cta-hint":"Device concept discussion",
+    "sm-cta":"Consult →",
 
 
 // ─── CONSULTING ───
-"cn-tag":"Technology development",
-"cn-title":"Engineering consulting and project development",
+    "cn-tag":"Technology development",
+    "cn-title":"Engineering consulting and project development",
 
-"cn-pl":"Typical context",
-"cn-ps":"Projects in early or intermediate stages requiring requirements definition, technical evaluation, and development structuring.",
+    "cn-pl":"Typical context",
+    "cn-ps":"Projects in early or intermediate stages requiring requirements definition, technical evaluation, and development structuring.",
 
-"cn-desc":"Technical consulting for engineering and R&D projects, including feasibility studies, requirements definition, and technical risk analysis.",
+    "cn-desc":"Technical consulting for engineering and R&D projects, including feasibility studies, requirements definition, and technical risk analysis.",
 
-"cn-cta-hint":"Project initiation",
-"cn-cta":"Start conversation →",
-whyLabel:"Why SARET",
+    "cn-cta-hint":"Project initiation",
+    "cn-cta":"Start conversation →",
+    whyLabel:"Why SARET",
 
-whyTitle:"Engineering expertise,<br><em>validated in demanding environments</em>",
+    whyTitle:"Engineering expertise,<br><em>validated in demanding environments</em>",
 
-w1t:"High-precision engineering background",
-w1d:"Experience developed in scientific instrumentation projects with strict performance and validation requirements.",
+    w1t:"High-precision engineering background",
+    w1d:"Experience developed in scientific instrumentation projects with strict performance and validation requirements.",
 
-w2t:"Integrated technical capabilities",
-w2d:"Optics, coatings, semiconductor technologies, and mechanical design addressed within a coordinated engineering framework.",
+    w2t:"Integrated technical capabilities",
+    w2d:"Optics, coatings, semiconductor technologies, and mechanical design addressed within a coordinated engineering framework.",
 
-w3t:"International technical context",
-w3d:"Experience aligned with international research standards and their application in industrial environments.",
-contactLabel:"Contact",
+    w3t:"International technical context",
+    w3d:"Experience aligned with international research standards and their application in industrial environments.",
+    contactLabel:"Contact",
 
-contactTitle:"Technical discussion of<br><em>your project</em>",
+    contactTitle:"Technical discussion of<br><em>your project</em>",
 
-contactTagline:"Technical inquiries, project development, and collaboration opportunities are welcome.",
-liText:"LinkedIn — SARET Consulting",
+    contactTagline:"Technical inquiries, project development, and collaboration opportunities are welcome.",
+    liText:"LinkedIn — SARET Consulting",
 
-formTitle:"Project inquiry",
+    formTitle:"Project inquiry",
 
-fName:"Name",
-fEmail:"Email",
-fPhone:"Phone (optional)",
-fMsg:"Project description or technical request",
-fSubmit:"Submit inquiry",
+    fName:"Name",
+    fEmail:"Email",
+    fPhone:"Phone (optional)",
+    fMsg:"Project description or technical request",
+    fSubmit:"Submit inquiry",
 
-fSvc:"Services",
-fAbout:"About"
+    fSvc:"Services",
+    fAbout:"About"
   },
   es: {
-    navAbout:"Nosotros", navServices:"Servicios", navContact:"Contacto",
     navAbout:"Nosotros", 
-navServices:"Servicios", 
-navContact:"Contacto",
+    navServices:"Servicios", 
+    navContact:"Contacto",
 
-heroTag:"Ingeniería científica aplicada",
+    heroTag:"Ingeniería científica aplicada",
 
-heroH1:"Ingeniería para sistemas<br><em>ópticos y de películas delgadas</em>",
+    heroH1:"Ingeniería para sistemas<br><em>ópticos y de películas delgadas</em>",
 
-heroSub:"SARET ofrece servicios de ingeniería especializada en diseño óptico, recubrimientos ópticos y tecnologías de películas delgadas para aplicaciones industriales y de I+D.",
+    heroSub:"SARET ofrece servicios de ingeniería especializada en diseño óptico, recubrimientos ópticos y tecnologías de películas delgadas para aplicaciones industriales y de I+D.",
 
-heroCta1:"Solicitar consulta técnica", 
-heroCta2:"Ver servicios →",
+    heroCta1:"Solicitar consulta técnica", 
+    heroCta2:"Ver servicios →",
 
-scrollHint:"desplaza",
+    scrollHint:"desplaza",
 
-strip1:"Diseño óptico", 
-strip2:"Recubrimientos ópticos", 
-strip3:"Películas delgadas",
-strip4:"Semiconductores", 
-strip5:"Formación técnica", 
-strip6:"Consultoría en I+D",
+    strip1:"Diseño óptico", 
+    strip2:"Recubrimientos ópticos", 
+    strip3:"Películas delgadas",
+    strip4:"Semiconductores", 
+    strip5:"Formación técnica", 
+    strip6:"Consultoría en I+D",
 
-aboutLabel:"Sobre SARET",
+    aboutLabel:"Sobre SARET",
 
-aboutTitle:"Capacidades de ingeniería,<br><em>aplicadas a entornos industriales</em>",
+    aboutTitle:"Capacidades de ingeniería,<br><em>aplicadas a entornos industriales</em>",
 
-aboutBody:"SARET opera en la intersección entre la instrumentación científica y la ingeniería aplicada. Proporciona acceso a capacidades especializadas en óptica, recubrimientos y tecnologías de películas delgadas, apoyando el desarrollo y optimización de sistemas en entornos industriales y de investigación."
-   p1t:"Ingeniería de alta precisión",
-   p1d:"Desarrollada en entornos de instrumentación científica con requerimientos estrictos de desempeño y validación.",
+    aboutBody:"SARET opera en la intersección entre la instrumentación científica y la ingeniería aplicada. Proporciona acceso a capacidades especializadas en óptica, recubrimientos y tecnologías de películas delgadas, apoyando el desarrollo y optimización de sistemas en entornos industriales y de investigación."
+    p1t:"Ingeniería de alta precisión",
+    p1d:"Desarrollada en entornos de instrumentación científica con requerimientos estrictos de desempeño y validación.",
 
-   p2t:"Capacidades técnicas integradas",
-   p2d:"Óptica, recubrimientos, semiconductores y diseño mecánico abordados de forma coordinada dentro de un mismo desarrollo de ingeniería.",
+    p2t:"Capacidades técnicas integradas",
+    p2d:"Óptica, recubrimientos, semiconductores y diseño mecánico abordados de forma coordinada dentro de un mismo desarrollo de ingeniería.",
 
-  p3t:"Ejecución técnica directa",
-  p3d:"Participación directa en la definición, análisis y desarrollo técnico de proyectos de ingeniería.",
+    p3t:"Ejecución técnica directa",
+    p3d:"Participación directa en la definición, análisis y desarrollo técnico de proyectos de ingeniería.",
 
-  s1:"Áreas de especialización",
-  s2:"Aplicaciones industriales",
-  s3:"León, Guanajuato, México"
+    s1:"Áreas de especialización",
+    s2:"Aplicaciones industriales",
+    s3:"León, Guanajuato, México"
     svcLabel:"Servicios",
 
-svcTitle:"Capacidades de ingeniería<br><em>para desarrollo tecnológico</em>",
+    svcTitle:"Capacidades de ingeniería<br><em>para desarrollo tecnológico</em>",
 
-svcBody:"SARET proporciona servicios de ingeniería en distintas etapas del desarrollo tecnológico, desde la definición conceptual hasta la validación de sistemas.",
+    svcBody:"SARET proporciona servicios de ingeniería en distintas etapas del desarrollo tecnológico, desde la definición conceptual hasta la validación de sistemas.",
 
 
-"nb-training":"Formación técnica",
-"nb-optical":"Diseño óptico",
-"nb-coatings":"Recubrimientos ópticos",
-"nb-thinfilms":"Procesos de películas delgadas",
-"nb-semiconductor":"Dispositivos semiconductores",
-"nb-consulting":"Consultoría en ingeniería",
+    "nb-training":"Formación técnica",
+    "nb-optical":"Diseño óptico",
+    "nb-coatings":"Recubrimientos ópticos",
+    "nb-thinfilms":"Procesos de películas delgadas",
+    "nb-semiconductor":"Dispositivos semiconductores",
+    "nb-consulting":"Consultoría en ingeniería",
 
 
 // ─── TRAINING ───
-"t-tag":"Formación técnica · En línea y presencial",
-"t-title":"Formación técnica especializada",
+    "t-tag":"Formación técnica · En línea y presencial",
+    "t-title":"Formación técnica especializada",
 
-"t-pl":"Contexto típico",
-"t-ps":"Equipos de ingeniería que requieren fortalecer fundamentos en óptica, recubrimientos o tecnologías de películas delgadas para el desarrollo de sistemas.",
+    "t-pl":"Contexto típico",
+    "t-ps":"Equipos de ingeniería que requieren fortalecer fundamentos en óptica, recubrimientos o tecnologías de películas delgadas para el desarrollo de sistemas.",
 
-"t-desc":"Programas de formación técnica dirigidos a ingenieros y equipos de I+D, con contenidos adaptados al contexto del proyecto y nivel de especialización requerido.",
+    "t-desc":"Programas de formación técnica dirigidos a ingenieros y equipos de I+D, con contenidos adaptados al contexto del proyecto y nivel de especialización requerido.",
 
-"t-cta-hint":"Solicitud de formación personalizada",
-"t-cta":"Solicitar propuesta →",
+    "t-cta-hint":"Solicitud de formación personalizada",
+    "t-cta":"Solicitar propuesta →",
 
 
 // ─── OPTICAL ───
-"o-tag":"Ingeniería de diseño",
-"o-title":"Diseño óptico y optomecánico",
+    "o-tag":"Ingeniería de diseño",
+    "o-title":"Diseño óptico y optomecánico",
 
-"o-pl":"Contexto típico",
-"o-ps":"Desarrollo de sistemas ópticos que requieren definición de arquitectura, análisis de desempeño y especificaciones para fabricación.",
+    "o-pl":"Contexto típico",
+    "o-ps":"Desarrollo de sistemas ópticos que requieren definición de arquitectura, análisis de desempeño y especificaciones para fabricación.",
 
-"o-desc":"Diseño y desarrollo de sistemas ópticos para aplicaciones industriales y científicas, desde la arquitectura conceptual hasta la generación de especificaciones fabricables.",
+    "o-desc":"Diseño y desarrollo de sistemas ópticos para aplicaciones industriales y científicas, desde la arquitectura conceptual hasta la generación de especificaciones fabricables.",
 
-"o-cta-hint":"Consulta técnica de proyecto",
-"o-cta":"Iniciar discusión →",
+    "o-cta-hint":"Consulta técnica de proyecto",
+    "o-cta":"Iniciar discusión →",
 
 
 // ─── COATINGS ───
-"c-tag":"Ingeniería de diseño",
-"c-title":"Diseño de recubrimientos ópticos",
+    "c-tag":"Ingeniería de diseño",
+    "c-title":"Diseño de recubrimientos ópticos",
 
-"c-pl":"Contexto típico",
-"c-ps":"Sistemas ópticos que requieren control en el rendimiento óptico y optimización de desempeño bajo condiciones específicas y tolerancias de fabricación.",
+    "c-pl":"Contexto típico",
+    "c-ps":"Sistemas ópticos que requieren control en el rendimiento óptico y optimización de desempeño bajo condiciones específicas y tolerancias de fabricación.",
 
-"c-desc":"Diseño y optimización de recubrimientos multicapa, considerando desempeño espectral, sensibilidad y robustez frente a variaciones de proceso de manufactura.",
+    "c-desc":"Diseño y optimización de recubrimientos multicapa, considerando desempeño espectral, sensibilidad y robustez frente a variaciones de proceso de manufactura.",
 
-"c-cta-hint":"Evaluación de desempeño de recubrimientos",
-"c-cta":"Solicitar análisis →",
+    "c-cta-hint":"Evaluación de desempeño de recubrimientos",
+    "c-cta":"Solicitar análisis →",
 
 
 // ─── THINFILMS ───
-"tf-tag":"Ingeniería de proceso",
-"tf-title":"Procesos de depósito de películas delgadas",
+    "tf-tag":"Ingeniería de proceso",
+    "tf-title":"Procesos de depósito de películas delgadas",
 
-"tf-pl":"Contexto típico",
-"tf-ps":"Procesos PVD que requieren control de repetibilidad, uniformidad y estabilidad en el desempeño de recubrimientos.",
+    "tf-pl":"Contexto típico",
+    "tf-ps":"Procesos PVD que requieren control de repetibilidad, uniformidad y estabilidad en el desempeño de recubrimientos.",
 
-"tf-desc":"Análisis y optimización de procesos de depósito de películas delgadas, enfocados en estabilidad de proceso, reproducibilidad y validación de desempeño.",
+    "tf-desc":"Análisis y optimización de procesos de depósito de películas delgadas, enfocados en estabilidad de proceso, reproducibilidad y validación de desempeño.",
 
-"tf-cta-hint":"Revisión de proceso",
-"tf-cta":"Solicitar revisión →",
+    "tf-cta-hint":"Revisión de proceso",
+    "tf-cta":"Solicitar revisión →",
 
 
 // ─── SEMICONDUCTOR ───
-"sm-tag":"Física aplicada",
-"sm-title":"Dispositivos semiconductores",
+    "sm-tag":"Física aplicada",
+    "sm-title":"Dispositivos semiconductores",
 
-"sm-pl":"Contexto típico",
-"sm-ps":"Desarrollo de dispositivos optoelectrónicos o estructuras semiconductoras que requieren definición física y modelado de comportamiento.",
+    "sm-pl":"Contexto típico",
+    "sm-ps":"Desarrollo de dispositivos optoelectrónicos o estructuras semiconductoras que requieren definición física y modelado de comportamiento.",
 
-"sm-desc":"Consultoría en diseño y análisis de dispositivos semiconductores para aplicaciones de sensado y energía, incluyendo modelado y estudios de viabilidad.",
+    "sm-desc":"Consultoría en diseño y análisis de dispositivos semiconductores para aplicaciones de sensado y energía, incluyendo modelado y estudios de viabilidad.",
 
-"sm-cta-hint":"Discusión de concepto de dispositivo",
-"sm-cta":"Consultar →",
+    "sm-cta-hint":"Discusión de concepto de dispositivo",
+    "sm-cta":"Consultar →",
 
 
 // ─── CONSULTING ───
-"cn-tag":"Desarrollo tecnológico",
-"cn-title":"Consultoría en ingeniería y desarrollo de proyectos",
+    "cn-tag":"Desarrollo tecnológico",
+    "cn-title":"Consultoría en ingeniería y desarrollo de proyectos",
 
-"cn-pl":"Contexto típico",
-"cn-ps":"Proyectos en etapa inicial o intermedia que requieren definición de requerimientos, evaluación técnica y estructuración del desarrollo.",
+    "cn-pl":"Contexto típico",
+    "cn-ps":"Proyectos en etapa inicial o intermedia que requieren definición de requerimientos, evaluación técnica y estructuración del desarrollo.",
 
-"cn-desc":"Consultoría técnica para proyectos de ingeniería e I+D, incluyendo estudios de viabilidad, definición de requerimientos y análisis de riesgos técnicos.",
+    "cn-desc":"Consultoría técnica para proyectos de ingeniería e I+D, incluyendo estudios de viabilidad, definición de requerimientos y análisis de riesgos técnicos.",
 
-"cn-cta-hint":"Inicio de proyecto",
-"cn-cta":"Iniciar discusión →",
+    "cn-cta-hint":"Inicio de proyecto",
+    "cn-cta":"Iniciar discusión →",
 
-whyLabel:"Por qué SARET",
+    whyLabel:"Por qué SARET",
 
-whyTitle:"Capacidades de ingeniería,<br><em>validadas en entornos exigentes</em>",
+    whyTitle:"Capacidades de ingeniería,<br><em>validadas en entornos exigentes</em>",
+  
+    w1t:"Base en ingeniería de alta precisión",
+    w1d:"Experiencia desarrollada en proyectos de instrumentación científica con requerimientos estrictos de desempeño y validación.",
 
-w1t:"Base en ingeniería de alta precisión",
-w1d:"Experiencia desarrollada en proyectos de instrumentación científica con requerimientos estrictos de desempeño y validación.",
+    w2t:"Capacidades técnicas integradas",
+    w2d:"Óptica, recubrimientos y tecnologías de semiconductores abordadas de forma coordinada dentro de un mismo desarrollo de ingeniería.",
 
-w2t:"Capacidades técnicas integradas",
-w2d:"Óptica, recubrimientos y tecnologías de semiconductores abordadas de forma coordinada dentro de un mismo desarrollo de ingeniería.",
+    w3t:"Contexto técnico internacional",
+    w3d:"Experiencia alineada con estándares internacionales de investigación y su aplicación en entornos industriales.",
 
-w3t:"Contexto técnico internacional",
-w3d:"Experiencia alineada con estándares internacionales de investigación y su aplicación en entornos industriales.",
+    contactTitle:"Discusión técnica de<br><em>tu proyecto</em>",
 
-contactTitle:"Discusión técnica de<br><em>tu proyecto</em>",
+    contactTagline:"Consultas técnicas, desarrollo de proyectos y oportunidades de colaboración.",
 
-contactTagline:"Consultas técnicas, desarrollo de proyectos y oportunidades de colaboración.",
+    liText:"LinkedIn — SARET Consulting",
 
-liText:"LinkedIn — SARET Consulting",
+    formTitle:"Consulta de proyecto",
 
-formTitle:"Consulta de proyecto",
+    fName:"Nombre",
+    fEmail:"Correo electrónico",
+    fPhone:"Teléfono (opcional)",
 
-fName:"Nombre",
-fEmail:"Correo electrónico",
-fPhone:"Teléfono (opcional)",
+    fMsg:"Descripción del proyecto o requerimiento técnico",
 
-fMsg:"Descripción del proyecto o requerimiento técnico",
+    fSubmit:"Enviar consulta",
 
-fSubmit:"Enviar consulta",
-
-fSvc:"Servicios",
-fAbout:"Nosotros"
+    fSvc:"Servicios",
+    fAbout:"Nosotros"
   }
 };
 
 const bullets = {
   en: {
-   en: {
-training:[
+    training:[
   "Optical system fundamentals: image formation, aberrations, and performance evaluation criteria.",
   "Advanced optical design: optimization, tolerance analysis, and manufacturable specifications.",
   "Multilayer coatings and spectral performance optimization.",
@@ -1357,41 +1404,40 @@ training:[
   "Semiconductor devices: fundamentals of semiconductor physics and system evaluation for sensing and energy applications."
 ],
 
-optical:[
+    optical:[
   "Optical systems for imaging and illumination applications.",
   "Collimators, cameras, and optical coupling systems.",
   "Tolerance and sensitivity evaluation.",
   "Interface definition for alignment and optomechanical integration."
 ],
 
-coatings:[
+    coatings:[
   "Multilayer coatings and spectral performance as a function of wavelength.",
   "Sensitivity and robustness under manufacturing tolerances.",
   "Deliverables: design files, performance reports, and technical recommendations."
 ],
 
-thinfilms:[
+    thinfilms:[
   "Process evaluation: materials, monitoring, and deposition planning.",
   "Root-cause analysis of spectral deviations and process adjustments.",
   "Strategies for improving stability and reproducibility."
 ],
 
-semiconductor:[
+    semiconductor:[
   "Device physics for optoelectronic applications.",
   "Modeling and feasibility assessment of semiconductor structures.",
   "Experimental definition and characterization strategies."
 ],
 
-consulting:[
+    consulting:[
   "Feasibility and trade-off studies for optical, thin-film, and semiconductor systems.",
   "R&D structuring: requirements, milestones, and technical risks.",
   "Technical review of specifications, documentation, and experimental plans.",
   "Collaboration with research centers, laboratories, and industry."
 ]
-}
-  },
+},
   es: {
-training:[
+    training:[
   "Fundamentos de sistemas ópticos: formación de imagen, aberraciones y criterios de evaluación de desempeño.",
   "Diseño óptico avanzado: optimización, análisis de tolerancias y especificaciones fabricables.",
   "Recubrimientos multicapa y optimización del desempeño espectral.",
@@ -1399,32 +1445,32 @@ training:[
   "Dispositivos semiconductores: fundamentos de física de semiconductores, evaluación de sistemas aplicados a sensado y energía"
 ],
 
-optical:[
+    optical:[
   "Sistemas ópticos para aplicaciones de imagen e iluminación.",
   "Colimadores, cámaras y sistemas de acoplamiento óptico.",
   "Evaluación de tolerancias y sensibilidad.",
   "Definición de interfaces para alineación e integración optomecánica."
 ],
 
-coatings:[
+    coatings:[
   "Recubrimientos multicapa y desempeño espectral en función de longitud de onda.",
   "Sensibilidad y robustez bajo tolerancias de fabricación.",
   "Entregables: archivos de diseño, reportes de desempeño y recomendaciones técnicas."
 ],
 
-thinfilms:[
+    thinfilms:[
   "Evaluación de proceso: materiales, monitoreo y planeación de depósitos.",
   "Análisis de causa raíz de desviaciones espectrales y ajustes de proceso.",
   "Estrategias de mejora en estabilidad y reproducibilidad."
 ],
 
-semiconductor:[
+    semiconductor:[
   "Física de dispositivos para aplicaciones optoelectrónicas.",
   "Modelado y evaluación de viabilidad de estructuras semiconductoras.",
   "Definición experimental y estrategias de caracterización."
 ],
 
-consulting:[
+    consulting:[
   "Estudios de viabilidad y análisis de compromiso para sistemas ópticos, de películas delgadas y semiconductores.",
   "Estructuración de I+D: requerimientos, hitos y riesgos técnicos.",
   "Revisión técnica de especificaciones, documentación y planes experimentales.",
