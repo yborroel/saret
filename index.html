@@ -8,23 +8,23 @@
 
   <style>
   :root {
-    --bg:       #0d0f14;
-    --surface:  #13161d;
-    --surface2: #1c2030;
-    --border:   #252a38;
-    --border2:  #2e3548;
-    --ink:      #e8ecf4;
-    --mid:      #8892aa;
-    --muted:    #4a5268;
-    --accent:   #5b8dee;
-    --accent2:  #3dd6ac;
-    --accent3:  #f0b429;
-    --glow:     rgba(91,141,238,0.18);
-    --glow2:    rgba(61,214,172,0.14);
+    --bg:       #f4f3f0;
+    --bg2:      #eceae5;
+    --surface:  #ffffff;
+    --surface2: #f9f8f6;
+    --border:   #e2dfd8;
+    --border2:  #ccc9c0;
+    --ink:      #1a1916;
+    --mid:      #5a5650;
+    --muted:    #9a9690;
+    --accent:   #1a4fad;
+    --accent2:  #1a7a57;
+    --accent3:  #9a3a10;
+    --glow:     rgba(26,79,173,0.12);
+    --glow2:    rgba(26,122,87,0.10);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -36,18 +36,7 @@
     overflow-x: hidden;
   }
 
-  /* ── Noise texture overlay ── */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.4;
-  }
-
-  /* ─────────────── NAV ─────────────── */
+  /* ─── NAV ─── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -55,11 +44,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 48px;
-    background: rgba(13,15,20,0.85);
+    padding: 16px 48px;
+    background: rgba(244,243,240,0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    transition: padding 0.3s ease;
   }
 
   .nav-logo {
@@ -68,23 +56,21 @@
     gap: 12px;
   }
   .nav-logo img {
-    height: 36px;
+    height: 38px;
     width: auto;
-    filter: brightness(1.1);
   }
   .nav-logo-text {
     font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    color: var(--mid);
-    letter-spacing: 0.05em;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
   }
 
   .nav-right {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 36px;
   }
-
   .nav-links {
     display: flex;
     gap: 28px;
@@ -95,15 +81,12 @@
     font-weight: 400;
     color: var(--mid);
     text-decoration: none;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--ink); }
 
-  .lang-switcher {
-    display: flex;
-    gap: 4px;
-  }
+  .lang-switcher { display: flex; gap: 4px; }
   .lang-btn {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -116,61 +99,59 @@
     transition: all 0.2s;
     letter-spacing: 0.1em;
   }
-  .lang-btn:hover, .lang-btn.active {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
+  .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .lang-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(26,79,173,0.06); }
 
-  @media(max-width: 640px){
+  @media(max-width:640px){
     nav { padding: 14px 20px; }
     .nav-logo-text { display: none; }
     .nav-links { gap: 16px; }
   }
 
-  /* ─────────────── HERO ─────────────── */
+  /* ─── HERO ─── */
   .hero {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 120px 48px 80px;
+    padding: 130px 48px 90px;
     position: relative;
     overflow: hidden;
+    background: var(--surface);
   }
 
-  /* Subtle grid background */
+  /* Fine grid */
   .hero::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(91,141,238,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(91,141,238,0.04) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 56px 56px;
+    opacity: 0.5;
+    mask-image: radial-gradient(ellipse 70% 80% at 60% 50%, black 0%, transparent 100%);
   }
 
-  /* Glow orb */
-  .hero-orb {
+  /* Soft color wash */
+  .hero-wash {
     position: absolute;
-    top: 15%; right: -5%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(91,141,238,0.12) 0%, transparent 70%);
-    border-radius: 50%;
+    top: -10%; right: -5%;
+    width: 55vw; height: 80vh;
+    background: radial-gradient(ellipse, rgba(26,79,173,0.07) 0%, transparent 70%);
     pointer-events: none;
   }
-  .hero-orb2 {
+  .hero-wash2 {
     position: absolute;
-    bottom: 5%; left: -10%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(61,214,172,0.08) 0%, transparent 70%);
-    border-radius: 50%;
+    bottom: -5%; left: -5%;
+    width: 40vw; height: 50vh;
+    background: radial-gradient(ellipse, rgba(26,122,87,0.05) 0%, transparent 70%);
     pointer-events: none;
   }
 
   .hero-inner {
     position: relative;
-    max-width: 780px;
+    max-width: 800px;
   }
 
   .hero-tag {
@@ -182,7 +163,7 @@
     margin-bottom: 28px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     opacity: 0;
     animation: fadeUp 0.7s 0.1s ease forwards;
   }
@@ -194,9 +175,9 @@
 
   .hero-h1 {
     font-family: 'Fraunces', serif;
-    font-size: clamp(40px, 6vw, 72px);
+    font-size: clamp(38px, 5.5vw, 68px);
     font-weight: 300;
-    line-height: 1.08;
+    line-height: 1.1;
     color: var(--ink);
     margin-bottom: 28px;
     opacity: 0;
@@ -206,15 +187,12 @@
     font-style: italic;
     color: var(--accent);
   }
-  .hero-h1 strong {
-    font-weight: 600;
-  }
 
   .hero-sub {
-    font-size: clamp(15px, 2vw, 17px);
+    font-size: clamp(15px, 1.8vw, 17px);
     color: var(--mid);
     max-width: 560px;
-    line-height: 1.75;
+    line-height: 1.8;
     margin-bottom: 44px;
     opacity: 0;
     animation: fadeUp 0.8s 0.35s ease forwards;
@@ -222,7 +200,7 @@
 
   .hero-ctas {
     display: flex;
-    gap: 16px;
+    gap: 14px;
     flex-wrap: wrap;
     opacity: 0;
     animation: fadeUp 0.8s 0.45s ease forwards;
@@ -232,19 +210,19 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 28px;
+    padding: 13px 26px;
     background: var(--accent);
     color: #fff;
     font-size: 14px;
     font-weight: 500;
-    border-radius: 8px;
+    border-radius: 6px;
     text-decoration: none;
-    transition: all 0.25s ease;
-    box-shadow: 0 0 0 0 var(--glow);
+    transition: all 0.25s;
+    letter-spacing: 0.01em;
   }
   .btn-primary:hover {
-    background: #4a7ddc;
-    box-shadow: 0 0 32px var(--glow);
+    background: #1340a0;
+    box-shadow: 0 4px 20px var(--glow);
     transform: translateY(-1px);
   }
 
@@ -252,21 +230,17 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 28px;
+    padding: 13px 26px;
     border: 1px solid var(--border2);
     color: var(--mid);
     font-size: 14px;
     font-weight: 400;
-    border-radius: 8px;
+    border-radius: 6px;
     text-decoration: none;
-    transition: all 0.25s ease;
+    transition: all 0.25s;
   }
-  .btn-ghost:hover {
-    border-color: var(--ink);
-    color: var(--ink);
-  }
+  .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
 
-  /* Scroll indicator */
   .hero-scroll {
     position: absolute;
     bottom: 36px; left: 48px;
@@ -279,28 +253,27 @@
     color: var(--muted);
     text-transform: uppercase;
     opacity: 0;
-    animation: fadeIn 1s 1s ease forwards;
+    animation: fadeIn 1s 1.2s ease forwards;
   }
   .scroll-line {
-    width: 40px; height: 1px;
+    width: 36px; height: 1px;
     background: var(--muted);
-    animation: scrollPulse 2s 1.5s ease-in-out infinite;
+    animation: scrollPulse 2s 1.8s ease-in-out infinite;
   }
   @keyframes scrollPulse {
-    0%,100%{ opacity:0.3; width:40px; }
-    50%{ opacity:1; width:56px; }
+    0%,100%{ opacity:0.3; width:36px; }
+    50%{ opacity:1; width:52px; }
   }
 
-  /* ─────────────── EXPERTISE STRIP ─────────────── */
+  /* ─── EXPERTISE STRIP ─── */
   .expertise-strip {
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 20px 48px;
+    background: var(--ink);
+    padding: 16px 48px;
     display: flex;
     align-items: center;
-    gap: 0;
     overflow-x: auto;
     scrollbar-width: none;
+    gap: 0;
   }
   .expertise-strip::-webkit-scrollbar { display: none; }
 
@@ -309,7 +282,7 @@
     align-items: center;
     gap: 12px;
     padding: 0 28px;
-    border-right: 1px solid var(--border);
+    border-right: 1px solid rgba(255,255,255,0.12);
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -317,30 +290,29 @@
   .strip-item:last-child { border-right: none; }
 
   .strip-dot {
-    width: 6px; height: 6px;
+    width: 5px; height: 5px;
     border-radius: 50%;
-    background: var(--accent2);
+    background: rgba(26,122,87,0.9);
     flex-shrink: 0;
   }
   .strip-text {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--mid);
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.6);
   }
 
-  /* ─────────────── SECTIONS ─────────────── */
-  section {
-    padding: 100px 48px;
-    max-width: 1100px;
+  /* ─── SHARED SECTION STYLES ─── */
+  .section-wrap {
+    max-width: 1080px;
     margin: 0 auto;
+    padding: 96px 48px;
   }
-
-  @media(max-width: 640px){
-    .hero { padding: 100px 20px 60px; }
+  @media(max-width:640px){
+    .hero { padding: 100px 20px 70px; }
     .hero-scroll { left: 20px; }
-    .expertise-strip { padding: 16px 20px; }
-    section { padding: 70px 20px; }
+    .expertise-strip { padding: 14px 20px; }
+    .section-wrap { padding: 64px 20px; }
   }
 
   .section-label {
@@ -349,55 +321,64 @@
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     display: flex;
     align-items: center;
     gap: 12px;
   }
   .section-label::before {
     content: '';
-    width: 24px; height: 1px;
+    width: 22px; height: 1px;
     background: var(--accent);
   }
 
   .section-title {
     font-family: 'Fraunces', serif;
-    font-size: clamp(30px, 4vw, 46px);
+    font-size: clamp(28px, 3.5vw, 44px);
     font-weight: 300;
     line-height: 1.15;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .section-title em { font-style: italic; color: var(--accent); }
 
   .section-body {
     font-size: 16px;
     color: var(--mid);
-    max-width: 600px;
+    max-width: 580px;
     line-height: 1.8;
     margin-bottom: 48px;
   }
 
-  /* ─────────────── ABOUT ─────────────── */
-  #about {
+  /* ─── ABOUT ─── */
+  #about { background: var(--bg); }
+  .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 72px;
     align-items: start;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-left: 48px;
-    padding-right: 48px;
   }
-  @media(max-width:768px){
-    #about { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; }
-  }
+  @media(max-width:768px){ .about-grid { grid-template-columns: 1fr; gap: 40px; } }
 
-  .about-left {}
-  .about-right {
-    padding-top: 8px;
+  .about-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 32px;
   }
+  .pillar {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: border-color 0.2s;
+  }
+  .pillar:hover { border-color: var(--border2); }
+  .pillar-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .pillar-text { font-size: 13px; color: var(--mid); line-height: 1.6; }
+  .pillar-text strong { color: var(--ink); font-weight: 500; display: block; margin-bottom: 2px; font-size: 13px; }
 
   .about-stat-grid {
     display: grid;
@@ -405,80 +386,44 @@
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 28px;
   }
   .about-stat {
     background: var(--surface);
-    padding: 24px;
+    padding: 22px 20px;
   }
   .stat-num {
     font-family: 'Fraunces', serif;
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 600;
     color: var(--accent);
     line-height: 1;
     margin-bottom: 6px;
   }
-  .stat-label {
-    font-size: 12px;
-    color: var(--mid);
-    line-height: 1.5;
-  }
+  .stat-label { font-size: 12px; color: var(--mid); line-height: 1.45; }
 
-  .about-pillars {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .pillar {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 16px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-  }
-  .pillar-icon {
-    font-size: 20px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .pillar-text { font-size: 13px; color: var(--mid); line-height: 1.55; }
-  .pillar-text strong { color: var(--ink); font-weight: 500; display: block; margin-bottom: 2px; }
-
-  /* ─────────────── SERVICES ─────────────── */
-  #services {
-    border-top: 1px solid var(--border);
-  }
-
-  .services-header {
-    margin-bottom: 56px;
-  }
+  /* ─── SERVICES ─── */
+  #services { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
   .services-layout {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 32px;
+    grid-template-columns: 210px 1fr;
+    gap: 40px;
     align-items: start;
   }
-  @media(max-width:720px){
-    .services-layout { grid-template-columns: 1fr; }
-  }
+  @media(max-width:720px){ .services-layout { grid-template-columns: 1fr; } }
 
   .services-nav {
     position: sticky;
-    top: 96px;
+    top: 88px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
   }
-
   .svc-nav-btn {
     text-align: left;
-    padding: 12px 16px;
+    padding: 11px 14px;
     background: none;
     border: none;
     border-left: 2px solid transparent;
@@ -487,25 +432,18 @@
     font-size: 13px;
     font-weight: 400;
     cursor: pointer;
-    transition: all 0.2s ease;
-    border-radius: 0 6px 6px 0;
+    transition: all 0.2s;
+    border-radius: 0 5px 5px 0;
   }
-  .svc-nav-btn:hover {
-    color: var(--mid);
-    border-left-color: var(--border2);
-    background: var(--surface);
-  }
+  .svc-nav-btn:hover { color: var(--mid); border-left-color: var(--border2); background: var(--bg); }
   .svc-nav-btn.active {
     color: var(--accent);
     border-left-color: var(--accent);
-    background: rgba(91,141,238,0.06);
+    background: rgba(26,79,173,0.05);
     font-weight: 500;
   }
 
-  .service-panel {
-    display: none;
-    animation: fadeUp 0.3s ease both;
-  }
+  .service-panel { display: none; animation: fadeUp 0.3s ease both; }
   .service-panel.active { display: block; }
 
   .svc-panel-tag {
@@ -516,26 +454,24 @@
     color: var(--accent2);
     margin-bottom: 12px;
   }
-
   .svc-panel-title {
     font-family: 'Fraunces', serif;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 300;
     color: var(--ink);
     margin-bottom: 16px;
     line-height: 1.2;
   }
-
   .svc-panel-desc {
     font-size: 15px;
     color: var(--mid);
     line-height: 1.75;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .svc-problem-box {
-    background: rgba(61,214,172,0.06);
-    border: 1px solid rgba(61,214,172,0.2);
+    background: rgba(26,122,87,0.05);
+    border: 1px solid rgba(26,122,87,0.2);
     border-radius: 8px;
     padding: 16px 20px;
     margin-bottom: 24px;
@@ -548,19 +484,9 @@
     color: var(--accent2);
     margin-bottom: 8px;
   }
-  .spb-text {
-    font-size: 13px;
-    color: var(--mid);
-    font-style: italic;
-    line-height: 1.6;
-  }
+  .spb-text { font-size: 13px; color: var(--mid); font-style: italic; line-height: 1.6; }
 
-  .svc-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+  .svc-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .svc-bullets li {
     display: flex;
     align-items: flex-start;
@@ -579,7 +505,7 @@
 
   .svc-cta-line {
     margin-top: 28px;
-    padding-top: 20px;
+    padding-top: 18px;
     border-top: 1px solid var(--border);
     font-size: 13px;
     color: var(--muted);
@@ -600,11 +526,8 @@
   }
   .svc-cta-link:hover { gap: 10px; }
 
-  /* ─────────────── WHY SARET ─────────────── */
-  #why {
-    border-top: 1px solid var(--border);
-  }
-
+  /* ─── WHY SARET ─── */
+  #why { background: var(--bg); }
   .why-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -616,22 +539,15 @@
   .why-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px 24px;
+    border-radius: 10px;
+    padding: 26px 22px;
     transition: border-color 0.25s, box-shadow 0.25s;
   }
-  .why-card:hover {
-    border-color: var(--border2);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  }
-  .why-icon {
-    font-size: 28px;
-    margin-bottom: 16px;
-    display: block;
-  }
+  .why-card:hover { border-color: var(--border2); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+  .why-icon { font-size: 26px; margin-bottom: 14px; display: block; }
   .why-title {
     font-family: 'Fraunces', serif;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 300;
     color: var(--ink);
     margin-bottom: 10px;
@@ -639,23 +555,19 @@
   }
   .why-text { font-size: 13px; color: var(--mid); line-height: 1.65; }
 
-  /* ─────────────── CONTACT ─────────────── */
-  #contact {
-    border-top: 1px solid var(--border);
-  }
-
+  /* ─── CONTACT ─── */
+  #contact { background: var(--surface); border-top: 1px solid var(--border); }
   .contact-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 52px;
     margin-top: 48px;
   }
   @media(max-width:720px){ .contact-layout { grid-template-columns: 1fr; } }
 
-  .contact-info {}
   .contact-tagline {
     font-family: 'Fraunces', serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 300;
     font-style: italic;
     color: var(--mid);
@@ -664,12 +576,11 @@
     border-left: 2px solid var(--accent);
     padding-left: 20px;
   }
-
   .contact-detail {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 14px 0;
+    padding: 13px 0;
     border-bottom: 1px solid var(--border);
     font-size: 14px;
     color: var(--mid);
@@ -679,49 +590,48 @@
   .contact-detail:hover { color: var(--ink); }
   .contact-detail:last-child { border-bottom: none; }
   .cd-icon {
-    width: 36px; height: 36px;
-    background: var(--surface2);
+    width: 34px; height: 34px;
+    background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
     flex-shrink: 0;
+    color: var(--mid);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
   }
 
   .contact-form-wrap {
-    background: var(--surface);
+    background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px;
+    border-radius: 14px;
+    padding: 30px;
   }
   .form-title {
     font-family: 'Fraunces', serif;
     font-size: 20px;
     font-weight: 300;
     color: var(--ink);
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
-
-  .form-group {
-    margin-bottom: 16px;
-  }
+  .form-group { margin-bottom: 14px; }
   .form-label {
     display: block;
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 8px;
+    margin-bottom: 7px;
     font-family: 'DM Mono', monospace;
   }
   .form-input, .form-textarea {
     width: 100%;
-    background: var(--surface2);
+    background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 16px;
+    border-radius: 6px;
+    padding: 11px 14px;
     color: var(--ink);
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
@@ -729,62 +639,51 @@
     outline: none;
     resize: none;
   }
-  .form-input:focus, .form-textarea:focus {
-    border-color: var(--accent);
-  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
   .form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
-
   .form-submit {
     width: 100%;
-    padding: 14px;
+    padding: 13px;
     background: var(--accent);
     color: #fff;
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 6px;
     transition: background 0.2s, box-shadow 0.2s;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
   }
-  .form-submit:hover {
-    background: #4a7ddc;
-    box-shadow: 0 0 24px var(--glow);
-  }
+  .form-submit:hover { background: #1340a0; box-shadow: 0 4px 16px var(--glow); }
 
-  /* ─────────────── FOOTER ─────────────── */
+  /* ─── FOOTER ─── */
   footer {
-    border-top: 1px solid var(--border);
-    padding: 32px 48px;
+    background: var(--ink);
+    padding: 28px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
-    max-width: 1100px;
-    margin: 0 auto;
   }
   .footer-copy {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    color: var(--muted);
+    color: rgba(255,255,255,0.4);
     letter-spacing: 0.08em;
   }
-  .footer-links {
-    display: flex;
-    gap: 20px;
-  }
+  .footer-links { display: flex; gap: 20px; }
   .footer-links a {
     font-size: 12px;
-    color: var(--muted);
+    color: rgba(255,255,255,0.4);
     text-decoration: none;
     transition: color 0.2s;
   }
-  .footer-links a:hover { color: var(--mid); }
+  .footer-links a:hover { color: rgba(255,255,255,0.75); }
 
-  /* ─────────────── ANIMATIONS ─────────────── */
+  /* ─── ANIMATIONS ─── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -792,20 +691,14 @@
   @keyframes fadeIn {
     from { opacity: 0; } to { opacity: 1; }
   }
-
-  /* Section reveal on scroll */
   .reveal {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  .reveal.visible {
-    opacity: 1;
-    transform: none;
-  }
+  .reveal.visible { opacity: 1; transform: none; }
   </style>
 </head>
-
 <body>
 
 <!-- ── NAV ── -->
@@ -829,22 +722,20 @@
 
 <!-- ── HERO ── -->
 <div class="hero">
-  <div class="hero-orb"></div>
-  <div class="hero-orb2"></div>
+  <div class="hero-wash"></div>
+  <div class="hero-wash2"></div>
   <div class="hero-inner">
-    <div class="hero-tag" id="heroTag">Engineering for scientific precision</div>
-    <h1 class="hero-h1" id="heroH1">
-      When your project needs<br>
-      <em>optical engineering</em><br>
-      done right.
-    </h1>
-    <p class="hero-sub" id="heroSub">
-      SARET provides specialized engineering in optical design, optical coatings, thin-film deposition, and semiconductor devices — for research centers, tech companies, and advanced manufacturing.
-    </p>
-    <div class="hero-ctas">
-      <a href="#contact" class="btn-primary" id="heroCta1">Talk about your project</a>
-      <a href="#services" class="btn-ghost" id="heroCta2">See services →</a>
-    </div>
+  <div class="hero-tag">Applied scientific engineering</div>
+  <h1 class="hero-h1">
+  Engineering solutions for<br>
+  <em>complex optical and thin-film systems</em>
+  </h1>
+  <p class="hero-sub">
+  SARET provides specialized engineering services in optical design, optical coatings, and thin-film technologies for industrial and R&D applications.
+  </p>
+  <a href="#contact" class="btn-primary">Request technical consultation</a>
+<a href="#services" class="btn-ghost">Explore services →</a>
+  </div>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div><span id="scrollHint">scroll</span></div>
 </div>
@@ -856,286 +747,261 @@
   <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip3">Thin-Film Deposition</span></div>
   <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip4">Semiconductor Devices</span></div>
   <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip5">Technical Training</span></div>
-  <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip6">R&D Consulting</span></div>
+  <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip6">R&amp;D Consulting</span></div>
 </div>
 
 <!-- ── ABOUT ── -->
 <div id="about">
-  <div class="about-left reveal">
-    <div class="section-label" id="aboutLabel">About SARET</div>
-    <h2 class="section-title" id="aboutTitle">Science-grade engineering,<br><em>applied</em> to your industry.</h2>
-    <p class="section-body" id="aboutBody">SARET was founded to bridge the gap between scientific instrumentation and applied industrial engineering. We work with companies and research groups that need deep R+D expertise — without building an in-house team from scratch.</p>
-    <div class="about-pillars">
-      <div class="pillar">
-        <div class="pillar-icon">🎓</div>
-        <div class="pillar-text">
-          <strong id="p1t">PhD-level expertise</strong>
-          <span id="p1d">Background in astronomical instrumentation — one of the most demanding environments in optical engineering where performance margins are extremely tight.</span>
+  <div class="section-wrap">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <div class="section-label" id="aboutLabel">About SARET</div>
+        <h2 class="section-title">Advanced engineering capabilities,<br><em>adapted to industrial applications</em>
+        </h2>
+       <p class="section-body">SARET provides engineering services across different stages of technological development, from conceptual definition to system validation.</p>
+          <div class="pillar">
+            <div class="pillar-icon">🔬</div>
+            <div class="pillar-text">
+              <strong>Engineering developed in high-demand environments</strong>
+              Experience built in scientific instrumentation projects with strict performance and validation requirements.
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🤝</div>
+            <div class="pillar-text">
+              <strong>Multidisciplinary technical network</strong>
+              Specialists in optics, coatings, semiconductors, and mechanical design working in coordinated collaboration.
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">⚡</div>
+            <div class="pillar-text">
+              <strong>Direct technical engagement</strong>
+              Projects are executed through direct interaction with technical specialists, ensuring clarity and efficiency in decision-making.
+            </div>
+          </div>
         </div>
       </div>
-      <div class="pillar">
-        <div class="pillar-icon">🤝</div>
-        <div class="pillar-text">
-          <strong id="p2t">Collaborative network</strong>
-          <span id="p2d">Specialists in semiconductor fabrication, mechanical design, and optical manufacturing ready to contribute.</span>
+      <div class="about-right reveal">
+        <div class="about-stat-grid">
+          <div class="about-stat">
+            <div class="stat-num">6</div>
+            <div class="stat-label" id="s1">Specialized service areas</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-num">4+</div>
+            <div class="stat-label" id="s2">Target industries</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-num">EN<br>ES</div>
+            <div class="stat-label" id="s3">Bilingual service delivery</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-num">MX</div>
+            <div class="stat-label" id="s4">Based in León, Guanajuato</div>
+          </div>
         </div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">⚡</div>
-        <div class="pillar-text">
-          <strong id="p3t">Agile & focused</strong>
-          <span id="p3d">No large consulting overhead. You work directly with the technical expert on your project.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="about-right reveal">
-    <div class="about-stat-grid">
-      <div class="about-stat">
-        <div class="stat-num">6</div>
-        <div class="stat-label" id="s1">Specialized service areas</div>
-      </div>
-      <div class="about-stat">
-        <div class="stat-num">4+</div>
-        <div class="stat-label" id="s2">Target industries</div>
-      </div>
-      <div class="about-stat">
-        <div class="stat-num">EN<br>ES</div>
-        <div class="stat-label" id="s3">Bilingual service delivery</div>
-      </div>
-      <div class="about-stat">
-        <div class="stat-num">MX</div>
-        <div class="stat-label" id="s4">Based in León, Guanajuato</div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- ── SERVICES ── -->
-<section id="services">
-  <div class="services-header reveal">
-    <div class="section-label" id="svcLabel">Services</div>
-    <h2 class="section-title" id="svcTitle">What we can do<br><em>for your project</em></h2>
-    <p class="section-body" id="svcBody">From a single design review to full project co-development. Each service is tailored to your technical stage and goals.</p>
-  </div>
+<div id="services">
+  <div class="section-wrap">
+    <div class="reveal">
+      <div class="section-label" id="svcLabel">Services</div>
+      <h2 class="section-title" id="svcTitle">What we can do<br><em>for your project</em></h2>
+      <p class="section-body" id="svcBody">From a single design review to full project co-development. Each service is tailored to your technical stage and goals.</p>
+    </div>
+    <div class="services-layout">
+      <nav class="services-nav">
+        <button class="svc-nav-btn active" onclick="showSvc('training')" id="nb-training">Training &amp; Courses</button>
+        <button class="svc-nav-btn" onclick="showSvc('optical')" id="nb-optical">Optical Design</button>
+        <button class="svc-nav-btn" onclick="showSvc('coatings')" id="nb-coatings">Coatings Design</button>
+        <button class="svc-nav-btn" onclick="showSvc('thinfilms')" id="nb-thinfilms">Thin-Film Consulting</button>
+        <button class="svc-nav-btn" onclick="showSvc('semiconductor')" id="nb-semiconductor">Semiconductor Devices</button>
+        <button class="svc-nav-btn" onclick="showSvc('consulting')" id="nb-consulting">Engineering Consulting</button>
+      </nav>
 
-  <div class="services-layout">
-    <nav class="services-nav">
-      <button class="svc-nav-btn active" onclick="showSvc('training')" id="nb-training">Training & Courses</button>
-      <button class="svc-nav-btn" onclick="showSvc('optical')" id="nb-optical">Optical Design</button>
-      <button class="svc-nav-btn" onclick="showSvc('coatings')" id="nb-coatings">Coatings Design</button>
-      <button class="svc-nav-btn" onclick="showSvc('thinfilms')" id="nb-thinfilms">Thin-Film Consulting</button>
-      <button class="svc-nav-btn" onclick="showSvc('semiconductor')" id="nb-semiconductor">Semiconductor Devices</button>
-      <button class="svc-nav-btn" onclick="showSvc('consulting')" id="nb-consulting">Engineering Consulting</button>
-    </nav>
+      <div class="services-content">
 
-    <div class="services-content">
-
-      <!-- TRAINING -->
-      <div class="service-panel active" id="svc-training">
-        <div class="svc-panel-tag" id="t-tag">Star Service · Online & On-site</div>
-        <div class="svc-panel-title" id="t-title">Specialized Training & Technical Courses</div>
-        <div class="svc-problem-box">
-          <div class="spb-label" id="t-pl">Your situation</div>
-          <div class="spb-text" id="t-ps">"We have engineers working on optical systems, but gaps in the fundamentals are slowing down the project."</div>
+        <!-- TRAINING -->
+        <div class="service-panel active" id="svc-training">
+          <div class="svc-panel-tag" id="t-tag">Star Service · Online &amp; On-site</div>
+          <div class="svc-panel-title" id="t-title">Specialized Training &amp; Technical Courses</div>
+          <div class="svc-problem-box">
+            <div class="spb-label" id="t-pl">Your situation</div>
+            <div class="spb-text" id="t-ps">"We have engineers working on optical systems, but gaps in the fundamentals are slowing down the project."</div>
+          </div>
+          <div class="svc-panel-desc" id="t-desc">Hands-on technical training for engineers, researchers, and R&amp;D teams. Courses are customized to your project context and can be delivered online or on-site.</div>
+          <ul class="svc-bullets" id="t-bullets"></ul>
+          <div class="svc-cta-line">
+            <span id="t-cta-hint">Interested in a custom course?</span>
+            <a href="#contact" class="svc-cta-link" id="t-cta">Request a proposal →</a>
+          </div>
         </div>
-        <div class="svc-panel-desc" id="t-desc">Hands-on technical training for engineers, researchers, and R&D teams. Courses are customized to your project context and can be delivered online or on-site.</div>
-        <ul class="svc-bullets" id="t-bullets">
-          <li>Optical design fundamentals: imaging systems, aberrations, sequential & non-sequential modeling.</li>
-          <li>Advanced optical design: optimization, tolerance analysis, manufacturable specifications.</li>
-          <li>Optical coatings design: from basic multilayers to advanced filter design.</li>
-          <li>Thin-film deposition for optical applications: process, troubleshooting, and QA.</li>
-          <li>Semiconductor devices and optoelectronics: device physics for sensing and energy.</li>
-        </ul>
-        <div class="svc-cta-line">
-          <span id="t-cta-hint">Interested in a custom course?</span>
-          <a href="#contact" class="svc-cta-link" id="t-cta">Request a proposal →</a>
+
+        <!-- OPTICAL -->
+        <div class="service-panel" id="svc-optical">
+          <div class="svc-panel-tag" id="o-tag">Design Engineering</div>
+          <div class="svc-panel-title" id="o-title">Optical &amp; Optomechanical Design</div>
+          <div class="svc-problem-box">
+            <div class="spb-label" id="o-pl">Your situation</div>
+            <div class="spb-text" id="o-ps">"We need to design an optical system but don't have the in-house expertise to go from concept to manufacturable specifications."</div>
+          </div>
+          <div class="svc-panel-desc" id="o-desc">Design and development of optical and optomechanical systems for industrial and scientific applications, from conceptual architecture to fabrication-ready specifications.</div>
+          <ul class="svc-bullets" id="o-bullets"></ul>
+          <div class="svc-cta-line">
+            <span id="o-cta-hint">Have a project in mind?</span>
+            <a href="#contact" class="svc-cta-link" id="o-cta">Let's discuss it →</a>
+          </div>
         </div>
+
+        <!-- COATINGS -->
+        <div class="service-panel" id="svc-coatings">
+          <div class="svc-panel-tag" id="c-tag">Design Engineering</div>
+          <div class="svc-panel-title" id="c-title">Optical Coatings Design</div>
+          <div class="svc-problem-box">
+            <div class="spb-label" id="c-pl">Your situation</div>
+            <div class="spb-text" id="c-ps">"Our coatings are not meeting spectral targets and we're not sure if the problem is the design or the deposition process."</div>
+          </div>
+          <div class="svc-panel-desc" id="c-desc">Design and optimization of multilayer optical coatings, including anti-reflective, reflective, and filtering systems, with consideration of angular performance and manufacturing tolerances.</div>
+          <ul class="svc-bullets" id="c-bullets"></ul>
+          <div class="svc-cta-line">
+            <span id="c-cta-hint">Dealing with coating performance issues?</span>
+            <a href="#contact" class="svc-cta-link" id="c-cta">Get a diagnostic →</a>
+          </div>
+        </div>
+
+        <!-- THINFILMS -->
+        <div class="service-panel" id="svc-thinfilms">
+          <div class="svc-panel-tag" id="tf-tag">Process Consulting</div>
+          <div class="svc-panel-title" id="tf-title">Thin-Film Deposition Consulting</div>
+          <div class="svc-problem-box">
+            <div class="spb-label" id="tf-pl">Your situation</div>
+            <div class="spb-text" id="tf-ps">"We have a PVD system but our coatings show batch-to-batch variability. We can't figure out the root cause."</div>
+          </div>
+          <div class="svc-panel-desc" id="tf-desc">Technical support for physical vapor deposition processes, focused on process stability, reproducibility, and performance validation in thin-film coatings.</div>
+          <ul class="svc-bullets" id="tf-bullets"></ul>
+          <div class="svc-cta-line">
+            <span id="tf-cta-hint">Process giving you trouble?</span>
+            <a href="#contact" class="svc-cta-link" id="tf-cta">Book a process review →</a>
+          </div>
+        </div>
+
+        <!-- SEMICONDUCTOR -->
+        <div class="service-panel" id="svc-semiconductor">
+          <div class="svc-panel-tag" id="sm-tag">Applied Device Physics</div>
+          <div class="svc-panel-title" id="sm-title">Semiconductor Devices</div>
+          <div class="svc-problem-box">
+            <div class="spb-label" id="sm-pl">Your situation</div>
+            <div class="spb-text" id="sm-ps">"We're developing a new optoelectronic device but our team lacks the device physics background to define the structure and specs."</div>
+          </div>
+          <div class="svc-panel-desc" id="sm-desc">Engineering consulting for research and development projects, including feasibility assessment, system requirements definition, and technical risk analysis.</div>
+          <ul class="svc-bullets" id="sm-bullets"></ul>
+          <div class="svc-cta-line">
+            <span id="sm-cta-hint">Building a new device concept?</span>
+            <a href="#contact" class="svc-cta-link" id="sm-cta">Talk to a specialist →</a>
+          </div>
+        </div>
+
+        <!-- CONSULTING -->
+        <div class="service-panel" id="svc-consulting">
+          <div class="svc-panel-tag" id="cn-tag">R&amp;D Project Development</div>
+          <div class="svc-panel-title" id="cn-title">Engineering Consulting &amp; Project Development</div>
+          <div class="svc-problem-box">
+            <div class="spb-label" id="cn-pl">Typical context</div>
+            <div class="spb-text" id="cn-ps">Projects requiring specialized expertise in optical design, coatings, or thin-film processes, where internal capabilities are limited or not available.</div>
+          </div>
+          <div class="svc-panel-desc" id="cn-desc">Technical consulting for scientific and technological projects: feasibility studies, requirements definition, and engineering planning for R&amp;D initiatives.</div>
+          <ul class="svc-bullets" id="cn-bullets"></ul>
+          <div class="svc-cta-line">
+            <span id="cn-cta-hint">Structuring a new R&amp;D project?</span>
+            <a href="#contact" class="svc-cta-link" id="cn-cta">Start a conversation →</a>
+          </div>
+        </div>
+
       </div>
-
-      <!-- OPTICAL -->
-      <div class="service-panel" id="svc-optical">
-        <div class="svc-panel-tag" id="o-tag">Design Engineering</div>
-        <div class="svc-panel-title" id="o-title">Optical & Optomechanical Design</div>
-        <div class="svc-problem-box">
-          <div class="spb-label" id="o-pl">Your situation</div>
-          <div class="spb-text" id="o-ps">"We need to design an optical system but don't have the in-house expertise to go from concept to manufacturable specifications."</div>
-        </div>
-        <div class="svc-panel-desc" id="o-desc">Engineering services in optical system design for scientific and industrial applications — from conceptual definition to fabrication-ready specifications.</div>
-        <ul class="svc-bullets" id="o-bullets">
-          <li>Optical design for imaging and spectroscopic systems.</li>
-          <li>Collimators, cameras, relay optics, and illumination optics.</li>
-          <li>Tolerance analysis and sensitivity studies.</li>
-          <li>Interface recommendations for alignment and optomechanical integration.</li>
-        </ul>
-        <div class="svc-cta-line">
-          <span id="o-cta-hint">Have a project in mind?</span>
-          <a href="#contact" class="svc-cta-link" id="o-cta">Let's discuss it →</a>
-        </div>
-      </div>
-
-      <!-- COATINGS -->
-      <div class="service-panel" id="svc-coatings">
-        <div class="svc-panel-tag" id="c-tag">Design Engineering</div>
-        <div class="svc-panel-title" id="c-title">Optical Coatings Design</div>
-        <div class="svc-problem-box">
-          <div class="spb-label" id="c-pl">Your situation</div>
-          <div class="spb-text" id="c-ps">"Our coatings are not meeting spectral targets and we're not sure if the problem is the design or the deposition process."</div>
-        </div>
-        <div class="svc-panel-desc" id="c-desc">Design and optimization of multilayer coatings for scientific and industrial optics: anti-reflective, high-reflective, filters, and polarizing components.</div>
-        <ul class="svc-bullets" id="c-bullets">
-          <li>Multilayer thin-film design and spectral optimization.</li>
-          <li>Angle and thicknesses sensitivity analysis.</li>
-          <li>Robustness and tolerance studies.</li>
-          <li>Deliverables: design files + performance report and recommendations.</li>
-        </ul>
-        <div class="svc-cta-line">
-          <span id="c-cta-hint">Dealing with coating performance issues?</span>
-          <a href="#contact" class="svc-cta-link" id="c-cta">Get a diagnostic →</a>
-        </div>
-      </div>
-
-      <!-- THINFILMS -->
-      <div class="service-panel" id="svc-thinfilms">
-        <div class="svc-panel-tag" id="tf-tag">Process Consulting</div>
-        <div class="svc-panel-title" id="tf-title">Thin-Film Deposition Consulting</div>
-        <div class="svc-problem-box">
-          <div class="spb-label" id="tf-pl">Your situation</div>
-          <div class="spb-text" id="tf-ps">"We have a PVD system but our coatings show batch-to-batch variability. We analyze your system (design + measurements) and identify the root cause of performance issues."</div>
-        </div>
-        <div class="svc-panel-desc" id="tf-desc">Process support and troubleshooting for PVD thin-film deposition — focused on improving repeatability, uniformity, and optical performance.</div>
-        <ul class="svc-bullets" id="tf-bullets">
-          <li>Process review: materials, monitoring strategy, and deposition planning.</li>
-          <li>Root-cause analysis for spectral mismatch and drift.</li>
-          <li>Uniformity and reproducibility strategies.</li>
-          <li>Measurement plan recommendations (R/T, thickness, mapping).</li>
-        </ul>
-        <div class="svc-cta-line">
-          <span id="tf-cta-hint">Process giving you trouble?</span>
-          <a href="#contact" class="svc-cta-link" id="tf-cta">Book a process review →</a>
-        </div>
-      </div>
-
-      <!-- SEMICONDUCTOR -->
-      <div class="service-panel" id="svc-semiconductor">
-        <div class="svc-panel-tag" id="sm-tag">Applied Device Physics</div>
-        <div class="svc-panel-title" id="sm-title">Semiconductor Devices</div>
-        <div class="svc-problem-box">
-          <div class="spb-label" id="sm-pl">Your situation</div>
-          <div class="spb-text" id="sm-ps">"We're developing a new optoelectronic device but our team lacks the device physics background to define the structure and specs."</div>
-        </div>
-        <div class="svc-panel-desc" id="sm-desc">Engineering consulting for semiconductor-based devices and structures for sensing and energy applications.</div>
-        <ul class="svc-bullets" id="sm-bullets">
-          <li>Device physics guidance for optoelectronic and sensing concepts.</li>
-          <li>Modeling and feasibility studies for device structures.</li>
-          <li>Support in experimental planning and characterization strategy.</li>
-        </ul>
-        <div class="svc-cta-line">
-          <span id="sm-cta-hint">Building a new device concept?</span>
-          <a href="#contact" class="svc-cta-link" id="sm-cta">Talk to a specialist →</a>
-        </div>
-      </div>
-
-      <!-- CONSULTING -->
-      <div class="service-panel" id="svc-consulting">
-        <div class="svc-panel-tag" id="cn-tag">R&D Project Development</div>
-        <div class="svc-panel-title" id="cn-title">Engineering Consulting & Project Development</div>
-        <div class="svc-problem-box">
-          <div class="spb-label" id="cn-pl">Your situation</div>
-          <div class="spb-text" id="cn-ps">"We have a technical concept but need help defining requirements, assessing feasibility, and structuring the engineering plan."</div>
-        </div>
-        <div class="svc-panel-desc" id="cn-desc">Technical consulting for scientific and technological projects: feasibility studies, requirements definition, and engineering planning for R&D initiatives.</div>
-        <ul class="svc-bullets" id="cn-bullets">
-          <li>Feasibility and trade studies for optical / thin-film / semiconductor systems.</li>
-          <li>R&D project structuring: requirements, milestones, and technical risks.</li>
-          <li>Technical review of documents, specifications, and experimental plans.</li>
-          <li>Collaboration with universities, labs, and industry partners.</li>
-        </ul>
-        <div class="svc-cta-line">
-          <span id="cn-cta-hint">Structuring a new R&D project?</span>
-          <a href="#contact" class="svc-cta-link" id="cn-cta">Start a conversation →</a>
-        </div>
-      </div>
-
     </div>
   </div>
-</section>
+</div>
 
 <!-- ── WHY SARET ── -->
-<section id="why" style="max-width:1100px;margin:0 auto;">
-  <div class="reveal">
-    <div class="section-label" id="whyLabel">Why SARET</div>
-    <h2 class="section-title" id="whyTitle">The expertise you need,<br><em>when you need it.</em></h2>
-  </div>
-  <div class="why-grid reveal">
-    <div class="why-card">
-      <span class="why-icon">🔭</span>
-      <div class="why-title" id="w1t">
-      Precision developed in advanced research environments
-      </div>
-      <div class="why-text" id="w1d">
-      SARET works in one of the most demanding optical engineering environments, where systems are developed to meet strict scientific requirements.
-      </div>
-    <div class="why-card">
-      <span class="why-icon">🧩</span>
-      <div class="why-title" id="w2t">All disciplines, one point of contact</div>
-      <div class="why-text" id="w2d">Optics, coatings, semiconductors, and mechanical design — delivered through a coordinated network of specialists. No fragmentation, no translation loss between disciplines.</div>
+<div id="why">
+  <div class="section-wrap">
+    <div class="reveal">
+      <div class="section-label" id="whyLabel">Why SARET</div>
+      <h2 class="section-title" id="whyTitle">Engineering expertise,<br><em>integrated into your project</em></h2>
     </div>
-    <div class="why-card">
-      <span class="why-icon">🌎</span>
-      <div class="why-title" id="w3t">Bilingual, Mexico-based, globally connected</div>
-      <div class="why-text" id="w3d">Based in León, Guanajuato. Fluent in the technical language of both Mexican industry and international research environments. EN/ES delivery as standard.</div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <span class="why-icon">🔭</span>
+        <div class="why-title" id="w1t">Precision engineering background</div>
+        <div class="why-text" id="w1d">Experience derived from advanced scientific instrumentation projects with high performance requirements.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🧩</span>
+        <div class="why-title" id="w2t">Integrated technical capabilities</div>
+        <div class="why-text" id="w2d">Optics, coatings, and semiconductor technologies delivered through coordinated engineering efforts.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🌎</span>
+        <div class="why-title" id="w3t">International technical context</div>
+        <div class="why-text" id="w3d">Experience aligned with both industrial environments and international research standards.</div>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ── CONTACT ── -->
-<section id="contact" style="max-width:1100px;margin:0 auto;">
-  <div class="reveal">
-    <div class="section-label" id="contactLabel">Contact</div>
-    <h2 class="section-title" id="contactTitle">Let's talk about<br><em>your project.</em></h2>
-  </div>
-  <div class="contact-layout reveal">
-    <div class="contact-info">
-      <p class="contact-tagline" id="contactTagline">"Whether you're defining a concept or stuck on a technical problem — we're ready to engage."</p>
-      <a href="mailto:saret.consulting@outlook.mx" class="contact-detail">
-        <div class="cd-icon">✉</div>
-        saret.consulting@outlook.mx
-      </a>
-      <a href="tel:+524775361443" class="contact-detail">
-        <div class="cd-icon">📞</div>
-        +52 477 536 14 43
-      </a>
-      <a href="https://www.linkedin.com/company/saret.consulting/" target="_blank" class="contact-detail">
-        <div class="cd-icon">in</div>
-        <span id="liText">LinkedIn — SARET Consulting</span>
-      </a>
+<div id="contact">
+  <div class="section-wrap">
+    <div class="reveal">
+      <div class="section-label" id="contactLabel">Contact</div>
+      <h2 class="section-title" id="contactTitle">Let's talk about<br><em>your project.</em></h2>
     </div>
-
-    <div class="contact-form-wrap">
-      <div class="form-title" id="formTitle">Send us a message</div>
-      <form action="https://formspree.io/f/mqagqzpa" method="POST">
-        <div class="form-group">
-          <label class="form-label" id="fName">Name</label>
-          <input type="text" name="name" class="form-input" required placeholder="Your name">
-        </div>
-        <div class="form-group">
-          <label class="form-label" id="fEmail">Email</label>
-          <input type="email" name="_replyto" class="form-input" required placeholder="your@email.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label" id="fPhone">Phone (optional)</label>
-          <input type="tel" name="phone" class="form-input" placeholder="+52 ...">
-        </div>
-        <div class="form-group">
-          <label class="form-label" id="fMsg">Tell us about your project or challenge</label>
-          <textarea name="message" class="form-textarea" rows="4" required placeholder="Describe your technical need..."></textarea>
-        </div>
-        <button type="submit" class="form-submit" id="fSubmit">Send message</button>
-      </form>
+    <div class="contact-layout reveal">
+      <div class="contact-info">
+        <p class="contact-tagline" id="contactTagline">Technical discussions, project inquiries, and collaboration opportunities are welcome.</p>
+        <a href="mailto:saret.consulting@outlook.mx" class="contact-detail">
+          <div class="cd-icon">✉</div>
+          saret.consulting@outlook.mx
+        </a>
+        <a href="tel:+524775361443" class="contact-detail">
+          <div class="cd-icon">📞</div>
+          +52 477 536 14 43
+        </a>
+        <a href="https://www.linkedin.com/company/saret.consulting/" target="_blank" class="contact-detail">
+          <div class="cd-icon">in</div>
+          <span id="liText">LinkedIn — SARET Consulting</span>
+        </a>
+      </div>
+      <div class="contact-form-wrap">
+        <div class="form-title" id="formTitle">Send us a message</div>
+        <form action="https://formspree.io/f/mqagqzpa" method="POST">
+          <div class="form-group">
+            <label class="form-label" id="fName">Name</label>
+            <input type="text" name="name" class="form-input" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" id="fEmail">Email</label>
+            <input type="email" name="_replyto" class="form-input" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label" id="fPhone">Phone (optional)</label>
+            <input type="tel" name="phone" class="form-input" placeholder="+52 ...">
+          </div>
+          <div class="form-group">
+            <label class="form-label" id="fMsg">Tell us about your project or challenge</label>
+            <textarea name="message" class="form-textarea" rows="4" required placeholder="Describe your technical need..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="fSubmit">Send message</button>
+        </form>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ── FOOTER ── -->
 <footer>
@@ -1149,125 +1015,437 @@
 </footer>
 
 <script>
-/* ── Language system ── */
+/* ─── Content data ─── */
 const T = {
   en: {
-    navAbout:"About", navServices:"Services", navContact:"Contact",
-    heroTag:"Engineering for scientific precision",
-    heroH1:"When your project needs optical engineering done right.",
-    heroSub:"SARET provides specialized engineering in optical design, optical coatings, thin-film deposition, and semiconductor devices — for research centers, tech companies, and advanced manufacturing.",
-    heroCta1:"Request a technical consultation", heroCta2:"See services →",
-    scrollHint:"scroll",
-    strip1:"Optical Design", strip2:"Optical Coatings", strip3:"Thin-Film Deposition",
-    strip4:"Semiconductor Devices", strip5:"Technical Training", strip6:"R&D Consulting",
-    aboutLabel:"About SARET",
-    aboutTitle:"Science-grade engineering,<br><em>applied</em> to your industry.",
-    aboutBody:"SARET was founded to bridge the gap between scientific instrumentation and applied industrial engineering. We work with companies and research groups that need deep optical or thin-film expertise — without building an in-house team from scratch.",
-    p1t:"High-precision engineering", p1d:"Developed in demanding optical engineering environments, where systems must meet strict performance requirements.",
-    p2t:"Integrated expertise", p2d:"Optics, coatings, semiconductors, and mechanical design — brought together without fragmentation between disciplines.",
-    p3t:"Direct collaboration", p3d:"Work directly with the technical expert on your project, ensuring efficient and well-grounded decisions."
-    s1:"Specialized service areas", s2:"Target industries", s3:"Bilingual service delivery", s4:"Based in León, Guanajuato",
+    navAbout:"About", 
+navServices:"Services", 
+navContact:"Contact",
+
+heroTag:"Applied scientific engineering",
+
+heroH1:"Engineering for<br><em>optical and thin-film systems</em>",
+
+heroSub:"SARET provides specialized engineering capabilities in optical design, optical coatings, and thin-film technologies for industrial and R&D applications.",
+
+heroCta1:"Request technical consultation", 
+heroCta2:"Explore services →",
+
+scrollHint:"scroll",
+
+strip1:"Optical design", 
+strip2:"Optical coatings", 
+strip3:"Thin-film technologies",
+strip4:"Semiconductor devices", 
+strip5:"Technical training", 
+strip6:"R&D consulting",
+
+aboutLabel:"About SARET",
+
+aboutTitle:"Engineering capabilities,<br><em>applied to industrial environments</em>",
+
+aboutBody:"SARET operates at the intersection of scientific instrumentation and applied engineering. It provides access to specialized capabilities in optics, coatings, and thin-film technologies, supporting the development and optimization of systems in industrial and research environments.",
+
+p1t:"High-precision engineering",
+p1d:"Developed in scientific instrumentation environments with strict performance and validation requirements.",
+
+p2t:"Integrated technical capabilities",
+p2d:"Optics, coatings, semiconductor technologies, and mechanical design addressed in a coordinated engineering framework.",
+
+p3t:"Direct technical engagement",
+p3d:"Project execution through direct interaction with technical specialists, supporting efficient decision-making and clear technical definition.",
+
+s1:"Areas of specialization",
+s2:"Industrial applications",
+s3:"León, Guanajuato, Mexico"
     svcLabel:"Services",
-    svcTitle:"What we can do<br><em>for your project</em>",
-    svcBody:"From a single design review to full project co-development. Each service is tailored to your technical stage and goals.",
-    "nb-training":"Training & Courses","nb-optical":"Optical Design","nb-coatings":"Coatings Design",
-    "nb-thinfilms":"Thin-Film Consulting","nb-semiconductor":"Semiconductor Devices","nb-consulting":"Engineering Consulting",
-    "t-tag":"Star Service · Online & On-site","t-title":"Specialized Training & Technical Courses",
-    "t-pl":"Your situation","t-ps":'"We have engineers working on optical or thin-film systems, but gaps in the fundamentals are slowing down the project."',
-    "t-desc":"Hands-on technical training for engineers, researchers, and R&D teams. Courses are customized to your project context and can be delivered online or on-site.",
-    "t-cta-hint":"Interested in a custom course?","t-cta":"Request a proposal →",
-    "o-tag":"Design Engineering","o-title":"Optical & Optomechanical Design",
-    "o-pl":"Your situation","o-ps":'"We need to design an optical system but don\'t have the in-house expertise to go from concept to manufacturable specifications."',
-    "o-desc":"Engineering services in optical system design for scientific and industrial applications — from conceptual definition to fabrication-ready specifications.",
-    "o-cta-hint":"Have a project in mind?","o-cta":"Let's discuss it →",
-    "c-tag":"Design Engineering","c-title":"Optical Coatings Design",
-    "c-pl":"Your situation","c-ps":'"Our coatings are not meeting spectral targets and we\'re not sure if the problem is the design or the deposition process."',
-    "c-desc":"Design and optimization of multilayer coatings: anti-reflective, high-reflective, filters, and polarizing components.",
-    "c-cta-hint":"Dealing with coating performance issues?","c-cta":"Get a diagnostic →",
-    "tf-tag":"Process Consulting","tf-title":"Thin-Film Deposition Consulting",
-    "tf-pl":"Your situation","tf-ps":'"We have a PVD system but our coatings show batch-to-batch variability. We can\'t figure out the root cause."',
-    "tf-desc":"Process support and troubleshooting for PVD thin-film deposition — focused on improving repeatability, uniformity, and optical performance.",
-    "tf-cta-hint":"Process giving you trouble?","tf-cta":"Book a process review →",
-    "sm-tag":"Applied Device Physics","sm-title":"Semiconductor Devices",
-    "sm-pl":"Your situation","sm-ps":'"We\'re developing a new optoelectronic device but our team lacks the device physics background to define the structure and specs."',
-    "sm-desc":"Engineering consulting for semiconductor-based devices and structures for sensing and energy applications.",
-    "sm-cta-hint":"Building a new device concept?","sm-cta":"Talk to a specialist →",
-    "cn-tag":"R&D Project Development","cn-title":"Engineering Consulting & Project Development",
-    "cn-pl":"Your situation","cn-ps":'"We have a technical concept but need help defining requirements, assessing feasibility, and structuring the engineering plan."',
-    "cn-desc":"Technical consulting for scientific and technological projects: feasibility studies, requirements definition, and engineering planning.",
-    "cn-cta-hint":"Structuring a new R&D project?","cn-cta":"Start a conversation →",
-    whyLabel:"Why SARET",
-    whyTitle:"The expertise you need,<br><em>when you need it.</em>",
-    w1t:"Astronomical precision, applied to your project", w1d:"SARET collaborators bring experience from national and international research centers, working in some of the most demanding optical engineering environments. That level of precision translates directly into industrial and research applications.",
-    w2t:"All disciplines, one point of contact", w2d:"Optics, coatings, semiconductors, and mechanical design — coordinated through a single expert. No fragmentation, no translation loss between specialties.",
-    w3t:"Bilingual, Mexico-based, globally connected", w3d:"Based in León, Guanajuato. Fluent in the technical language of both Mexican industry and international research environments.",
-    contactLabel:"Contact", contactTitle:"Let's talk about<br><em>your project.</em>",
-    contactTagline:'"Whether you\'re defining a concept or stuck on a technical problem — we\'re ready to engage."',
-    liText:"LinkedIn — SARET Consulting",
-    formTitle:"Send us a message",
-    fName:"Name", fEmail:"Email", fPhone:"Phone (optional)", fMsg:"Tell us about your project or challenge", fSubmit:"Send message",
-    fSvc:"Services", fAbout:"About"
+
+svcTitle:"Engineering capabilities<br><em>for technology development</em>",
+
+svcBody:"SARET provides engineering services across different stages of technology development, from conceptual definition to system validation.",
+
+
+"nb-training":"Technical training",
+"nb-optical":"Optical design",
+"nb-coatings":"Optical coatings",
+"nb-thinfilms":"Thin-film processes",
+"nb-semiconductor":"Semiconductor devices",
+"nb-consulting":"Engineering consulting",
+
+
+// ─── TRAINING ───
+"t-tag":"Technical training · Online & On-site",
+"t-title":"Specialized technical training",
+
+"t-pl":"Typical context",
+"t-ps":"Engineering teams requiring reinforcement of fundamentals in optics, coatings, or thin-film technologies for system development.",
+
+"t-desc":"Technical training programs for engineers and R&D teams, with content adapted to the project context and required level of specialization.",
+
+"t-cta-hint":"Custom training request",
+"t-cta":"Request proposal →",
+
+
+// ─── OPTICAL ───
+"o-tag":"Design engineering",
+"o-title":"Optical and optomechanical design",
+
+"o-pl":"Typical context",
+"o-ps":"Development of optical systems requiring architectural definition, performance analysis, and fabrication-ready specifications.",
+
+"o-desc":"Design and development of optical systems for industrial and scientific applications, from conceptual architecture to manufacturable specifications.",
+
+"o-cta-hint":"Technical project consultation",
+"o-cta":"Start discussion →",
+
+
+// ─── COATINGS ───
+"c-tag":"Design engineering",
+"c-title":"Optical coatings design",
+
+"c-pl":"Typical context",
+"c-ps":"Optical systems requiring spectral control and performance optimization under angular constraints and manufacturing tolerances.",
+
+"c-desc":"Design and optimization of multilayer optical coatings, considering spectral performance, angular sensitivity, and process robustness.",
+
+"c-cta-hint":"Coating performance evaluation",
+"c-cta":"Request analysis →",
+
+
+// ─── THINFILMS ───
+"tf-tag":"Process engineering",
+"tf-title":"Thin-film deposition processes",
+
+"tf-pl":"Typical context",
+"tf-ps":"PVD processes requiring control of repeatability, uniformity, and coating performance stability.",
+
+"tf-desc":"Analysis and optimization of thin-film deposition processes, focused on process stability, reproducibility, and performance validation.",
+
+"tf-cta-hint":"Process review",
+"tf-cta":"Request review →",
+
+
+// ─── SEMICONDUCTOR ───
+"sm-tag":"Applied physics",
+"sm-title":"Semiconductor devices",
+
+"sm-pl":"Typical context",
+"sm-ps":"Development of optoelectronic devices or semiconductor structures requiring physical modeling and definition.",
+
+"sm-desc":"Engineering consulting for the design and analysis of semiconductor devices for sensing and energy applications, including modeling and feasibility studies.",
+
+"sm-cta-hint":"Device concept discussion",
+"sm-cta":"Consult →",
+
+
+// ─── CONSULTING ───
+"cn-tag":"Technology development",
+"cn-title":"Engineering consulting and project development",
+
+"cn-pl":"Typical context",
+"cn-ps":"Projects in early or intermediate stages requiring requirements definition, technical evaluation, and development structuring.",
+
+"cn-desc":"Technical consulting for engineering and R&D projects, including feasibility studies, requirements definition, and technical risk analysis.",
+
+"cn-cta-hint":"Project initiation",
+"cn-cta":"Start conversation →",
+whyLabel:"Why SARET",
+
+whyTitle:"Engineering expertise,<br><em>validated in demanding environments</em>",
+
+w1t:"High-precision engineering background",
+w1d:"Experience developed in scientific instrumentation projects with strict performance and validation requirements.",
+
+w2t:"Integrated technical capabilities",
+w2d:"Optics, coatings, semiconductor technologies, and mechanical design addressed within a coordinated engineering framework.",
+
+w3t:"International technical context",
+w3d:"Experience aligned with international research standards and their application in industrial environments.",
+contactLabel:"Contact",
+
+contactTitle:"Technical discussion of<br><em>your project</em>",
+
+contactTagline:"Technical inquiries, project development, and collaboration opportunities are welcome.",
+liText:"LinkedIn — SARET Consulting",
+
+formTitle:"Project inquiry",
+
+fName:"Name",
+fEmail:"Email",
+fPhone:"Phone (optional)",
+fMsg:"Project description or technical request",
+fSubmit:"Submit inquiry",
+
+fSvc:"Services",
+fAbout:"About"
   },
   es: {
     navAbout:"Nosotros", navServices:"Servicios", navContact:"Contacto",
-    heroTag:"Ingeniería para la precisión científica",
-    heroH1:"Cuando tu proyecto necesita<br><em>ingeniería óptica</em><br>de verdad.",
-    heroSub:"SARET ofrece ingeniería especializada en diseño óptico, recubrimientos ópticos, depósito de películas delgadas y dispositivos semiconductores — para centros de investigación, empresas tecnológicas y manufactura avanzada.",
-    heroCta1:"Habla de tu proyecto", heroCta2:"Ver servicios →",
-    scrollHint:"desplaza",
-    strip1:"Diseño Óptico", strip2:"Recubrimientos Ópticos", strip3:"Películas Delgadas",
-    strip4:"Semiconductores", strip5:"Formación Técnica", strip6:"Consultoría I+D",
-    aboutLabel:"Sobre SARET",
-    aboutTitle:"Ingeniería de precisión científica,<br><em>aplicada</em> a tu industria.",
-    aboutBody:"SARET nació para cerrar la brecha entre la instrumentación científica y la ingeniería aplicada. Trabajamos con empresas y grupos de investigación que necesitan expertise profundo en óptica y películas delgadas — sin necesidad de construir un equipo interno.",
-    p1t:"Ingeniería del alta precisión", p1d:"Equipo altamente especializado con experiencia en centros de investigación.",
-    p2t:"Red coordinada de especialistas", p2d:"Óptica, recubrimientos, semiconductores y diseño mecánico — cada disciplina abordada por especialistas, sin fragmentación ni pérdida entre interfaces.",
-    p3t:"Ágil y enfocada", p3d:"Sin estructura de consultoría pesada. Comunicación constante con la persona especialista en tu proyecto.",
-    s1:"Áreas de servicio especializadas", s2:"Industrias objetivo", s3:"Servicio bilingüe EN/ES", s4:"Con base en León, Guanajuato",
+    navAbout:"Nosotros", 
+navServices:"Servicios", 
+navContact:"Contacto",
+
+heroTag:"Ingeniería científica aplicada",
+
+heroH1:"Ingeniería para sistemas<br><em>ópticos y de películas delgadas</em>",
+
+heroSub:"SARET ofrece servicios de ingeniería especializada en diseño óptico, recubrimientos ópticos y tecnologías de películas delgadas para aplicaciones industriales y de I+D.",
+
+heroCta1:"Solicitar consulta técnica", 
+heroCta2:"Ver servicios →",
+
+scrollHint:"desplaza",
+
+strip1:"Diseño óptico", 
+strip2:"Recubrimientos ópticos", 
+strip3:"Películas delgadas",
+strip4:"Semiconductores", 
+strip5:"Formación técnica", 
+strip6:"Consultoría en I+D",
+
+aboutLabel:"Sobre SARET",
+
+aboutTitle:"Capacidades de ingeniería,<br><em>aplicadas a entornos industriales</em>",
+
+aboutBody:"SARET opera en la intersección entre la instrumentación científica y la ingeniería aplicada. Proporciona acceso a capacidades especializadas en óptica, recubrimientos y tecnologías de películas delgadas, apoyando el desarrollo y optimización de sistemas en entornos industriales y de investigación."
+   p1t:"Ingeniería de alta precisión",
+   p1d:"Desarrollada en entornos de instrumentación científica con requerimientos estrictos de desempeño y validación.",
+
+   p2t:"Capacidades técnicas integradas",
+   p2d:"Óptica, recubrimientos, semiconductores y diseño mecánico abordados de forma coordinada dentro de un mismo desarrollo de ingeniería.",
+
+  p3t:"Ejecución técnica directa",
+  p3d:"Participación directa en la definición, análisis y desarrollo técnico de proyectos de ingeniería.",
+
+  s1:"Áreas de especialización",
+  s2:"Aplicaciones industriales",
+  s3:"León, Guanajuato, México"
     svcLabel:"Servicios",
-    svcTitle:"Lo que podemos hacer<br><em>por tu proyecto</em>",
-    svcBody:"Desde una revisión técnica puntual hasta el co-desarrollo completo de un proyecto. Cada servicio se adapta a tu etapa técnica y tus objetivos.",
-    "nb-training":"Formación y cursos","nb-optical":"Diseño óptico","nb-coatings":"Diseño de recubrimientos",
-    "nb-thinfilms":"Consultoría en PVD","nb-semiconductor":"Dispositivos semiconductores","nb-consulting":"Consultoría de ingeniería",
-    "t-tag":"Servicio estrella · En línea y presencial","t-title":"Formación técnica y cursos especializados",
-    "t-pl":"Tu situación","t-ps":'"Tenemos ingenieros trabajando en sistemas ópticos o de películas delgadas, pero las brechas en los fundamentos están frenando el proyecto."',
-    "t-desc":"Formación técnica práctica para ingenieros, investigadores y equipos de I+D. Los cursos se personalizan según el contexto de tu proyecto.",
-    "t-cta-hint":"¿Te interesa un curso a medida?","t-cta":"Solicitar propuesta →",
-    "o-tag":"Ingeniería de diseño","o-title":"Diseño óptico e interfaces optomecánicas",
-    "o-pl":"Tu situación","o-ps":'"Necesitamos diseñar un sistema óptico pero no tenemos el expertise interno para ir del concepto a especificaciones fabricables."',
-    "o-desc":"Servicios de ingeniería en diseño de sistemas ópticos para aplicaciones científicas e industriales — desde la definición conceptual hasta especificaciones listas para fabricación.",
-    "o-cta-hint":"¿Tienes un proyecto en mente?","o-cta":"Platicamos →",
-    "c-tag":"Ingeniería de diseño","c-title":"Diseño de recubrimientos ópticos",
-    "c-pl":"Tu situación","c-ps":'"Nuestros recubrimientos no alcanzan los objetivos espectrales y no sabemos si el problema es el diseño o el proceso de depósito."',
-    "c-desc":"Diseño y optimización de recubrimientos multicapa: antirreflejantes, altamente reflectantes, filtros y componentes polarizantes.",
-    "c-cta-hint":"¿Problemas de rendimiento en recubrimientos?","c-cta":"Solicitar diagnóstico →",
-    "tf-tag":"Consultoría de proceso","tf-title":"Consultoría en depósito de películas delgadas",
-    "tf-pl":"Tu situación","tf-ps":'"Tenemos un sistema PVD pero los recubrimientos muestran variabilidad entre lotes. No logramos identificar la causa raíz."',
-    "tf-desc":"Soporte de proceso y troubleshooting para depósito PVD — enfocado en mejorar repetibilidad, uniformidad y desempeño óptico.",
-    "tf-cta-hint":"¿El proceso te está dando problemas?","tf-cta":"Agenda una revisión →",
-    "sm-tag":"Física de dispositivos aplicada","sm-title":"Dispositivos semiconductores",
-    "sm-pl":"Tu situación","sm-ps":'"Estamos desarrollando un dispositivo optoelectrónico nuevo pero nuestro equipo carece de la base en física de dispositivos para definir la estructura y las especificaciones."',
-    "sm-desc":"Consultoría de ingeniería para dispositivos y estructuras basadas en semiconductores para aplicaciones de sensado y energía.",
-    "sm-cta-hint":"¿Desarrollando un nuevo concepto de dispositivo?","sm-cta":"Habla con una especialista →",
-    "cn-tag":"Desarrollo de proyectos I+D","cn-title":"Consultoría de ingeniería y desarrollo de proyectos",
-    "cn-pl":"Tu situación","cn-ps":'"Tenemos un concepto técnico pero necesitamos ayuda para definir requerimientos, evaluar viabilidad y estructurar el plan de ingeniería."',
-    "cn-desc":"Consultoría técnica para proyectos científicos y tecnológicos: estudios de viabilidad, definición de requerimientos y planeación de ingeniería.",
-    "cn-cta-hint":"¿Estructurando un proyecto de I+D?","cn-cta":"Iniciemos una conversación →",
-    whyLabel:"Por qué SARET",
-    whyTitle:"El expertise que necesitas,<br><em>cuando lo necesitas.</em>",
-    w1t:"Ingeniería de alta presicion, aplicada a tu proyecto", w1d:"Los colaboradores de SARET cuentan con experiencia en centros de investigación nacionales e internacionales, en los entornos más exigentes de la ingeniería óptica. Esa precisión se transfiere directamente a aplicaciones industriales y de investigación.",
-    w2t:"Todas las disciplinas, un solo punto de contacto", w2d:"Óptica, recubrimientos, semiconductores y diseño mecánico — coordinados por una sola experta. Sin fragmentación ni pérdida de información entre especialidades.",
-    w3t:"Bilingüe, con base en México, conectada globalmente", w3d:"Con base en León, Guanajuato. Con fluidez en el lenguaje técnico de la industria mexicana y los entornos de investigación internacionales.",
-    contactLabel:"Contacto", contactTitle:"Hablemos de<br><em>tu proyecto.</em>",
-    contactTagline:'"Ya sea que estés definiendo un concepto o enfrentando un problema técnico — estamos listos para colaborar."',
-    liText:"LinkedIn — SARET Consulting",
-    formTitle:"Envíanos un mensaje",
-    fName:"Nombre", fEmail:"Correo electrónico", fPhone:"Teléfono (opcional)", fMsg:"Cuéntanos tu proyecto o reto técnico", fSubmit:"Enviar mensaje",
-    fSvc:"Servicios", fAbout:"Nosotros"
+
+svcTitle:"Capacidades de ingeniería<br><em>para desarrollo tecnológico</em>",
+
+svcBody:"SARET proporciona servicios de ingeniería en distintas etapas del desarrollo tecnológico, desde la definición conceptual hasta la validación de sistemas.",
+
+
+"nb-training":"Formación técnica",
+"nb-optical":"Diseño óptico",
+"nb-coatings":"Recubrimientos ópticos",
+"nb-thinfilms":"Procesos de películas delgadas",
+"nb-semiconductor":"Dispositivos semiconductores",
+"nb-consulting":"Consultoría en ingeniería",
+
+
+// ─── TRAINING ───
+"t-tag":"Formación técnica · En línea y presencial",
+"t-title":"Formación técnica especializada",
+
+"t-pl":"Contexto típico",
+"t-ps":"Equipos de ingeniería que requieren fortalecer fundamentos en óptica, recubrimientos o tecnologías de películas delgadas para el desarrollo de sistemas.",
+
+"t-desc":"Programas de formación técnica dirigidos a ingenieros y equipos de I+D, con contenidos adaptados al contexto del proyecto y nivel de especialización requerido.",
+
+"t-cta-hint":"Solicitud de formación personalizada",
+"t-cta":"Solicitar propuesta →",
+
+
+// ─── OPTICAL ───
+"o-tag":"Ingeniería de diseño",
+"o-title":"Diseño óptico y optomecánico",
+
+"o-pl":"Contexto típico",
+"o-ps":"Desarrollo de sistemas ópticos que requieren definición de arquitectura, análisis de desempeño y especificaciones para fabricación.",
+
+"o-desc":"Diseño y desarrollo de sistemas ópticos para aplicaciones industriales y científicas, desde la arquitectura conceptual hasta la generación de especificaciones fabricables.",
+
+"o-cta-hint":"Consulta técnica de proyecto",
+"o-cta":"Iniciar discusión →",
+
+
+// ─── COATINGS ───
+"c-tag":"Ingeniería de diseño",
+"c-title":"Diseño de recubrimientos ópticos",
+
+"c-pl":"Contexto típico",
+"c-ps":"Sistemas ópticos que requieren control en el rendimiento óptico y optimización de desempeño bajo condiciones específicas y tolerancias de fabricación.",
+
+"c-desc":"Diseño y optimización de recubrimientos multicapa, considerando desempeño espectral, sensibilidad y robustez frente a variaciones de proceso de manufactura.",
+
+"c-cta-hint":"Evaluación de desempeño de recubrimientos",
+"c-cta":"Solicitar análisis →",
+
+
+// ─── THINFILMS ───
+"tf-tag":"Ingeniería de proceso",
+"tf-title":"Procesos de depósito de películas delgadas",
+
+"tf-pl":"Contexto típico",
+"tf-ps":"Procesos PVD que requieren control de repetibilidad, uniformidad y estabilidad en el desempeño de recubrimientos.",
+
+"tf-desc":"Análisis y optimización de procesos de depósito de películas delgadas, enfocados en estabilidad de proceso, reproducibilidad y validación de desempeño.",
+
+"tf-cta-hint":"Revisión de proceso",
+"tf-cta":"Solicitar revisión →",
+
+
+// ─── SEMICONDUCTOR ───
+"sm-tag":"Física aplicada",
+"sm-title":"Dispositivos semiconductores",
+
+"sm-pl":"Contexto típico",
+"sm-ps":"Desarrollo de dispositivos optoelectrónicos o estructuras semiconductoras que requieren definición física y modelado de comportamiento.",
+
+"sm-desc":"Consultoría en diseño y análisis de dispositivos semiconductores para aplicaciones de sensado y energía, incluyendo modelado y estudios de viabilidad.",
+
+"sm-cta-hint":"Discusión de concepto de dispositivo",
+"sm-cta":"Consultar →",
+
+
+// ─── CONSULTING ───
+"cn-tag":"Desarrollo tecnológico",
+"cn-title":"Consultoría en ingeniería y desarrollo de proyectos",
+
+"cn-pl":"Contexto típico",
+"cn-ps":"Proyectos en etapa inicial o intermedia que requieren definición de requerimientos, evaluación técnica y estructuración del desarrollo.",
+
+"cn-desc":"Consultoría técnica para proyectos de ingeniería e I+D, incluyendo estudios de viabilidad, definición de requerimientos y análisis de riesgos técnicos.",
+
+"cn-cta-hint":"Inicio de proyecto",
+"cn-cta":"Iniciar discusión →",
+
+whyLabel:"Por qué SARET",
+
+whyTitle:"Capacidades de ingeniería,<br><em>validadas en entornos exigentes</em>",
+
+w1t:"Base en ingeniería de alta precisión",
+w1d:"Experiencia desarrollada en proyectos de instrumentación científica con requerimientos estrictos de desempeño y validación.",
+
+w2t:"Capacidades técnicas integradas",
+w2d:"Óptica, recubrimientos y tecnologías de semiconductores abordadas de forma coordinada dentro de un mismo desarrollo de ingeniería.",
+
+w3t:"Contexto técnico internacional",
+w3d:"Experiencia alineada con estándares internacionales de investigación y su aplicación en entornos industriales.",
+
+contactTitle:"Discusión técnica de<br><em>tu proyecto</em>",
+
+contactTagline:"Consultas técnicas, desarrollo de proyectos y oportunidades de colaboración.",
+
+liText:"LinkedIn — SARET Consulting",
+
+formTitle:"Consulta de proyecto",
+
+fName:"Nombre",
+fEmail:"Correo electrónico",
+fPhone:"Teléfono (opcional)",
+
+fMsg:"Descripción del proyecto o requerimiento técnico",
+
+fSubmit:"Enviar consulta",
+
+fSvc:"Servicios",
+fAbout:"Nosotros"
   }
 };
 
+const bullets = {
+  en: {
+   en: {
+training:[
+  "Optical system fundamentals: image formation, aberrations, and performance evaluation criteria.",
+  "Advanced optical design: optimization, tolerance analysis, and manufacturable specifications.",
+  "Multilayer coatings and spectral performance optimization.",
+  "Thin-film deposition for optical applications: process control and experimental adjustments.",
+  "Semiconductor devices: fundamentals of semiconductor physics and system evaluation for sensing and energy applications."
+],
+
+optical:[
+  "Optical systems for imaging and illumination applications.",
+  "Collimators, cameras, and optical coupling systems.",
+  "Tolerance and sensitivity evaluation.",
+  "Interface definition for alignment and optomechanical integration."
+],
+
+coatings:[
+  "Multilayer coatings and spectral performance as a function of wavelength.",
+  "Sensitivity and robustness under manufacturing tolerances.",
+  "Deliverables: design files, performance reports, and technical recommendations."
+],
+
+thinfilms:[
+  "Process evaluation: materials, monitoring, and deposition planning.",
+  "Root-cause analysis of spectral deviations and process adjustments.",
+  "Strategies for improving stability and reproducibility."
+],
+
+semiconductor:[
+  "Device physics for optoelectronic applications.",
+  "Modeling and feasibility assessment of semiconductor structures.",
+  "Experimental definition and characterization strategies."
+],
+
+consulting:[
+  "Feasibility and trade-off studies for optical, thin-film, and semiconductor systems.",
+  "R&D structuring: requirements, milestones, and technical risks.",
+  "Technical review of specifications, documentation, and experimental plans.",
+  "Collaboration with research centers, laboratories, and industry."
+]
+}
+  },
+  es: {
+training:[
+  "Fundamentos de sistemas ópticos: formación de imagen, aberraciones y criterios de evaluación de desempeño.",
+  "Diseño óptico avanzado: optimización, análisis de tolerancias y especificaciones fabricables.",
+  "Recubrimientos multicapa y optimización del desempeño espectral.",
+  "Depósito de películas delgadas para aplicaciones ópticas: control de proceso y ajustes experimentales.",
+  "Dispositivos semiconductores: fundamentos de física de semiconductores, evaluación de sistemas aplicados a sensado y energía"
+],
+
+optical:[
+  "Sistemas ópticos para aplicaciones de imagen e iluminación.",
+  "Colimadores, cámaras y sistemas de acoplamiento óptico.",
+  "Evaluación de tolerancias y sensibilidad.",
+  "Definición de interfaces para alineación e integración optomecánica."
+],
+
+coatings:[
+  "Recubrimientos multicapa y desempeño espectral en función de longitud de onda.",
+  "Sensibilidad y robustez bajo tolerancias de fabricación.",
+  "Entregables: archivos de diseño, reportes de desempeño y recomendaciones técnicas."
+],
+
+thinfilms:[
+  "Evaluación de proceso: materiales, monitoreo y planeación de depósitos.",
+  "Análisis de causa raíz de desviaciones espectrales y ajustes de proceso.",
+  "Estrategias de mejora en estabilidad y reproducibilidad."
+],
+
+semiconductor:[
+  "Física de dispositivos para aplicaciones optoelectrónicas.",
+  "Modelado y evaluación de viabilidad de estructuras semiconductoras.",
+  "Definición experimental y estrategias de caracterización."
+],
+
+consulting:[
+  "Estudios de viabilidad y análisis de compromiso para sistemas ópticos, de películas delgadas y semiconductores.",
+  "Estructuración de I+D: requerimientos, hitos y riesgos técnicos.",
+  "Revisión técnica de especificaciones, documentación y planes experimentales.",
+  "Colaboración con centros de investigación, laboratorios e industria."
+]
+  }
+};
+
+/* ─── bullet ID map ─── */
+const bulletId = {
+  training:'t-bullets', optical:'o-bullets', coatings:'c-bullets',
+  thinfilms:'tf-bullets', semiconductor:'sm-bullets', consulting:'cn-bullets'
+};
+
 let lang = 'en';
+
+function renderBullets(key, l) {
+  const el = document.getElementById(bulletId[key]);
+  if (!el) return;
+  el.innerHTML = (bullets[l][key] || []).map(b => `<li>${b}</li>`).join('');
+}
 
 function setLang(l) {
   lang = l;
@@ -1278,38 +1456,8 @@ function setLang(l) {
     const el = document.getElementById(k);
     if (el) el.innerHTML = t[k];
   });
-  // re-render active service bullets
   const active = document.querySelector('.service-panel.active');
-  if (active) {
-    const key = active.id.replace('svc-','');
-    renderBullets(key, l);
-  }
-}
-
-const bullets = {
-  en: {
-    training:["Optical design fundamentals: imaging systems, aberrations, sequential & non-sequential modeling.","Advanced optical design: optimization, tolerance analysis, manufacturable specifications.","Optical coatings design: from basic multilayers to advanced filter design.","Thin-film deposition for optical applications: process, troubleshooting, and QA.","Semiconductor devices and optoelectronics: device physics for sensing and energy."],
-    optical:["Optical design for imaging and spectroscopic systems.","Collimators, cameras, relay optics, and illumination optics.","Tolerance analysis and sensitivity studies.","Interface recommendations for alignment and optomechanical integration."],
-    coatings:["Multilayer thin-film design and spectral optimization.","Angle and polarization sensitivity analysis.","Robustness and thickness tolerance studies.","Deliverables: design files + performance report and recommendations."],
-    thinfilms:["Process review: materials, monitoring strategy, and run planning.","Root-cause analysis for spectral mismatch and drift.","Uniformity and reproducibility strategies.","Measurement plan recommendations (R/T, thickness, mapping)."],
-    semiconductor:["Device physics guidance for optoelectronic and sensing concepts.","Modeling and feasibility studies for device structures.","Support in experimental planning and characterization strategy."],
-    consulting:["Feasibility and trade studies for optical / thin-film / semiconductor systems.","R&D project structuring: requirements, milestones, and technical risks.","Technical review of documents, specifications, and experimental plans.","Collaboration with universities, labs, and industry partners."]
-  },
-  es: {
-    training:["Fundamentos de diseño óptico: sistemas de imagen, aberraciones, modelado secuencial y no secuencial.","Diseño óptico avanzado: optimización, análisis de tolerancias y especificaciones fabricables.","Diseño de recubrimientos ópticos: de multicapas básicas a filtros avanzados.","Depósito de películas delgadas para aplicaciones ópticas: proceso, troubleshooting y QA.","Dispositivos semiconductores y optoelectrónica: física de dispositivos para sensado y energía."],
-    optical:["Diseño óptico para sistemas de imagen y espectroscopía.","Colimadores, cámaras, relés ópticos y óptica de iluminación.","Análisis de tolerancias y sensibilidad.","Recomendaciones de integración: alineación e interfaces optomecánicas."],
-    coatings:["Diseño multicapa y optimización espectral.","Análisis de sensibilidad.","Estudios de robustez y tolerancias de fabricación.","Entregables: archivos de diseño + reporte técnico y recomendaciones."],
-    thinfilms:["Revisión del proceso: materiales, estrategia de monitoreo y planeación de depósitos.","Análisis de causa raíz para desajuste de mediciones y diseño.","Estrategias de uniformidad y reproducibilidad.","Recomendaciones de plan de medición (R/T, espesor, mapeo)."],
-    semiconductor:["Asesoría en física de dispositivos optoelectrónicos y de sensado.","Modelado y estudios de viabilidad de estructuras.","Apoyo en planeación experimental y estrategias de caracterización."],
-    consulting:["Estudios de viabilidad para sistemas ópticos / películas delgadas / semiconductores.","Estructuración de proyectos de I+D: requerimientos, hitos y riesgos técnicos.","Revisión técnica de documentos, especificaciones y planes experimentales.","Colaboración con universidades, laboratorios e industria."]
-  }
-};
-
-function renderBullets(key, l) {
-  const el = document.getElementById(key === 'thinfilms' ? 'tf-bullets' : key === 'semiconductor' ? 'sm-bullets' : key === 'consulting' ? 'cn-bullets' : key[0]+'-bullets');
-  if (!el) return;
-  const bList = bullets[l][key] || [];
-  el.innerHTML = bList.map(b => `<li>${b}</li>`).join('');
+  if (active) renderBullets(active.id.replace('svc-',''), l);
 }
 
 function showSvc(key) {
@@ -1320,17 +1468,18 @@ function showSvc(key) {
   renderBullets(key, lang);
 }
 
-/* ── Scroll reveal ── */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+/* ─── Scroll reveal ─── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-/* init */
+/* ─── Init ─── */
 setLang('en');
 </script>
 </body>
 </html>
+
 
 
 
