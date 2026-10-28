@@ -9,7 +9,6 @@
 <!-- [CAMBIO R08] Metadatos basicos. URL canonica y hreflang se anadiran al definir el dominio. -->
 <meta content="ROBERTA: consultoría, diseño, desarrollo, verificación y validación de sistemas. Ingeniería de sistemas, óptica, películas delgadas y semiconductores." name="description"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-
 <link href="styles.css" rel="stylesheet"/></head>
 <body><a class="skip-link" href="#services">Saltar a servicios</a>
 <!-- [CAMBIO R01] Logotipo tipografico temporal, sin depender del archivo saret_logo.png. -->
@@ -43,7 +42,7 @@
 <!-- [CAMBIO R11] Especialidades visibles, en orden de capacidades. -->
 <div aria-label="Áreas de experiencia" class="expertise-strip"><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip1">Ingeniería de sistemas</span></div><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip2">Diseño óptico</span></div><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip3">Recubrimientos ópticos</span></div><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip4">Películas delgadas</span></div><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip5">Semiconductores y detectores</span></div><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip6">Desarrollo de proyectos</span></div></div>
 <!-- [CAMBIO V2] Estructura sincronizada con los textos revisados. -->
-<section aria-labelledby="aboutTitle" id="about">
+<!-- [CAMBIO R12-V3] Retirado bloque "Entregables posibles" por solicitud. Conservados el texto de enfoque y sus dos pilares. --><section aria-labelledby="aboutTitle" id="about">
 <div class="section-wrap about-grid">
 <div class="about-left">
 <div class="section-label" id="aboutLabel">Nuestro enfoque</div>
@@ -53,11 +52,7 @@
 <div class="pillar"><div class="pillar-text"><strong id="p1t">Ingeniería orientada a requerimientos</strong><span id="p1d">Transformamos necesidades y objetivos en requerimientos técnicos que orientan la definición de arquitecturas, el diseño y el desarrollo de sistemas.</span></div></div><div class="pillar"><div class="pillar-text"><strong id="p2t">Integración de conocimientos especializados</strong><span id="p2d">Abordamos sistemas que requieren combinar distintas disciplinas y tecnologías.</span></div></div>
 </div>
 </div>
-<div class="about-deliverables">
-<div class="deliverable-head" id="delTitle">Entregables posibles</div>
-<ul class="deliverable-list"><li><strong id="del1t">Especificaciones y arquitecturas</strong><span id="del1d">Requerimientos, interfaces y alternativas de diseño.</span></li><li><strong id="del2t">Diseños y evaluaciones</strong><span id="del2d">Modelos, simulaciones y estudios de factibilidad.</span></li><li><strong id="del3t">Documentación técnica</strong><span id="del3d">Especificaciones para fabricación y recomendaciones.</span></li><li><strong id="del4t">Validación y seguimiento</strong><span id="del4d">Planes de prueba, análisis de resultados e informes técnicos.</span></li></ul>
-<p class="deliverable-disclaimer" id="delNote">Los entregables se definen de acuerdo con el alcance contratado.</p>
-</div>
+
 </div>
 </section>
 <!-- [CAMBIO V2] Estructura sincronizada con los textos revisados. -->
@@ -65,7 +60,7 @@
 <div class="section-label" id="svcLabel">Servicios</div>
 <h2 class="section-title" id="svcTitle">Capacidades para <em>desarrollar tecnología</em></h2>
 <p class="section-body" id="svcBody">Ofrecemos servicios en distintas etapas de un proyecto de ingeniería.</p>
-<div class="services-layout"><div aria-label="Servicios" class="services-nav" role="tablist"><button aria-controls="svc-systems" aria-selected="true" class="svc-nav-btn active" id="nb-systems" onclick="showSvc('systems')" role="tab" tabindex="0" type="button">Ingeniería de sistemas</button><button aria-controls="svc-optical" aria-selected="false" class="svc-nav-btn" id="nb-optical" onclick="showSvc('optical')" role="tab" tabindex="-1" type="button">Diseño óptico</button><button aria-controls="svc-thinfilms" aria-selected="false" class="svc-nav-btn" id="nb-thinfilms" onclick="showSvc('thinfilms')" role="tab" tabindex="-1" type="button">Películas delgadas</button><button aria-controls="svc-coatings" aria-selected="false" class="svc-nav-btn" id="nb-coatings" onclick="showSvc('coatings')" role="tab" tabindex="-1" type="button">Recubrimientos ópticos</button><button aria-controls="svc-semiconductor" aria-selected="false" class="svc-nav-btn" id="nb-semiconductor" onclick="showSvc('semiconductor')" role="tab" tabindex="-1" type="button">Semiconductores</button></div><div class="services-content"><section aria-labelledby="nb-systems" class="service-panel active" id="svc-systems" role="tabpanel" tabindex="0"><ul class="svc-bullets" id="sy-bullets"><li>Identificación de necesidades y definición de requerimientos verificables.</li><li>Arquitecturas e interfaces a nivel de sistema y subsistema.</li><li>Estudios de factibilidad, alternativas y riesgos técnicos.</li><li>Planeación de verificación, validación y criterios de aceptación.</li></ul></section><section aria-labelledby="nb-optical" class="service-panel" hidden="" id="svc-optical" role="tabpanel" tabindex="0"><ul class="svc-bullets" id="o-bullets"><li>Diseño de sistemas de imagen, iluminación, acoplamiento y medición.</li><li>Análisis de tolerancias, sensibilidad y desempeño óptico.</li><li>Definición de interfaces de integración y alineación.</li><li>Diseño de estrategias de medición y validación metrológica.</li></ul></section><section aria-labelledby="nb-thinfilms" class="service-panel" hidden="" id="svc-thinfilms" role="tabpanel" tabindex="0"><ul class="svc-bullets" id="tf-bullets"><li>Evaluación de parámetros y documentación de procesos de depósito.</li><li>Diagnóstico técnico de variaciones en desempeño y repetibilidad.</li><li>Soporte para planeación de pruebas y caracterización.</li><li>Orientación a equipos que disponen de instalaciones de fabricación.</li></ul></section><section aria-labelledby="nb-coatings" class="service-panel" hidden="" id="svc-coatings" role="tabpanel" tabindex="0"><ul class="svc-bullets" id="c-bullets"><li>Diseño de recubrimientos antirreflejantes, reflejantes y filtros ópticos.</li><li>Optimización espectral y angular con restricciones de fabricación.</li><li>Análisis de tolerancias y sensibilidad del diseño.</li><li>Especificaciones técnicas y evaluación de resultados de fabricación.</li></ul></section><section aria-labelledby="nb-semiconductor" class="service-panel" hidden="" id="svc-semiconductor" role="tabpanel" tabindex="0"><ul class="svc-bullets" id="sm-bullets"><li>Análisis de dispositivos semiconductores y detectores inductivos.</li><li>Modelado, definición de parámetros y estudios de factibilidad.</li><li>Definición de estrategias de caracterización y validación.</li><li>Asesoría técnica para desarrollo e integración de dispositivos.</li></ul></section></div></div></div></section>
+<!-- [CAMBIO R13-V3] Eliminadas listas de actividades por especialidad. Las cinco áreas permanecen como tarjetas informativas, sin pestañas inactivas. --><ul aria-label="Áreas de especialización" class="services-grid"><li class="service-area"><h3 class="service-area-title" id="nb-systems">Ingeniería de sistemas</h3></li><li class="service-area"><h3 class="service-area-title" id="nb-optical">Diseño óptico</h3></li><li class="service-area"><h3 class="service-area-title" id="nb-thinfilms">Películas delgadas</h3></li><li class="service-area"><h3 class="service-area-title" id="nb-coatings">Recubrimientos ópticos</h3></li><li class="service-area"><h3 class="service-area-title" id="nb-semiconductor">Semiconductores</h3></li></ul></div></section>
 <!-- [CAMBIO R14] Nueva seccion: proceso de trabajo no obligatorio ni lineal. -->
 <section aria-labelledby="processTitle" class="process" id="process">
 <div class="section-wrap">
@@ -124,7 +119,7 @@
 </section>
 <footer><div class="footer-copy">© 2026 ROBERTA · León, Guanajuato, México</div>
 <div class="footer-links"><a href="#services" id="fSvc">Servicios</a><a href="#about" id="fAbout">Enfoque</a><a href="#team" id="fTeam">Equipo</a><a href="mailto:saret.consulting@outlook.mx" id="fEmailFooter">Correo</a></div></footer>
-
 <!-- [CAMBIO R22] Diccionario bilingüe y comportamiento en script.js. -->
 <script defer="" src="script.js"></script></body>
 </html>
+
