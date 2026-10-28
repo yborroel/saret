@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SARET | Scientific Applications and Research in Engineering Technologies</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- [CAMBIO R00] Nombre provisional ROBERTA. Backronym aún en revisión. -->
+  <title>ROBERTA | Consultoría, diseño y desarrollo tecnológico</title>
+  <!-- [CAMBIO R08] Metadatos basicos. URL canonica y hreflang se anadiran al definir el dominio. -->
+  <meta name="description" content="ROBERTA: consultoría de ingeniería para empresas. Diseño de sistemas, subsistemas y componentes; óptica, recubrimientos, microelectrónica y apoyo técnico para fabricación y validación." />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
   :root {
     --bg:      #f4f3f0;
@@ -493,7 +495,7 @@
   }
   .svc-cta-link:hover { gap: 10px; }
 
-  /* ── WHY SARET ── */
+  /* ── WHY ROBERTA ── */
   #why { background: var(--bg); }
   .why-grid {
     display: grid;
@@ -661,628 +663,771 @@
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .reveal.visible { opacity: 1; transform: none; }
-  </style>
+  
+
+/* [CAMBIO R01] Marca siempre legible, tambien sin logotipo o en movil. */
+.nav-logo-text {font-size:19px; font-weight:500; letter-spacing:0.10em; color:var(--ink);}
+.nav-logo {text-decoration:none;}
+@media(max-width:640px){ .nav-logo-text {display:inline;} }
+
+/* [CAMBIO R02] Navegacion principal adaptada a moviles. El menu lateral de
+   servicios ya NO usa una etiqueta nav anidada. */
+nav.top-nav { gap:18px; }
+.top-nav .nav-right { gap:20px; }
+.top-nav .nav-links { gap:20px; }
+@media(max-width:780px){
+  nav.top-nav {padding:12px 18px;}
+  .top-nav .nav-right {gap:12px;}
+  .top-nav .nav-links {gap:12px;}
+  .top-nav .nav-links a {font-size:12px;}
+  .top-nav .nav-links .nav-optional {display:none;}
+  .top-nav .lang-btn {padding:5px 7px;}
+  .hero {padding:115px 20px 72px;}
+}
+@media(max-width:370px){
+  .nav-logo-text {font-size:16px;letter-spacing:.05em;}
+  .top-nav .nav-links {gap:9px;}
+}
+/* [CAMBIO R04] Evitar paneles que parecen vacios en capturas y en navegadores
+   donde IntersectionObserver no dispara de inmediato. */
+.reveal,.reveal.visible {opacity:1;transform:none;transition:none;}
+
+/* [CAMBIO R05] Contenido comercial: entregables, proceso y equipo. */
+.about-deliverables {background:var(--surface); border:1px solid var(--border); padding:26px;
+ border-radius:10px;}
+.deliverable-head {font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+ font-family:'DM Mono',monospace;color:var(--accent);margin-bottom:18px;}
+.deliverable-list {list-style:none;display:flex;flex-direction:column;gap:17px;}
+.deliverable-list li {border-bottom:1px solid var(--border);padding-bottom:13px;font-size:14px;color:var(--mid);}
+.deliverable-list li:last-child {border:0;padding-bottom:0;}
+.deliverable-list strong {color:var(--ink);display:block;font-weight:500;}
+.deliverable-disclaimer {margin-top:24px;font-size:12px;color:var(--muted);}
+.process {background:var(--surface);border-top:1px solid var(--border);}
+.process-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px;}
+.process-card {border:1px solid var(--border);border-radius:8px;padding:22px 19px;background:var(--bg);}
+.process-num {font:500 12px 'DM Mono',monospace;color:var(--accent);margin-bottom:18px;}
+.process-title {font-size:16px; font-weight:500;line-height:1.35;margin-bottom:10px;}
+.process-text {font-size:13px;color:var(--mid);line-height:1.65;}
+.process-note {margin-top:20px;font-size:13px;color:var(--mid);}
+.team {background:var(--bg);border-top:1px solid var(--border);}
+.team-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:32px;}
+.team-card {background:var(--surface);border:1px solid var(--border);padding:27px;border-radius:10px;}
+.team-card .mini {font:500 11px 'DM Mono',monospace;color:var(--accent);letter-spacing:.08em;margin-bottom:10px;}
+.team-card h3 {font:300 24px 'Fraunces',serif;line-height:1.2;margin-bottom:12px;}
+.team-card p {font-size:14px;color:var(--mid);}
+@media(max-width:900px){.process-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:640px){
+  .process-grid,.team-grid {grid-template-columns:1fr;}
+  .about-deliverables {padding:20px;}
+}
+/* [CAMBIO R06] Tabs mobile: botones visibles sin perderse en una columna larga. */
+@media(max-width:720px){
+  .services-nav {position:static;flex-direction:row;overflow-x:auto;padding-bottom:8px;gap:4px;}
+  .svc-nav-btn {flex:0 0 auto;white-space:nowrap;border-left:0;border-bottom:2px solid transparent;
+    border-radius:5px 5px 0 0;}
+  .svc-nav-btn.active {border-left:0;border-bottom-color:var(--accent);}
+  .services-layout {gap:24px;}
+}
+/* [CAMBIO R07] Accesibilidad. */
+:focus-visible {outline:3px solid var(--accent);outline-offset:3px;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.hero-tag,.hero-h1,.hero-sub,.hero-ctas,.hero-scroll{animation:none;opacity:1;}}
+.contact-note {font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6;}
+.form-input, .form-textarea {font-weight:400;}
+</style>
 </head>
 <body>
-
-<!-- ══ NAV ══ -->
-<nav>
-  <div class="nav-logo">
-    <img src="saret_logo.png" alt="SARET" onerror="this.style.display='none'">
-    <span class="nav-logo-text">SARET</span>
+<!-- [CAMBIO R01] Logotipo tipografico temporal, sin depender del archivo saret_logo.png. -->
+<nav class="top-nav" aria-label="Principal">
+ <a class="nav-logo" href="#home" aria-label="ROBERTA, inicio"><span class="nav-logo-text">ROBERTA</span></a>
+ <div class="nav-right">
+  <ul class="nav-links"><li><a href="#about" id="navAbout" class="nav-optional">Enfoque</a></li>
+<li><a href="#services" id="navServices" class="">Servicios</a></li>
+<li><a href="#process" id="navProcess" class="nav-optional">Proceso</a></li>
+<li><a href="#team" id="navTeam" class="nav-optional">Equipo</a></li>
+<li><a href="#contact" id="navContact" class="">Contacto</a></li></ul>
+  <!-- [CAMBIO R03] ES es el idioma predeterminado. Por ahora el selector cambia contenidos
+       dentro de la misma URL. En fase SEO final, dividir en /es/ y /en/. -->
+  <div class="lang-switcher" role="group" aria-label="Idioma / Language">
+   <button type="button" class="lang-btn active" data-lang="es" onclick="setLang('es')" aria-pressed="true">ES</button>
+   <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')" aria-pressed="false">EN</button>
   </div>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="#about"    id="navAbout">About</a></li>
-      <li><a href="#services" id="navServices">Services</a></li>
-      <li><a href="#contact"  id="navContact">Contact</a></li>
-    </ul>
-    <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn"        onclick="setLang('es')">ES</button>
-    </div>
-  </div>
+ </div>
 </nav>
 
-<!-- ══ HERO ══ -->
-<div class="hero">
-  <div class="hero-wash"></div>
-  <div class="hero-wash2"></div>
-  <div class="hero-inner">
-    <div class="hero-tag"  id="heroTag">Applied scientific engineering</div>
-    <h1  class="hero-h1"  id="heroH1">Engineering for<br><em>optical and thin-film systems</em></h1>
-    <p   class="hero-sub" id="heroSub">SARET provides specialized engineering capabilities in optical design, optical coatings, and thin-film technologies for industrial and R&amp;D applications.</p>
-    <div class="hero-ctas">
-      <a href="#contact"  class="btn-primary" id="heroCta1">Request technical consultation</a>
-      <a href="#services" class="btn-ghost"   id="heroCta2">Explore services →</a>
-    </div>
+<!-- [CAMBIO R10] Portada: foco en ingeniería y desarrollo, no solo en optica y peliculas delgadas. -->
+<header class="hero" id="home">
+ <div class="hero-wash"></div><div class="hero-wash2"></div>
+ <div class="hero-inner">
+  <div class="hero-tag" id="heroTag" >CONSULTORÍA · DISEÑO · DESARROLLO</div>
+  <h1 class="hero-h1" id="heroH1" >Ingeniería para <em>desarrollar soluciones tecnológicas</em></h1>
+  <p class="hero-sub" id="heroSub" >Definimos requerimientos, diseñamos arquitecturas, sistemas, subsistemas y componentes, y acompañamos el desarrollo técnico hasta la verificación y validación, según el alcance de cada proyecto.</p>
+  <div class="hero-ctas"><a href="#contact" class="btn-primary" id="heroCta1">Cuéntanos sobre tu proyecto</a><a href="#services" class="btn-ghost" id="heroCta2">Explorar servicios →</a></div>
+ </div>
+ <div class="hero-scroll"><div class="scroll-line"></div><span class="" id="scrollHint" >desplazar</span></div>
+</header>
+
+<!-- [CAMBIO R11] Especialidades visibles, en orden de capacidades. -->
+<div class="expertise-strip" aria-label="Áreas de experiencia"><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip1">Ingeniería de sistemas</span></div><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip2">Diseño óptico</span></div><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip3">Recubrimientos ópticos</span></div><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip4">Películas delgadas</span></div><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip5">Semiconductores y detectores</span></div><div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip6">Desarrollo de proyectos</span></div></div>
+
+<!-- [CAMBIO R12] Enfoque y entregables: se retiran contadores no sustentados (6, 4+). -->
+<section id="about" aria-labelledby="aboutTitle">
+ <div class="section-wrap about-grid">
+  <div class="about-left">
+   <div class="section-label" id="aboutLabel" >Nuestro enfoque</div>
+   <h2 class="section-title" id="aboutTitle" >De la necesidad técnica <em>a una solución de ingeniería</em></h2>
+   <p class="section-body" id="aboutBody" >ROBERTA reúne experiencia en ingeniería de sistemas, instrumentación, óptica, microelectrónica y tecnologías de películas delgadas. Participamos en la definición, el diseño y el desarrollo técnico de soluciones para empresas, con atención a las restricciones de desempeño, integración y fabricación.</p>
+   <div class="about-pillars">
+    <div class="pillar"><div class="pillar-text"><strong id="p1t">Diseño a partir de requerimientos</strong><span id="p1d">Traducimos objetivos y restricciones técnicas en especificaciones y decisiones de diseño verificables.</span></div></div><div class="pillar"><div class="pillar-text"><strong id="p2t">Experiencia interdisciplinaria</strong><span id="p2d">Combinamos ingeniería de sistemas con conocimientos especializados en óptica, recubrimientos y dispositivos.</span></div></div><div class="pillar"><div class="pillar-text"><strong id="p3t">Acompañamiento según el proyecto</strong><span id="p3d">Trabajamos en etapas específicas o en un desarrollo más amplio, en coordinación con los equipos y proveedores involucrados.</span></div></div>
+   </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span id="scrollHint">scroll</span>
+  <div class="about-deliverables">
+   <div class="deliverable-head" id="delTitle" >Entregables posibles</div>
+   <ul class="deliverable-list"><li><strong id="del1t">Especificaciones y arquitecturas</strong><span id="del1d">Requerimientos, interfaces y alternativas de diseño.</span></li><li><strong id="del2t">Diseños y evaluaciones</strong><span id="del2d">Modelos, simulaciones y estudios de factibilidad.</span></li><li><strong id="del3t">Documentación técnica</strong><span id="del3d">Especificaciones para fabricación y recomendaciones.</span></li><li><strong id="del4t">Validación y seguimiento</strong><span id="del4d">Planes de prueba, análisis de resultados e informes técnicos.</span></li></ul>
+   <p class="deliverable-disclaimer" id="delNote" >Los entregables se definen de acuerdo con el alcance contratado.</p>
   </div>
-</div>
+ </div>
+</section>
 
-<!-- ══ EXPERTISE STRIP ══ -->
-<div class="expertise-strip">
-  <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip1">Optical Design</span></div>
-  <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip2">Optical Coatings</span></div>
-  <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip3">Thin-Film Deposition</span></div>
-  <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip4">Semiconductor Devices</span></div>
-  <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip5">Technical Training</span></div>
-  <div class="strip-item"><div class="strip-dot"></div><span class="strip-text" id="strip6">R&amp;D Consulting</span></div>
-</div>
-
-<!-- ══ ABOUT ══ -->
-<div id="about">
-  <div class="section-wrap">
-    <div class="about-grid">
-
-      <!-- LEFT -->
-      <div class="about-left reveal">
-        <div class="section-label" id="aboutLabel">About SARET</div>
-        <h2 class="section-title" id="aboutTitle">Engineering capabilities,<br><em>applied to industrial environments</em></h2>
-        <p class="section-body" id="aboutBody">SARET operates at the intersection of scientific instrumentation and applied engineering. We provide access to specialized capabilities in optics, coatings, and thin-film technologies — supporting the development and optimization of systems in industrial and research environments.</p>
-
-        <div class="about-pillars">
-          <div class="pillar">
-            <div class="pillar-icon">🔬</div>
-            <div class="pillar-text">
-              <strong id="p1t">Engineering developed in high-demand environments</strong>
-              <span id="p1d">Experience built in scientific instrumentation projects with strict performance and validation requirements.</span>
-            </div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-icon">🤝</div>
-            <div class="pillar-text">
-              <strong id="p2t">Multidisciplinary technical network</strong>
-              <span id="p2d">Specialists in optics, coatings, semiconductors, and mechanical design working in coordinated collaboration — each discipline covered by dedicated experts.</span>
-            </div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-icon">⚡</div>
-            <div class="pillar-text">
-              <strong id="p3t">Direct technical engagement</strong>
-              <span id="p3d">Projects executed through direct interaction with technical specialists, ensuring clarity and efficiency in decision-making.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT -->
-      <div class="about-right reveal">
-        <div class="about-stat-grid">
-          <div class="about-stat">
-            <div class="stat-num">6</div>
-            <div class="stat-label" id="s1">Areas of specialization</div>
-          </div>
-          <div class="about-stat">
-            <div class="stat-num">4+</div>
-            <div class="stat-label" id="s2">Industrial application sectors</div>
-          </div>
-          <div class="about-stat">
-            <div class="stat-num">EN<br>ES</div>
-            <div class="stat-label" id="s3">Bilingual technical service</div>
-          </div>
-          <div class="about-stat">
-            <div class="stat-num">MX</div>
-            <div class="stat-label" id="s4">León, Guanajuato, México</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+<!-- [CAMBIO R13] Servicios: 1) ingeniería de sistemas primero, 2) alcance ampliado,
+     3) capacitacion al final, 4) apoyo a fabricacion mediante instalaciones de terceros. -->
+<section id="services" aria-labelledby="svcTitle">
+ <div class="section-wrap">
+  <div class="section-label" id="svcLabel" >Servicios</div>
+  <h2 class="section-title" id="svcTitle" >Capacidades para <em>desarrollar tecnología</em></h2>
+  <p class="section-body" id="svcBody" >Ofrecemos servicios en distintas etapas de un proyecto de ingeniería. Las áreas de especialización pueden combinarse según la necesidad técnica.</p>
+  <div class="services-layout">
+   <div class="services-nav" role="tablist" aria-label="Servicios"><button class="svc-nav-btn active" role="tab" aria-selected="true" aria-controls="svc-systems" id="nb-systems" onclick="showSvc('systems')">Ingeniería de sistemas</button>
+<button class="svc-nav-btn " role="tab" aria-selected="false" aria-controls="svc-optical" id="nb-optical" onclick="showSvc('optical')">Diseño óptico</button>
+<button class="svc-nav-btn " role="tab" aria-selected="false" aria-controls="svc-coatings" id="nb-coatings" onclick="showSvc('coatings')">Recubrimientos</button>
+<button class="svc-nav-btn " role="tab" aria-selected="false" aria-controls="svc-thinfilms" id="nb-thinfilms" onclick="showSvc('thinfilms')">Películas delgadas</button>
+<button class="svc-nav-btn " role="tab" aria-selected="false" aria-controls="svc-semiconductor" id="nb-semiconductor" onclick="showSvc('semiconductor')">Semiconductores y detectores</button>
+<button class="svc-nav-btn " role="tab" aria-selected="false" aria-controls="svc-projects" id="nb-projects" onclick="showSvc('projects')">Proyectos y fabricación</button>
+<button class="svc-nav-btn " role="tab" aria-selected="false" aria-controls="svc-training" id="nb-training" onclick="showSvc('training')">Formación técnica</button></div>
+   <div class="services-content"><section class="service-panel active" role="tabpanel" aria-labelledby="nb-systems" id="svc-systems">
+  <div class="svc-panel-tag" id="sy-tag">Definición y arquitectura</div>
+  <h3 class="svc-panel-title" id="sy-title">Ingeniería de sistemas y subsistemas</h3>
+  <div class="svc-problem-box"><div class="spb-label" id="problem-systems">Situación típica</div><p class="spb-text" id="sy-ps">Una empresa necesita traducir un objetivo de desempeño en requerimientos, una arquitectura y criterios de evaluación técnica.</p></div>
+  <p class="svc-panel-desc" id="sy-desc">Estructuramos el desarrollo de sistemas y subsistemas a partir de necesidades, restricciones, interfaces y criterios de desempeño.</p>
+  <ul class="svc-bullets" id="sy-bullets"></ul>
+  <div class="svc-cta-line"><span id="sy-cta-hint">Definición de proyectos técnicos</span><a href="#contact" class="svc-cta-link" id="sy-cta">Plantear un proyecto →</a></div>
+</section>
+<section class="service-panel " role="tabpanel" aria-labelledby="nb-optical" id="svc-optical">
+  <div class="svc-panel-tag" id="o-tag">Diseño y evaluación</div>
+  <h3 class="svc-panel-title" id="o-title">Diseño óptico y metrología</h3>
+  <div class="svc-problem-box"><div class="spb-label" id="problem-optical">Situación típica</div><p class="spb-text" id="o-ps">Un sistema de imagen, iluminación o medición requiere un diseño que cumpla especificaciones ópticas y restricciones de integración.</p></div>
+  <p class="svc-panel-desc" id="o-desc">Diseñamos y analizamos componentes y sistemas ópticos, considerando desempeño, tolerancias, integración y estrategias de medición.</p>
+  <ul class="svc-bullets" id="o-bullets"></ul>
+  <div class="svc-cta-line"><span id="o-cta-hint">Proyecto de óptica o instrumentación</span><a href="#contact" class="svc-cta-link" id="o-cta">Consultar el alcance →</a></div>
+</section>
+<section class="service-panel " role="tabpanel" aria-labelledby="nb-coatings" id="svc-coatings">
+  <div class="svc-panel-tag" id="c-tag">Diseño especializado</div>
+  <h3 class="svc-panel-title" id="c-title">Diseño de recubrimientos ópticos</h3>
+  <div class="svc-problem-box"><div class="spb-label" id="problem-coatings">Situación típica</div><p class="spb-text" id="c-ps">Una aplicación necesita controlar la respuesta espectral o angular de un componente óptico bajo restricciones de fabricación.</p></div>
+  <p class="svc-panel-desc" id="c-desc">Desarrollamos y evaluamos diseños de recubrimientos multicapa, atendiendo a las especificaciones de desempeño y a la viabilidad de fabricación.</p>
+  <ul class="svc-bullets" id="c-bullets"></ul>
+  <div class="svc-cta-line"><span id="c-cta-hint">Diseño o revisión de recubrimientos</span><a href="#contact" class="svc-cta-link" id="c-cta">Solicitar revisión →</a></div>
+</section>
+<section class="service-panel " role="tabpanel" aria-labelledby="nb-thinfilms" id="svc-thinfilms">
+  <div class="svc-panel-tag" id="tf-tag">Procesos y evaluación</div>
+  <h3 class="svc-panel-title" id="tf-title">Películas delgadas y soporte de procesos</h3>
+  <div class="svc-problem-box"><div class="spb-label" id="problem-thinfilms">Situación típica</div><p class="spb-text" id="tf-ps">Un equipo de fabricación necesita analizar variaciones de desempeño, repetibilidad o parámetros de depósito.</p></div>
+  <p class="svc-panel-desc" id="tf-desc">Ofrecemos análisis de procesos de películas delgadas y asistencia técnica para planificación, ajustes y evaluación de resultados en instalaciones del cliente o de terceros.</p>
+  <ul class="svc-bullets" id="tf-bullets"></ul>
+  <div class="svc-cta-line"><span id="tf-cta-hint">Revisión técnica de un proceso</span><a href="#contact" class="svc-cta-link" id="tf-cta">Conversar sobre el proceso →</a></div>
+</section>
+<section class="service-panel " role="tabpanel" aria-labelledby="nb-semiconductor" id="svc-semiconductor">
+  <div class="svc-panel-tag" id="sm-tag">Dispositivos y sensores</div>
+  <h3 class="svc-panel-title" id="sm-title">Semiconductores y detectores</h3>
+  <div class="svc-problem-box"><div class="spb-label" id="problem-semiconductor">Situación típica</div><p class="spb-text" id="sm-ps">El desarrollo de un dispositivo o detector requiere evaluación conceptual, modelado y criterios de desempeño y caracterización.</p></div>
+  <p class="svc-panel-desc" id="sm-desc">Asesoramos en el diseño y análisis de dispositivos semiconductores y detectores, incluyendo evaluación de factibilidad y definición de estrategias de validación.</p>
+  <ul class="svc-bullets" id="sm-bullets"></ul>
+  <div class="svc-cta-line"><span id="sm-cta-hint">Dispositivos o detectores</span><a href="#contact" class="svc-cta-link" id="sm-cta">Consultar un desarrollo →</a></div>
+</section>
+<section class="service-panel " role="tabpanel" aria-labelledby="nb-projects" id="svc-projects">
+  <div class="svc-panel-tag" id="pr-tag">Del diseño a la implementación</div>
+  <h3 class="svc-panel-title" id="pr-title">Desarrollo de proyectos y asistencia para fabricación</h3>
+  <div class="svc-problem-box"><div class="spb-label" id="problem-projects">Situación típica</div><p class="spb-text" id="pr-ps">Una empresa cuenta con una necesidad tecnológica, pero requiere diseño, especificaciones o coordinación técnica para avanzar hacia una solución.</p></div>
+  <p class="svc-panel-desc" id="pr-desc">Participamos en proyectos de ingeniería desde la definición del alcance hasta el desarrollo técnico. Podemos apoyar la búsqueda y evaluación de proveedores de fabricación, así como orientar procesos en laboratorios del cliente.</p>
+  <ul class="svc-bullets" id="pr-bullets"></ul>
+  <div class="svc-cta-line"><span id="pr-cta-hint">Coordinación técnica y desarrollo</span><a href="#contact" class="svc-cta-link" id="pr-cta">Plantear el proyecto →</a></div>
+</section>
+<section class="service-panel " role="tabpanel" aria-labelledby="nb-training" id="svc-training">
+  <div class="svc-panel-tag" id="t-tag">Servicio complementario</div>
+  <h3 class="svc-panel-title" id="t-title">Formación técnica especializada</h3>
+  <div class="svc-problem-box"><div class="spb-label" id="problem-training">Situación típica</div><p class="spb-text" id="t-ps">Un equipo necesita fortalecer capacidades técnicas específicas para desarrollar, fabricar o evaluar una tecnología.</p></div>
+  <p class="svc-panel-desc" id="t-desc">Preparamos formación especializada en temas acordados con la empresa y vinculados con las competencias del equipo consultor.</p>
+  <ul class="svc-bullets" id="t-bullets"></ul>
+  <div class="svc-cta-line"><span id="t-cta-hint">Programas a la medida</span><a href="#contact" class="svc-cta-link" id="t-cta">Solicitar información →</a></div>
+</section></div>
   </div>
-</div>
+ </div>
+</section>
 
-<!-- ══ SERVICES ══ -->
-<div id="services">
-  <div class="section-wrap">
-    <div class="reveal">
-      <div class="section-label" id="svcLabel">Services</div>
-      <h2 class="section-title" id="svcTitle">Engineering capabilities<br><em>for technology development</em></h2>
-      <p class="section-body" id="svcBody">SARET provides engineering services across different stages of technology development, from conceptual definition to system validation.</p>
-    </div>
+<!-- [CAMBIO R14] Nueva seccion: proceso de trabajo no obligatorio ni lineal. -->
+<section class="process" id="process" aria-labelledby="processTitle">
+ <div class="section-wrap">
+  <div class="section-label" id="processLabel" >Cómo trabajamos</div>
+  <h2 class="section-title" id="processTitle" >Un proceso <em>adaptado al alcance del proyecto</em></h2>
+  <p class="section-body" id="processBody" >Podemos participar en una etapa puntual o acompañar varias fases del desarrollo.</p>
+  <div class="process-grid"><article class="process-card"><div class="process-num">01</div><h3 class="process-title" id="proc1t">Comprender la necesidad</h3><p class="process-text" id="proc1d">Identificamos objetivos, condiciones de uso y restricciones técnicas.</p></article><article class="process-card"><div class="process-num">02</div><h3 class="process-title" id="proc2t">Definir el alcance</h3><p class="process-text" id="proc2d">Establecemos requerimientos, entregables, interfaces y criterios de evaluación.</p></article><article class="process-card"><div class="process-num">03</div><h3 class="process-title" id="proc3t">Diseñar y desarrollar</h3><p class="process-text" id="proc3d">Analizamos alternativas, desarrollamos diseños y documentamos decisiones técnicas.</p></article><article class="process-card"><div class="process-num">04</div><h3 class="process-title" id="proc4t">Evaluar y acompañar</h3><p class="process-text" id="proc4d">Apoyamos la verificación, la validación y la interacción técnica con fabricantes o equipos del cliente.</p></article></div>
+  <p class="process-note" id="processNote" >Las actividades se acuerdan para cada proyecto; no es necesario contratar todas las etapas.</p>
+ </div>
+</section>
 
-    <div class="services-layout">
-      <nav class="services-nav">
-        <button class="svc-nav-btn active" onclick="showSvc('training')"     id="nb-training">Technical Training</button>
-        <button class="svc-nav-btn"        onclick="showSvc('optical')"      id="nb-optical">Optical Design</button>
-        <button class="svc-nav-btn"        onclick="showSvc('coatings')"     id="nb-coatings">Optical Coatings</button>
-        <button class="svc-nav-btn"        onclick="showSvc('thinfilms')"    id="nb-thinfilms">Thin-Film Processes</button>
-        <button class="svc-nav-btn"        onclick="showSvc('semiconductor')"id="nb-semiconductor">Semiconductor Devices</button>
-        <button class="svc-nav-btn"        onclick="showSvc('consulting')"   id="nb-consulting">Engineering Consulting</button>
-      </nav>
+<!-- [CAMBIO R15] Diferenciadores sin afirmar la existencia de una red consolidada. -->
+<section id="why" aria-labelledby="whyTitle">
+ <div class="section-wrap">
+  <div class="section-label" id="whyLabel" >Por qué ROBERTA</div>
+  <h2 class="section-title" id="whyTitle" >Experiencia especializada <em>con visión de sistema</em></h2>
+  <div class="why-grid"><article class="why-card"><span class="why-icon" aria-hidden="true">◈</span><h3 class="why-title" id="w1t">Experiencia en instrumentación científica</h3><p class="why-text" id="w1d">Formación y participación en proyectos donde las especificaciones, tolerancias y estrategias de evaluación tienen un papel central.</p></article><article class="why-card"><span class="why-icon" aria-hidden="true">◇</span><h3 class="why-title" id="w2t">Conexión entre disciplinas</h3><p class="why-text" id="w2d">Las decisiones de diseño consideran las relaciones entre sistemas, componentes, materiales y procesos de fabricación.</p></article><article class="why-card"><span class="why-icon" aria-hidden="true">↔</span><h3 class="why-title" id="w3t">Comunicación técnica directa</h3><p class="why-text" id="w3d">Interacción directa para entender la necesidad, discutir alternativas y definir entregables claros.</p></article></div>
+ </div>
+</section>
 
-      <div class="services-content">
+<!-- [CAMBIO R16] Equipo en dos bloques. [PENDIENTE] Completar nombres,
+     semblanzas aprobadas y proyectos verificables con consentimiento de la colega. -->
+<section class="team" id="team" aria-labelledby="teamTitle">
+ <div class="section-wrap">
+  <div class="section-label" id="teamLabel" >Perfiles técnicos</div>
+  <h2 class="section-title" id="teamTitle" >Conocimientos <em>complementarios</em></h2>
+  <p class="section-body" id="teamBody" >ROBERTA parte de una colaboración entre especialistas con formación doctoral en áreas de ingeniería y tecnología.</p>
+  <div class="team-grid"><article class="team-card"><div class="mini" id="team1tag">ÁREA DE ESPECIALIDAD 01</div><h3 id="team1title">Ingeniería de sistemas y óptica</h3><p id="team1desc">Requerimientos y arquitecturas de sistemas, instrumentación, diseño óptico, recubrimientos y metrología óptica.</p></article><article class="team-card"><div class="mini" id="team2tag">ÁREA DE ESPECIALIDAD 02</div><h3 id="team2title">Microelectrónica y películas delgadas</h3><p id="team2desc">Semiconductores, detectores, recubrimientos y procesos de fabricación y validación de películas delgadas.</p></article></div>
+ </div>
+</section>
 
-        <!-- TRAINING -->
-        <div class="service-panel active" id="svc-training">
-          <div class="svc-panel-tag"   id="t-tag">Technical training · Online &amp; On-site</div>
-          <div class="svc-panel-title" id="t-title">Specialized Technical Training</div>
-          <div class="svc-problem-box">
-            <div class="spb-label" id="t-pl">Typical context</div>
-            <div class="spb-text"  id="t-ps">Engineering teams requiring reinforcement of fundamentals in optics, coatings, or thin-film technologies for system development.</div>
-          </div>
-          <div class="svc-panel-desc" id="t-desc">Technical training programs for engineers and R&amp;D teams, with content adapted to the project context and required level of specialization.</div>
-          <ul class="svc-bullets" id="t-bullets"></ul>
-          <div class="svc-cta-line">
-            <span id="t-cta-hint">Custom training request</span>
-            <a href="#contact" class="svc-cta-link" id="t-cta">Request proposal →</a>
-          </div>
-        </div>
-
-        <!-- OPTICAL -->
-        <div class="service-panel" id="svc-optical">
-          <div class="svc-panel-tag"   id="o-tag">Design engineering</div>
-          <div class="svc-panel-title" id="o-title">Optical and Optomechanical Design</div>
-          <div class="svc-problem-box">
-            <div class="spb-label" id="o-pl">Typical context</div>
-            <div class="spb-text"  id="o-ps">Development of optical systems requiring architectural definition, performance analysis, and fabrication-ready specifications.</div>
-          </div>
-          <div class="svc-panel-desc" id="o-desc">Design and development of optical systems for industrial and scientific applications, from conceptual architecture to manufacturable specifications.</div>
-          <ul class="svc-bullets" id="o-bullets"></ul>
-          <div class="svc-cta-line">
-            <span id="o-cta-hint">Technical project consultation</span>
-            <a href="#contact" class="svc-cta-link" id="o-cta">Start discussion →</a>
-          </div>
-        </div>
-
-        <!-- COATINGS -->
-        <div class="service-panel" id="svc-coatings">
-          <div class="svc-panel-tag"   id="c-tag">Design engineering</div>
-          <div class="svc-panel-title" id="c-title">Optical Coatings Design</div>
-          <div class="svc-problem-box">
-            <div class="spb-label" id="c-pl">Typical context</div>
-            <div class="spb-text"  id="c-ps">Optical systems requiring spectral control and performance optimization under angular constraints and manufacturing tolerances.</div>
-          </div>
-          <div class="svc-panel-desc" id="c-desc">Design and optimization of multilayer optical coatings, considering spectral performance, angular sensitivity, and process robustness.</div>
-          <ul class="svc-bullets" id="c-bullets"></ul>
-          <div class="svc-cta-line">
-            <span id="c-cta-hint">Coating performance evaluation</span>
-            <a href="#contact" class="svc-cta-link" id="c-cta">Request analysis →</a>
-          </div>
-        </div>
-
-        <!-- THINFILMS -->
-        <div class="service-panel" id="svc-thinfilms">
-          <div class="svc-panel-tag"   id="tf-tag">Process engineering</div>
-          <div class="svc-panel-title" id="tf-title">Thin-Film Deposition Processes</div>
-          <div class="svc-problem-box">
-            <div class="spb-label" id="tf-pl">Typical context</div>
-            <div class="spb-text"  id="tf-ps">PVD processes requiring control of repeatability, uniformity, and coating performance stability.</div>
-          </div>
-          <div class="svc-panel-desc" id="tf-desc">Analysis and optimization of thin-film deposition processes, focused on process stability, reproducibility, and performance validation.</div>
-          <ul class="svc-bullets" id="tf-bullets"></ul>
-          <div class="svc-cta-line">
-            <span id="tf-cta-hint">Process review</span>
-            <a href="#contact" class="svc-cta-link" id="tf-cta">Request review →</a>
-          </div>
-        </div>
-
-        <!-- SEMICONDUCTOR -->
-        <div class="service-panel" id="svc-semiconductor">
-          <div class="svc-panel-tag"   id="sm-tag">Applied physics</div>
-          <div class="svc-panel-title" id="sm-title">Semiconductor Devices</div>
-          <div class="svc-problem-box">
-            <div class="spb-label" id="sm-pl">Typical context</div>
-            <div class="spb-text"  id="sm-ps">Development of optoelectronic devices or semiconductor structures requiring physical modeling and definition.</div>
-          </div>
-          <div class="svc-panel-desc" id="sm-desc">Engineering consulting for the design and analysis of semiconductor devices for sensing and energy applications, including modeling and feasibility studies.</div>
-          <ul class="svc-bullets" id="sm-bullets"></ul>
-          <div class="svc-cta-line">
-            <span id="sm-cta-hint">Device concept discussion</span>
-            <a href="#contact" class="svc-cta-link" id="sm-cta">Consult →</a>
-          </div>
-        </div>
-
-        <!-- CONSULTING -->
-        <div class="service-panel" id="svc-consulting">
-          <div class="svc-panel-tag"   id="cn-tag">Technology development</div>
-          <div class="svc-panel-title" id="cn-title">Engineering Consulting &amp; Project Development</div>
-          <div class="svc-problem-box">
-            <div class="spb-label" id="cn-pl">Typical context</div>
-            <div class="spb-text"  id="cn-ps">Projects in early or intermediate stages requiring requirements definition, technical evaluation, and development structuring.</div>
-          </div>
-          <div class="svc-panel-desc" id="cn-desc">Technical consulting for engineering and R&amp;D projects, including feasibility studies, requirements definition, and technical risk analysis.</div>
-          <ul class="svc-bullets" id="cn-bullets"></ul>
-          <div class="svc-cta-line">
-            <span id="cn-cta-hint">Project initiation</span>
-            <a href="#contact" class="svc-cta-link" id="cn-cta">Start conversation →</a>
-          </div>
-        </div>
-
-      </div><!-- /services-content -->
-    </div><!-- /services-layout -->
-  </div><!-- /section-wrap -->
-</div><!-- /#services -->
-
-<!-- ══ WHY SARET ══ -->
-<div id="why">
-  <div class="section-wrap">
-    <div class="reveal">
-      <div class="section-label" id="whyLabel">Why SARET</div>
-      <h2 class="section-title" id="whyTitle">Engineering expertise,<br><em>validated in demanding environments</em></h2>
-    </div>
-    <div class="why-grid reveal">
-      <div class="why-card">
-        <span class="why-icon">🔭</span>
-        <div class="why-title" id="w1t">Precision engineering background</div>
-        <div class="why-text"  id="w1d">Experience derived from advanced scientific instrumentation projects — environments where performance margins are extremely tight and validation requirements are strict.</div>
-      </div>
-      <div class="why-card">
-        <span class="why-icon">🧩</span>
-        <div class="why-title" id="w2t">Integrated technical capabilities</div>
-        <div class="why-text"  id="w2d">Optics, coatings, and semiconductor technologies delivered through a coordinated network of specialists — all within a single engineering framework.</div>
-      </div>
-      <div class="why-card">
-        <span class="why-icon">🌎</span>
-        <div class="why-title" id="w3t">International technical context</div>
-        <div class="why-text"  id="w3d">Experience aligned with international research standards and their practical application in industrial development environments. EN/ES service delivery.</div>
-      </div>
-    </div>
+<!-- [CAMBIO R17] Contacto: etiquetas accesibles y campo opcional de empresa.
+     [PENDIENTE] Correo, LinkedIn y Formspree siguen siendo SARET; verificar recepcion.
+     [PENDIENTE] Crear/validar el aviso de privacidad antes de publicar. -->
+<section id="contact" aria-labelledby="contactTitle">
+ <div class="section-wrap">
+  <div class="section-label" id="contactLabel" >Contacto</div>
+  <h2 class="section-title" id="contactTitle" >Conversemos sobre <em>tu proyecto</em></h2>
+  <div class="contact-layout">
+   <div class="contact-info">
+    <p class="contact-tagline" id="contactTagline" >Compártenos tu necesidad técnica y el tipo de apoyo que buscas. Revisaremos el planteamiento para definir los siguientes pasos.</p>
+    <a href="mailto:saret.consulting@outlook.mx" class="contact-detail"><div class="cd-icon" aria-hidden="true">✉</div>saret.consulting@outlook.mx</a>
+    <a href="https://www.linkedin.com/company/saret.consulting/" target="_blank" rel="noopener noreferrer" class="contact-detail"><div class="cd-icon" aria-hidden="true">in</div><span id="liText">LinkedIn — SARET (temporal)</span></a>
+   </div>
+   <div class="contact-form-wrap">
+    <h3 class="form-title" id="formTitle" >Consulta técnica</h3>
+    <form action="https://formspree.io/f/mqagqzpa" method="POST">
+     <div class="form-group"><label class="form-label" id="fName" for="contact-name">Nombre</label><input id="contact-name" name="name" class="form-input" required autocomplete="name" placeholder="Tu nombre"></div>
+     <div class="form-group"><label class="form-label" id="fCompany" for="contact-company">Empresa (opcional)</label><input id="contact-company" name="company" class="form-input" autocomplete="organization" placeholder="Nombre de la empresa"></div>
+     <div class="form-group"><label class="form-label" id="fEmail" for="contact-email">Correo electrónico</label><input type="email" id="contact-email" name="_replyto" class="form-input" required autocomplete="email" placeholder="nombre@empresa.com"></div>
+     <div class="form-group"><label class="form-label" id="fPhone" for="contact-phone">Teléfono (opcional)</label><input type="tel" id="contact-phone" name="phone" class="form-input" autocomplete="tel" placeholder="+52 ..."></div>
+     <div class="form-group"><label class="form-label" id="fMsg" for="contact-message">Necesidad o proyecto</label><textarea id="contact-message" name="message" class="form-textarea" rows="5" required placeholder="Describe brevemente tu necesidad técnica..."></textarea></div>
+     <input type="hidden" name="source" value="ROBERTA draft v1">
+     <button type="submit" class="form-submit" id="fSubmit">Enviar consulta</button>
+     <p class="contact-note" id="formNote" >Contacto actual conservado para revisión. Actualizar correo y formulario antes de publicar ROBERTA.</p>
+    </form>
+   </div>
   </div>
-</div>
+ </div>
+</section>
 
-<!-- ══ CONTACT ══ -->
-<div id="contact">
-  <div class="section-wrap">
-    <div class="reveal">
-      <div class="section-label" id="contactLabel">Contact</div>
-      <h2 class="section-title"  id="contactTitle">Technical discussion of<br><em>your project</em></h2>
-    </div>
-    <div class="contact-layout reveal">
-      <div class="contact-info">
-        <p class="contact-tagline" id="contactTagline">Technical inquiries, project development, and collaboration opportunities are welcome.</p>
-        <a href="mailto:saret.consulting@outlook.mx" class="contact-detail">
-          <div class="cd-icon">✉</div>
-          saret.consulting@outlook.mx
-        </a>
-        <!-- <a href="tel:+524775361443" class="contact-detail">
-          <div class="cd-icon">📞</div>
-          +52 477 536 14 43
-        </a> -->
-        <a href="https://www.linkedin.com/company/saret.consulting/" target="_blank" class="contact-detail">
-          <div class="cd-icon">in</div>
-          <span id="liText">LinkedIn — SARET Consulting</span>
-        </a>
-      </div>
-      <div class="contact-form-wrap">
-        <div class="form-title" id="formTitle">Project inquiry</div>
-        <form action="https://formspree.io/f/mqagqzpa" method="POST">
-          <div class="form-group">
-            <label class="form-label" id="fName">Name</label>
-            <input type="text"  name="name"     class="form-input"    required placeholder="Your name">
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="fEmail">Email</label>
-            <input type="email" name="_replyto" class="form-input"    required placeholder="your@email.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="fPhone">Phone (optional)</label>
-            <input type="tel"   name="phone"    class="form-input"    placeholder="+52 ...">
-          </div>
-          <div class="form-group">
-            <label class="form-label" id="fMsg">Project description or technical request</label>
-            <textarea name="message" class="form-textarea" rows="4" required placeholder="Describe your technical need..."></textarea>
-          </div>
-          <button type="submit" class="form-submit" id="fSubmit">Submit inquiry</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="footer-copy">© 2026 SARET · León, Guanajuato, México</div>
-  <div class="footer-links">
-    <a href="#services" id="fSvc">Services</a>
-    <a href="#about"    id="fAbout">About</a>
-    <a href="mailto:saret.consulting@outlook.mx">Email</a>
-    <a href="https://www.linkedin.com/company/saret.consulting/" target="_blank">LinkedIn</a>
-  </div>
-</footer>
+<footer><div class="footer-copy">© 2026 ROBERTA · León, Guanajuato, México</div>
+<div class="footer-links"><a href="#services" id="fSvc">Servicios</a><a href="#about" id="fAbout">Enfoque</a><a href="#team" id="fTeam">Equipo</a><a href="mailto:saret.consulting@outlook.mx" id="fEmailFooter">Correo</a></div></footer>
 
 <script>
-/* ══════════════════════════════════════════
-   CONTENT DATA — bilingual
-   All strings are complete; no missing commas.
-══════════════════════════════════════════ */
+/* [CAMBIO R18] Diccionarios bilingues: editar textos aqui, no en dos lugares.
+   En esta fase el idioma cambia sin recarga. Cuando se aprueben los textos,
+   generar paginas separadas /es/ y /en/ para SEO. */
 const T = {
-  en: {
-    navAbout:"About", navServices:"Services", navContact:"Contact",
-    heroTag:"Applied scientific engineering",
-    heroH1:"Engineering for<br><em>optical and thin-film systems</em>",
-    heroSub:"SARET provides specialized engineering capabilities in optical design, optical coatings, and thin-film technologies for industrial and R&D applications.",
-    heroCta1:"Request technical consultation", heroCta2:"Explore services →",
-    scrollHint:"scroll",
-    strip1:"Optical Design", strip2:"Optical Coatings", strip3:"Thin-Film Deposition",
-    strip4:"Semiconductor Devices", strip5:"Technical Training", strip6:"R&D Consulting",
-    aboutLabel:"About SARET",
-    aboutTitle:"Engineering capabilities,<br><em>applied to industrial environments</em>",
-    aboutBody:"SARET operates at the intersection of scientific instrumentation and applied engineering. We provide access to specialized capabilities in optics, coatings, and thin-film technologies — supporting the development and optimization of systems in industrial and research environments.",
-    p1t:"Engineering developed in high-demand environments",
-    p1d:"Experience built in scientific instrumentation projects with strict performance and validation requirements.",
-    p2t:"Multidisciplinary technical network",
-    p2d:"Specialists in optics, coatings, semiconductors, and mechanical design working in coordinated collaboration — each discipline covered by dedicated experts.",
-    p3t:"Direct technical engagement",
-    p3d:"Projects executed through direct interaction with technical specialists, ensuring clarity and efficiency in decision-making.",
-    s1:"Areas of specialization", s2:"Industrial application sectors",
-    s3:"Bilingual technical service", s4:"León, Guanajuato, México",
-    svcLabel:"Services",
-    svcTitle:"Engineering capabilities<br><em>for technology development</em>",
-    svcBody:"SARET provides engineering services across different stages of technology development, from conceptual definition to system validation.",
-    "nb-training":"Technical Training", "nb-optical":"Optical Design",
-    "nb-coatings":"Optical Coatings", "nb-thinfilms":"Thin-Film Processes",
-    "nb-semiconductor":"Semiconductor Devices", "nb-consulting":"Engineering Consulting",
-    "t-tag":"Technical training · Online & On-site",
-    "t-title":"Specialized Technical Training",
-    "t-pl":"Typical context",
-    "t-ps":"Engineering teams requiring reinforcement of fundamentals in optics, coatings, or thin-film technologies for system development.",
-    "t-desc":"Technical training programs for engineers and R&D teams, with content adapted to the project context and required level of specialization.",
-    "t-cta-hint":"Custom training request", "t-cta":"Request proposal →",
-    "o-tag":"Design engineering",
-    "o-title":"Optical and Optomechanical Design",
-    "o-pl":"Typical context",
-    "o-ps":"Development of optical systems requiring architectural definition, performance analysis, and fabrication-ready specifications.",
-    "o-desc":"Design and development of optical systems for industrial and scientific applications, from conceptual architecture to manufacturable specifications.",
-    "o-cta-hint":"Technical project consultation", "o-cta":"Start discussion →",
-    "c-tag":"Design engineering",
-    "c-title":"Optical Coatings Design",
-    "c-pl":"Typical context",
-    "c-ps":"Optical systems requiring spectral control and performance optimization under angular constraints and manufacturing tolerances.",
-    "c-desc":"Design and optimization of multilayer optical coatings, considering spectral performance, angular sensitivity, and process robustness.",
-    "c-cta-hint":"Coating performance evaluation", "c-cta":"Request analysis →",
-    "tf-tag":"Process engineering",
-    "tf-title":"Thin-Film Deposition Processes",
-    "tf-pl":"Typical context",
-    "tf-ps":"PVD processes requiring control of repeatability, uniformity, and coating performance stability.",
-    "tf-desc":"Analysis and optimization of thin-film deposition processes, focused on process stability, reproducibility, and performance validation.",
-    "tf-cta-hint":"Process review", "tf-cta":"Request review →",
-    "sm-tag":"Applied physics",
-    "sm-title":"Semiconductor Devices",
-    "sm-pl":"Typical context",
-    "sm-ps":"Development of optoelectronic devices or semiconductor structures requiring physical modeling and definition.",
-    "sm-desc":"Engineering consulting for the design and analysis of semiconductor devices for sensing and energy applications, including modeling and feasibility studies.",
-    "sm-cta-hint":"Device concept discussion", "sm-cta":"Consult →",
-    "cn-tag":"Technology development",
-    "cn-title":"Engineering Consulting & Project Development",
-    "cn-pl":"Typical context",
-    "cn-ps":"Projects in early or intermediate stages requiring requirements definition, technical evaluation, and development structuring.",
-    "cn-desc":"Technical consulting for engineering and R&D projects, including feasibility studies, requirements definition, and technical risk analysis.",
-    "cn-cta-hint":"Project initiation", "cn-cta":"Start conversation →",
-    whyLabel:"Why SARET",
-    whyTitle:"Engineering expertise,<br><em>validated in demanding environments</em>",
-    w1t:"Precision engineering background",
-    w1d:"Experience derived from advanced scientific instrumentation projects — environments where performance margins are extremely tight and validation requirements are strict.",
-    w2t:"Integrated technical capabilities",
-    w2d:"Optics, coatings, and semiconductor technologies delivered through a coordinated network of specialists — all within a single engineering framework.",
-    w3t:"International technical context",
-    w3d:"Experience aligned with international research standards and their practical application in industrial development environments. EN/ES service delivery.",
-    contactLabel:"Contact",
-    contactTitle:"Technical discussion of<br><em>your project</em>",
-    contactTagline:"Technical inquiries, project development, and collaboration opportunities are welcome.",
-    liText:"LinkedIn — SARET Consulting",
-    formTitle:"Project inquiry",
-    fName:"Name", fEmail:"Email", fPhone:"Phone (optional)",
-    fMsg:"Project description or technical request", fSubmit:"Submit inquiry",
-    fSvc:"Services", fAbout:"About"
+  "es": {
+    "navAbout": "Enfoque",
+    "navServices": "Servicios",
+    "navProcess": "Proceso",
+    "navTeam": "Equipo",
+    "navContact": "Contacto",
+    "heroTag": "CONSULTORÍA · DISEÑO · DESARROLLO",
+    "heroH1": "Ingeniería para <em>desarrollar soluciones tecnológicas</em>",
+    "heroSub": "Definimos requerimientos, diseñamos arquitecturas, sistemas, subsistemas y componentes, y acompañamos el desarrollo técnico hasta la verificación y validación, según el alcance de cada proyecto.",
+    "heroCta1": "Cuéntanos sobre tu proyecto",
+    "heroCta2": "Explorar servicios →",
+    "scrollHint": "desplazar",
+    "strip1": "Ingeniería de sistemas",
+    "strip2": "Diseño óptico",
+    "strip3": "Recubrimientos ópticos",
+    "strip4": "Películas delgadas",
+    "strip5": "Semiconductores y detectores",
+    "strip6": "Desarrollo de proyectos",
+    "aboutLabel": "Nuestro enfoque",
+    "aboutTitle": "De la necesidad técnica <em>a una solución de ingeniería</em>",
+    "aboutBody": "ROBERTA reúne experiencia en ingeniería de sistemas, instrumentación, óptica, microelectrónica y tecnologías de películas delgadas. Participamos en la definición, el diseño y el desarrollo técnico de soluciones para empresas, con atención a las restricciones de desempeño, integración y fabricación.",
+    "p1t": "Diseño a partir de requerimientos",
+    "p1d": "Traducimos objetivos y restricciones técnicas en especificaciones y decisiones de diseño verificables.",
+    "p2t": "Experiencia interdisciplinaria",
+    "p2d": "Combinamos ingeniería de sistemas con conocimientos especializados en óptica, recubrimientos y dispositivos.",
+    "p3t": "Acompañamiento según el proyecto",
+    "p3d": "Trabajamos en etapas específicas o en un desarrollo más amplio, en coordinación con los equipos y proveedores involucrados.",
+    "delTitle": "Entregables posibles",
+    "del1t": "Especificaciones y arquitecturas",
+    "del1d": "Requerimientos, interfaces y alternativas de diseño.",
+    "del2t": "Diseños y evaluaciones",
+    "del2d": "Modelos, simulaciones y estudios de factibilidad.",
+    "del3t": "Documentación técnica",
+    "del3d": "Especificaciones para fabricación y recomendaciones.",
+    "del4t": "Validación y seguimiento",
+    "del4d": "Planes de prueba, análisis de resultados e informes técnicos.",
+    "delNote": "Los entregables se definen de acuerdo con el alcance contratado.",
+    "svcLabel": "Servicios",
+    "svcTitle": "Capacidades para <em>desarrollar tecnología</em>",
+    "svcBody": "Ofrecemos servicios en distintas etapas de un proyecto de ingeniería. Las áreas de especialización pueden combinarse según la necesidad técnica.",
+    "nb-systems": "Ingeniería de sistemas",
+    "nb-optical": "Diseño óptico",
+    "nb-coatings": "Recubrimientos",
+    "nb-thinfilms": "Películas delgadas",
+    "nb-semiconductor": "Semiconductores y detectores",
+    "nb-projects": "Proyectos y fabricación",
+    "nb-training": "Formación técnica",
+    "systems-tag": "Definición y arquitectura",
+    "systems-title": "Ingeniería de sistemas y subsistemas",
+    "systems-problem": "Una empresa necesita traducir un objetivo de desempeño en requerimientos, una arquitectura y criterios de evaluación técnica.",
+    "systems-desc": "Estructuramos el desarrollo de sistemas y subsistemas a partir de necesidades, restricciones, interfaces y criterios de desempeño.",
+    "systems-cta-hint": "Definición de proyectos técnicos",
+    "systems-cta": "Plantear un proyecto →",
+    "optical-tag": "Diseño y evaluación",
+    "optical-title": "Diseño óptico y metrología",
+    "optical-problem": "Un sistema de imagen, iluminación o medición requiere un diseño que cumpla especificaciones ópticas y restricciones de integración.",
+    "optical-desc": "Diseñamos y analizamos componentes y sistemas ópticos, considerando desempeño, tolerancias, integración y estrategias de medición.",
+    "optical-cta-hint": "Proyecto de óptica o instrumentación",
+    "optical-cta": "Consultar el alcance →",
+    "coatings-tag": "Diseño especializado",
+    "coatings-title": "Diseño de recubrimientos ópticos",
+    "coatings-problem": "Una aplicación necesita controlar la respuesta espectral o angular de un componente óptico bajo restricciones de fabricación.",
+    "coatings-desc": "Desarrollamos y evaluamos diseños de recubrimientos multicapa, atendiendo a las especificaciones de desempeño y a la viabilidad de fabricación.",
+    "coatings-cta-hint": "Diseño o revisión de recubrimientos",
+    "coatings-cta": "Solicitar revisión →",
+    "films-tag": "Procesos y evaluación",
+    "films-title": "Películas delgadas y soporte de procesos",
+    "films-problem": "Un equipo de fabricación necesita analizar variaciones de desempeño, repetibilidad o parámetros de depósito.",
+    "films-desc": "Ofrecemos análisis de procesos de películas delgadas y asistencia técnica para planificación, ajustes y evaluación de resultados en instalaciones del cliente o de terceros.",
+    "films-cta-hint": "Revisión técnica de un proceso",
+    "films-cta": "Conversar sobre el proceso →",
+    "semiconductor-tag": "Dispositivos y sensores",
+    "semiconductor-title": "Semiconductores y detectores",
+    "semiconductor-problem": "El desarrollo de un dispositivo o detector requiere evaluación conceptual, modelado y criterios de desempeño y caracterización.",
+    "semiconductor-desc": "Asesoramos en el diseño y análisis de dispositivos semiconductores y detectores, incluyendo evaluación de factibilidad y definición de estrategias de validación.",
+    "semiconductor-cta-hint": "Dispositivos o detectores",
+    "semiconductor-cta": "Consultar un desarrollo →",
+    "projects-tag": "Del diseño a la implementación",
+    "projects-title": "Desarrollo de proyectos y asistencia para fabricación",
+    "projects-problem": "Una empresa cuenta con una necesidad tecnológica, pero requiere diseño, especificaciones o coordinación técnica para avanzar hacia una solución.",
+    "projects-desc": "Participamos en proyectos de ingeniería desde la definición del alcance hasta el desarrollo técnico. Podemos apoyar la búsqueda y evaluación de proveedores de fabricación, así como orientar procesos en laboratorios del cliente.",
+    "projects-cta-hint": "Coordinación técnica y desarrollo",
+    "projects-cta": "Plantear el proyecto →",
+    "training-tag": "Servicio complementario",
+    "training-title": "Formación técnica especializada",
+    "training-problem": "Un equipo necesita fortalecer capacidades técnicas específicas para desarrollar, fabricar o evaluar una tecnología.",
+    "training-desc": "Preparamos formación especializada en temas acordados con la empresa y vinculados con las competencias del equipo consultor.",
+    "training-cta-hint": "Programas a la medida",
+    "training-cta": "Solicitar información →",
+    "common-problem-label": "Situación típica",
+    "processLabel": "Cómo trabajamos",
+    "processTitle": "Un proceso <em>adaptado al alcance del proyecto</em>",
+    "processBody": "Podemos participar en una etapa puntual o acompañar varias fases del desarrollo.",
+    "proc1t": "Comprender la necesidad",
+    "proc1d": "Identificamos objetivos, condiciones de uso y restricciones técnicas.",
+    "proc2t": "Definir el alcance",
+    "proc2d": "Establecemos requerimientos, entregables, interfaces y criterios de evaluación.",
+    "proc3t": "Diseñar y desarrollar",
+    "proc3d": "Analizamos alternativas, desarrollamos diseños y documentamos decisiones técnicas.",
+    "proc4t": "Evaluar y acompañar",
+    "proc4d": "Apoyamos la verificación, la validación y la interacción técnica con fabricantes o equipos del cliente.",
+    "processNote": "Las actividades se acuerdan para cada proyecto; no es necesario contratar todas las etapas.",
+    "whyLabel": "Por qué ROBERTA",
+    "whyTitle": "Experiencia especializada <em>con visión de sistema</em>",
+    "w1t": "Experiencia en instrumentación científica",
+    "w1d": "Formación y participación en proyectos donde las especificaciones, tolerancias y estrategias de evaluación tienen un papel central.",
+    "w2t": "Conexión entre disciplinas",
+    "w2d": "Las decisiones de diseño consideran las relaciones entre sistemas, componentes, materiales y procesos de fabricación.",
+    "w3t": "Comunicación técnica directa",
+    "w3d": "Interacción directa para entender la necesidad, discutir alternativas y definir entregables claros.",
+    "teamLabel": "Perfiles técnicos",
+    "teamTitle": "Conocimientos <em>complementarios</em>",
+    "teamBody": "ROBERTA parte de una colaboración entre especialistas con formación doctoral en áreas de ingeniería y tecnología.",
+    "team1tag": "ÁREA DE ESPECIALIDAD 01",
+    "team1title": "Ingeniería de sistemas y óptica",
+    "team1desc": "Requerimientos y arquitecturas de sistemas, instrumentación, diseño óptico, recubrimientos y metrología óptica.",
+    "team2tag": "ÁREA DE ESPECIALIDAD 02",
+    "team2title": "Microelectrónica y películas delgadas",
+    "team2desc": "Semiconductores, detectores, recubrimientos y procesos de fabricación y validación de películas delgadas.",
+    "contactLabel": "Contacto",
+    "contactTitle": "Conversemos sobre <em>tu proyecto</em>",
+    "contactTagline": "Compártenos tu necesidad técnica y el tipo de apoyo que buscas. Revisaremos el planteamiento para definir los siguientes pasos.",
+    "liText": "LinkedIn — SARET (temporal)",
+    "formTitle": "Consulta técnica",
+    "fName": "Nombre",
+    "fCompany": "Empresa (opcional)",
+    "fEmail": "Correo electrónico",
+    "fPhone": "Teléfono (opcional)",
+    "fMsg": "Necesidad o proyecto",
+    "fSubmit": "Enviar consulta",
+    "phName": "Tu nombre",
+    "phCompany": "Nombre de la empresa",
+    "phEmail": "nombre@empresa.com",
+    "phPhone": "+52 ...",
+    "phMsg": "Describe brevemente tu necesidad técnica...",
+    "formNote": "Contacto actual conservado para revisión. Actualizar correo y formulario antes de publicar ROBERTA.",
+    "fSvc": "Servicios",
+    "fAbout": "Enfoque",
+    "fEmailFooter": "Correo",
+    "fTeam": "Equipo",
+    "sy-tag": "Definición y arquitectura",
+    "sy-title": "Ingeniería de sistemas y subsistemas",
+    "sy-ps": "Una empresa necesita traducir un objetivo de desempeño en requerimientos, una arquitectura y criterios de evaluación técnica.",
+    "sy-desc": "Estructuramos el desarrollo de sistemas y subsistemas a partir de necesidades, restricciones, interfaces y criterios de desempeño.",
+    "sy-cta-hint": "Definición de proyectos técnicos",
+    "sy-cta": "Plantear un proyecto →",
+    "o-tag": "Diseño y evaluación",
+    "o-title": "Diseño óptico y metrología",
+    "o-ps": "Un sistema de imagen, iluminación o medición requiere un diseño que cumpla especificaciones ópticas y restricciones de integración.",
+    "o-desc": "Diseñamos y analizamos componentes y sistemas ópticos, considerando desempeño, tolerancias, integración y estrategias de medición.",
+    "o-cta-hint": "Proyecto de óptica o instrumentación",
+    "o-cta": "Consultar el alcance →",
+    "c-tag": "Diseño especializado",
+    "c-title": "Diseño de recubrimientos ópticos",
+    "c-ps": "Una aplicación necesita controlar la respuesta espectral o angular de un componente óptico bajo restricciones de fabricación.",
+    "c-desc": "Desarrollamos y evaluamos diseños de recubrimientos multicapa, atendiendo a las especificaciones de desempeño y a la viabilidad de fabricación.",
+    "c-cta-hint": "Diseño o revisión de recubrimientos",
+    "c-cta": "Solicitar revisión →",
+    "tf-tag": "Procesos y evaluación",
+    "tf-title": "Películas delgadas y soporte de procesos",
+    "tf-ps": "Un equipo de fabricación necesita analizar variaciones de desempeño, repetibilidad o parámetros de depósito.",
+    "tf-desc": "Ofrecemos análisis de procesos de películas delgadas y asistencia técnica para planificación, ajustes y evaluación de resultados en instalaciones del cliente o de terceros.",
+    "tf-cta-hint": "Revisión técnica de un proceso",
+    "tf-cta": "Conversar sobre el proceso →",
+    "sm-tag": "Dispositivos y sensores",
+    "sm-title": "Semiconductores y detectores",
+    "sm-ps": "El desarrollo de un dispositivo o detector requiere evaluación conceptual, modelado y criterios de desempeño y caracterización.",
+    "sm-desc": "Asesoramos en el diseño y análisis de dispositivos semiconductores y detectores, incluyendo evaluación de factibilidad y definición de estrategias de validación.",
+    "sm-cta-hint": "Dispositivos o detectores",
+    "sm-cta": "Consultar un desarrollo →",
+    "pr-tag": "Del diseño a la implementación",
+    "pr-title": "Desarrollo de proyectos y asistencia para fabricación",
+    "pr-ps": "Una empresa cuenta con una necesidad tecnológica, pero requiere diseño, especificaciones o coordinación técnica para avanzar hacia una solución.",
+    "pr-desc": "Participamos en proyectos de ingeniería desde la definición del alcance hasta el desarrollo técnico. Podemos apoyar la búsqueda y evaluación de proveedores de fabricación, así como orientar procesos en laboratorios del cliente.",
+    "pr-cta-hint": "Coordinación técnica y desarrollo",
+    "pr-cta": "Plantear el proyecto →",
+    "t-tag": "Servicio complementario",
+    "t-title": "Formación técnica especializada",
+    "t-ps": "Un equipo necesita fortalecer capacidades técnicas específicas para desarrollar, fabricar o evaluar una tecnología.",
+    "t-desc": "Preparamos formación especializada en temas acordados con la empresa y vinculados con las competencias del equipo consultor.",
+    "t-cta-hint": "Programas a la medida",
+    "t-cta": "Solicitar información →"
   },
-
-  es: {
-    navAbout:"Nosotros", navServices:"Servicios", navContact:"Contacto",
-    heroTag:"Ingeniería científica aplicada",
-    heroH1:"Ingeniería para sistemas<br><em>ópticos y de películas delgadas</em>",
-    heroSub:"SARET ofrece servicios de ingeniería especializada en diseño óptico, recubrimientos ópticos y tecnologías de películas delgadas para aplicaciones industriales y de I+D.",
-    heroCta1:"Solicitar consulta técnica", heroCta2:"Ver servicios →",
-    scrollHint:"desplaza",
-    strip1:"Diseño óptico", strip2:"Recubrimientos ópticos", strip3:"Películas delgadas",
-    strip4:"Semiconductores", strip5:"Formación técnica", strip6:"Consultoría en I+D",
-    aboutLabel:"Sobre SARET",
-    aboutTitle:"Capacidades de ingeniería,<br><em>aplicadas a entornos industriales</em>",
-    aboutBody:"SARET opera en la intersección entre la instrumentación científica y la ingeniería aplicada. Proporcionamos acceso a capacidades especializadas en óptica, recubrimientos y tecnologías de películas delgadas — apoyando el desarrollo y optimización de sistemas en entornos industriales y de investigación.",
-    p1t:"Ingeniería desarrollada en entornos de alta exigencia",
-    p1d:"Experiencia construida en proyectos de instrumentación científica con requerimientos estrictos de desempeño y validación.",
-    p2t:"Red técnica multidisciplinaria",
-    p2d:"Especialistas en óptica, recubrimientos, semiconductores y diseño mecánico trabajando en colaboración coordinada — cada disciplina atendida por expertos dedicados.",
-    p3t:"Ejecución técnica directa",
-    p3d:"Proyectos ejecutados mediante interacción directa con los especialistas técnicos, garantizando claridad y eficiencia en la toma de decisiones.",
-    s1:"Áreas de especialización", s2:"Sectores de aplicación industrial",
-    s3:"Servicio técnico bilingüe", s4:"León, Guanajuato, México",
-    svcLabel:"Servicios",
-    svcTitle:"Capacidades de ingeniería<br><em>para el desarrollo tecnológico</em>",
-    svcBody:"SARET proporciona servicios de ingeniería en distintas etapas del desarrollo tecnológico, desde la definición conceptual hasta la validación de sistemas.",
-    "nb-training":"Formación técnica", "nb-optical":"Diseño óptico",
-    "nb-coatings":"Recubrimientos ópticos", "nb-thinfilms":"Procesos de películas delgadas",
-    "nb-semiconductor":"Dispositivos semiconductores", "nb-consulting":"Consultoría en ingeniería",
-    "t-tag":"Formación técnica · En línea y presencial",
-    "t-title":"Formación técnica especializada",
-    "t-pl":"Contexto típico",
-    "t-ps":"Equipos de ingeniería que requieren fortalecer fundamentos en óptica, recubrimientos o tecnologías de películas delgadas para el desarrollo de sistemas.",
-    "t-desc":"Programas de formación técnica dirigidos a ingenieros y equipos de I+D, con contenidos adaptados al contexto del proyecto y nivel de especialización requerido.",
-    "t-cta-hint":"Solicitud de formación personalizada", "t-cta":"Solicitar propuesta →",
-    "o-tag":"Ingeniería de diseño",
-    "o-title":"Diseño óptico y optomecánico",
-    "o-pl":"Contexto típico",
-    "o-ps":"Desarrollo de sistemas ópticos que requieren definición de arquitectura, análisis de desempeño y especificaciones para fabricación.",
-    "o-desc":"Diseño y desarrollo de sistemas ópticos para aplicaciones industriales y científicas, desde la arquitectura conceptual hasta especificaciones fabricables.",
-    "o-cta-hint":"Consulta técnica de proyecto", "o-cta":"Iniciar discusión →",
-    "c-tag":"Ingeniería de diseño",
-    "c-title":"Diseño de recubrimientos ópticos",
-    "c-pl":"Contexto típico",
-    "c-ps":"Sistemas ópticos que requieren control espectral y optimización de desempeño bajo restricciones angulares y tolerancias de fabricación.",
-    "c-desc":"Diseño y optimización de recubrimientos ópticos multicapa, considerando desempeño espectral, sensibilidad angular y robustez de proceso.",
-    "c-cta-hint":"Evaluación de desempeño de recubrimientos", "c-cta":"Solicitar análisis →",
-    "tf-tag":"Ingeniería de proceso",
-    "tf-title":"Procesos de depósito de películas delgadas",
-    "tf-pl":"Contexto típico",
-    "tf-ps":"Procesos PVD que requieren control de repetibilidad, uniformidad y estabilidad en el desempeño de recubrimientos.",
-    "tf-desc":"Análisis y optimización de procesos de depósito de películas delgadas, enfocados en estabilidad de proceso, reproducibilidad y validación de desempeño.",
-    "tf-cta-hint":"Revisión de proceso", "tf-cta":"Solicitar revisión →",
-    "sm-tag":"Física aplicada",
-    "sm-title":"Dispositivos semiconductores",
-    "sm-pl":"Contexto típico",
-    "sm-ps":"Desarrollo de dispositivos optoelectrónicos o estructuras semiconductoras que requieren modelado físico y definición de estructura.",
-    "sm-desc":"Consultoría en diseño y análisis de dispositivos semiconductores para aplicaciones de sensado y energía, incluyendo modelado y estudios de viabilidad.",
-    "sm-cta-hint":"Discusión de concepto de dispositivo", "sm-cta":"Consultar →",
-    "cn-tag":"Desarrollo tecnológico",
-    "cn-title":"Consultoría en ingeniería y desarrollo de proyectos",
-    "cn-pl":"Contexto típico",
-    "cn-ps":"Proyectos en etapa inicial o intermedia que requieren definición de requerimientos, evaluación técnica y estructuración del desarrollo.",
-    "cn-desc":"Consultoría técnica para proyectos de ingeniería e I+D, incluyendo estudios de viabilidad, definición de requerimientos y análisis de riesgos técnicos.",
-    "cn-cta-hint":"Inicio de proyecto", "cn-cta":"Iniciar discusión →",
-    whyLabel:"Por qué SARET",
-    whyTitle:"Capacidades de ingeniería,<br><em>validadas en entornos exigentes</em>",
-    w1t:"Base en ingeniería de alta precisión",
-    w1d:"Experiencia derivada de proyectos avanzados de instrumentación científica — entornos donde los márgenes de desempeño son estrictos y los requisitos de validación son rigurosos.",
-    w2t:"Capacidades técnicas integradas",
-    w2d:"Óptica, recubrimientos y tecnologías de semiconductores entregados mediante una red coordinada de especialistas — dentro de un mismo marco de ingeniería.",
-    w3t:"Contexto técnico internacional",
-    w3d:"Experiencia alineada con estándares internacionales de investigación y su aplicación práctica en entornos de desarrollo industrial. Servicio en EN/ES.",
-    contactLabel:"Contacto",
-    contactTitle:"Discusión técnica de<br><em>tu proyecto</em>",
-    contactTagline:"Consultas técnicas, desarrollo de proyectos y oportunidades de colaboración son bienvenidas.",
-    liText:"LinkedIn — SARET Consulting",
-    formTitle:"Consulta de proyecto",
-    fName:"Nombre", fEmail:"Correo electrónico", fPhone:"Teléfono (opcional)",
-    fMsg:"Descripción del proyecto o requerimiento técnico", fSubmit:"Enviar consulta",
-    fSvc:"Servicios", fAbout:"Nosotros"
+  "en": {
+    "navAbout": "Approach",
+    "navServices": "Services",
+    "navProcess": "Process",
+    "navTeam": "Team",
+    "navContact": "Contact",
+    "heroTag": "CONSULTING · DESIGN · DEVELOPMENT",
+    "heroH1": "Engineering to <em>develop technology solutions</em>",
+    "heroSub": "We define requirements, design architectures, systems, subsystems and components, and support technical development through verification and validation, according to each project’s scope.",
+    "heroCta1": "Discuss your project",
+    "heroCta2": "Explore services →",
+    "scrollHint": "scroll",
+    "strip1": "Systems engineering",
+    "strip2": "Optical design",
+    "strip3": "Optical coatings",
+    "strip4": "Thin films",
+    "strip5": "Semiconductors and detectors",
+    "strip6": "Project development",
+    "aboutLabel": "Our approach",
+    "aboutTitle": "From technical needs <em>to engineering solutions</em>",
+    "aboutBody": "ROBERTA brings together experience in systems engineering, instrumentation, optics, microelectronics, and thin-film technologies. We contribute to technical definition, design, and development for companies, considering performance, integration, and manufacturing constraints.",
+    "p1t": "Requirements-driven design",
+    "p1d": "We translate objectives and constraints into specifications and verifiable design decisions.",
+    "p2t": "Interdisciplinary experience",
+    "p2d": "We combine systems engineering with expertise in optics, coatings, and devices.",
+    "p3t": "Project-specific support",
+    "p3d": "We can work on a specific stage or a broader development effort, coordinating with the teams and suppliers involved.",
+    "delTitle": "Potential deliverables",
+    "del1t": "Specifications and architectures",
+    "del1d": "Requirements, interfaces, and design alternatives.",
+    "del2t": "Designs and assessments",
+    "del2d": "Models, simulations, and feasibility studies.",
+    "del3t": "Technical documentation",
+    "del3d": "Manufacturing specifications and recommendations.",
+    "del4t": "Validation and follow-up",
+    "del4d": "Test plans, results analysis, and technical reports.",
+    "delNote": "Deliverables are defined according to the agreed project scope.",
+    "svcLabel": "Services",
+    "svcTitle": "Engineering capabilities <em>for technology development</em>",
+    "svcBody": "We offer services across different engineering project stages. Technical disciplines are combined based on the needs of each project.",
+    "nb-systems": "Systems engineering",
+    "nb-optical": "Optical design",
+    "nb-coatings": "Optical coatings",
+    "nb-thinfilms": "Thin films",
+    "nb-semiconductor": "Semiconductors and detectors",
+    "nb-projects": "Projects and manufacturing",
+    "nb-training": "Technical training",
+    "systems-tag": "Definition and architecture",
+    "systems-title": "Systems and subsystems engineering",
+    "systems-problem": "A company needs to turn performance objectives into requirements, an architecture, and technical assessment criteria.",
+    "systems-desc": "We structure the development of systems and subsystems based on needs, constraints, interfaces, and performance criteria.",
+    "systems-cta-hint": "Technical project definition",
+    "systems-cta": "Discuss a project →",
+    "optical-tag": "Design and assessment",
+    "optical-title": "Optical design and metrology",
+    "optical-problem": "An imaging, illumination, or measurement system needs to satisfy optical specifications and integration constraints.",
+    "optical-desc": "We design and analyze optical systems and components, addressing performance, tolerances, integration, and measurement strategies.",
+    "optical-cta-hint": "Optics or instrumentation project",
+    "optical-cta": "Discuss the scope →",
+    "coatings-tag": "Specialized design",
+    "coatings-title": "Optical coating design",
+    "coatings-problem": "An application requires a specific spectral or angular response while meeting manufacturing constraints.",
+    "coatings-desc": "We design and assess multilayer optical coatings in view of performance requirements and manufacturing feasibility.",
+    "coatings-cta-hint": "Coating design or review",
+    "coatings-cta": "Request a review →",
+    "films-tag": "Processes and assessment",
+    "films-title": "Thin films and process support",
+    "films-problem": "A manufacturing team needs to analyze performance variation, repeatability, or deposition parameters.",
+    "films-desc": "We offer thin-film process analysis and technical assistance for planning, adjustments, and results evaluation at client or third-party facilities.",
+    "films-cta-hint": "Technical process review",
+    "films-cta": "Discuss the process →",
+    "semiconductor-tag": "Devices and sensors",
+    "semiconductor-title": "Semiconductors and detectors",
+    "semiconductor-problem": "Device or detector development requires conceptual assessment, modeling, and performance and characterization criteria.",
+    "semiconductor-desc": "We advise on semiconductor device and detector design and analysis, including feasibility studies and validation strategies.",
+    "semiconductor-cta-hint": "Devices or detectors",
+    "semiconductor-cta": "Discuss development →",
+    "projects-tag": "From design to implementation",
+    "projects-title": "Project development and manufacturing support",
+    "projects-problem": "A company has a technology need but requires design, specifications, or technical coordination to progress toward a solution.",
+    "projects-desc": "We contribute to engineering projects from scope definition through technical development. We can help identify and evaluate manufacturing suppliers, and advise processes in client laboratories.",
+    "projects-cta-hint": "Technical coordination and development",
+    "projects-cta": "Discuss the project →",
+    "training-tag": "Complementary service",
+    "training-title": "Specialized technical training",
+    "training-problem": "A team needs specific technical skills to develop, manufacture, or evaluate a technology.",
+    "training-desc": "We prepare specialized training in topics agreed with the company and aligned with the consulting team’s expertise.",
+    "training-cta-hint": "Tailored programs",
+    "training-cta": "Request information →",
+    "common-problem-label": "Typical situation",
+    "processLabel": "How we work",
+    "processTitle": "A process <em>tailored to project scope</em>",
+    "processBody": "We can contribute to a specific stage or support several phases of development.",
+    "proc1t": "Understand the need",
+    "proc1d": "We identify objectives, operating conditions, and technical constraints.",
+    "proc2t": "Define the scope",
+    "proc2d": "We establish requirements, deliverables, interfaces, and assessment criteria.",
+    "proc3t": "Design and develop",
+    "proc3d": "We assess alternatives, develop designs, and document technical decisions.",
+    "proc4t": "Evaluate and support",
+    "proc4d": "We support verification, validation, and technical interaction with manufacturers or client teams.",
+    "processNote": "Activities are agreed upon for each project; engaging us for every stage is not required.",
+    "whyLabel": "Why ROBERTA",
+    "whyTitle": "Specialized expertise <em>with a systems perspective</em>",
+    "w1t": "Scientific instrumentation background",
+    "w1d": "Training and experience in projects where specifications, tolerances, and assessment strategies are central.",
+    "w2t": "Connecting disciplines",
+    "w2d": "Design decisions account for interfaces among systems, components, materials, and manufacturing processes.",
+    "w3t": "Direct technical communication",
+    "w3d": "Direct interaction to understand needs, discuss alternatives, and agree on clear deliverables.",
+    "teamLabel": "Technical backgrounds",
+    "teamTitle": "Complementary <em>expertise</em>",
+    "teamBody": "ROBERTA is built around a collaboration between specialists with doctoral training in engineering and technology.",
+    "team1tag": "SPECIALTY 01",
+    "team1title": "Systems engineering and optics",
+    "team1desc": "Systems requirements and architectures, instrumentation, optical design, coatings, and optical metrology.",
+    "team2tag": "SPECIALTY 02",
+    "team2title": "Microelectronics and thin films",
+    "team2desc": "Semiconductors, detectors, coatings, and thin-film manufacturing and validation processes.",
+    "contactLabel": "Contact",
+    "contactTitle": "Let’s discuss <em>your project</em>",
+    "contactTagline": "Tell us about your technical need and the support you are looking for. We will review your inquiry to determine the next steps.",
+    "liText": "LinkedIn — SARET (temporary)",
+    "formTitle": "Technical inquiry",
+    "fName": "Name",
+    "fCompany": "Company (optional)",
+    "fEmail": "Email",
+    "fPhone": "Phone (optional)",
+    "fMsg": "Technical need or project",
+    "fSubmit": "Send inquiry",
+    "phName": "Your name",
+    "phCompany": "Company name",
+    "phEmail": "name@company.com",
+    "phPhone": "+52 ...",
+    "phMsg": "Briefly describe your technical need...",
+    "formNote": "Current contact details retained for review. Update email and form before publishing ROBERTA.",
+    "fSvc": "Services",
+    "fAbout": "Approach",
+    "fEmailFooter": "Email",
+    "fTeam": "Team",
+    "sy-tag": "Definition and architecture",
+    "sy-title": "Systems and subsystems engineering",
+    "sy-ps": "A company needs to turn performance objectives into requirements, an architecture, and technical assessment criteria.",
+    "sy-desc": "We structure the development of systems and subsystems based on needs, constraints, interfaces, and performance criteria.",
+    "sy-cta-hint": "Technical project definition",
+    "sy-cta": "Discuss a project →",
+    "o-tag": "Design and assessment",
+    "o-title": "Optical design and metrology",
+    "o-ps": "An imaging, illumination, or measurement system needs to satisfy optical specifications and integration constraints.",
+    "o-desc": "We design and analyze optical systems and components, addressing performance, tolerances, integration, and measurement strategies.",
+    "o-cta-hint": "Optics or instrumentation project",
+    "o-cta": "Discuss the scope →",
+    "c-tag": "Specialized design",
+    "c-title": "Optical coating design",
+    "c-ps": "An application requires a specific spectral or angular response while meeting manufacturing constraints.",
+    "c-desc": "We design and assess multilayer optical coatings in view of performance requirements and manufacturing feasibility.",
+    "c-cta-hint": "Coating design or review",
+    "c-cta": "Request a review →",
+    "tf-tag": "Processes and assessment",
+    "tf-title": "Thin films and process support",
+    "tf-ps": "A manufacturing team needs to analyze performance variation, repeatability, or deposition parameters.",
+    "tf-desc": "We offer thin-film process analysis and technical assistance for planning, adjustments, and results evaluation at client or third-party facilities.",
+    "tf-cta-hint": "Technical process review",
+    "tf-cta": "Discuss the process →",
+    "sm-tag": "Devices and sensors",
+    "sm-title": "Semiconductors and detectors",
+    "sm-ps": "Device or detector development requires conceptual assessment, modeling, and performance and characterization criteria.",
+    "sm-desc": "We advise on semiconductor device and detector design and analysis, including feasibility studies and validation strategies.",
+    "sm-cta-hint": "Devices or detectors",
+    "sm-cta": "Discuss development →",
+    "pr-tag": "From design to implementation",
+    "pr-title": "Project development and manufacturing support",
+    "pr-ps": "A company has a technology need but requires design, specifications, or technical coordination to progress toward a solution.",
+    "pr-desc": "We contribute to engineering projects from scope definition through technical development. We can help identify and evaluate manufacturing suppliers, and advise processes in client laboratories.",
+    "pr-cta-hint": "Technical coordination and development",
+    "pr-cta": "Discuss the project →",
+    "t-tag": "Complementary service",
+    "t-title": "Specialized technical training",
+    "t-ps": "A team needs specific technical skills to develop, manufacture, or evaluate a technology.",
+    "t-desc": "We prepare specialized training in topics agreed with the company and aligned with the consulting team’s expertise.",
+    "t-cta-hint": "Tailored programs",
+    "t-cta": "Request information →"
   }
 };
-
-/* ══ BULLETS ══ */
 const bullets = {
-  en: {
-    training:[
-      "Optical system fundamentals: image formation, aberrations, and performance evaluation criteria.",
-      "Advanced optical design: optimization, tolerance analysis, and manufacturable specifications.",
-      "Multilayer coatings and spectral performance optimization.",
-      "Thin-film deposition for optical applications: process control and experimental adjustments.",
-      "Semiconductor devices: fundamentals and system evaluation for sensing and energy applications."
+  "es": {
+    "systems": [
+      "Identificación de necesidades y definición de requerimientos verificables.",
+      "Arquitecturas e interfaces a nivel de sistema y subsistema.",
+      "Estudios de factibilidad, alternativas y riesgos técnicos.",
+      "Planeación de verificación, validación y criterios de aceptación."
     ],
-    optical:[
-      "Optical systems for imaging and illumination applications.",
-      "Collimators, cameras, and optical coupling systems.",
-      "Tolerance and sensitivity evaluation.",
-      "Interface definition for alignment and optomechanical integration."
+    "optical": [
+      "Diseño de sistemas de imagen, iluminación, acoplamiento y medición.",
+      "Análisis de tolerancias, sensibilidad y desempeño óptico.",
+      "Definición de interfaces de integración y alineación.",
+      "Diseño de estrategias de medición y validación metrológica."
     ],
-    coatings:[
-      "Multilayer coatings: anti-reflective, high-reflective, filters, and beam splitters.",
-      "Sensitivity and robustness under manufacturing tolerances.",
-      "Deliverables: design files, performance reports, and technical recommendations."
+    "coatings": [
+      "Diseño de recubrimientos antirreflejantes, reflejantes y filtros ópticos.",
+      "Optimización espectral y angular con restricciones de fabricación.",
+      "Análisis de tolerancias y sensibilidad del diseño.",
+      "Especificaciones técnicas y evaluación de resultados de fabricación."
     ],
-    thinfilms:[
-      "Process evaluation: materials, monitoring, and deposition planning.",
-      "Root-cause analysis of spectral deviations and process adjustments.",
-      "Strategies for improving stability and reproducibility."
+    "films": [
+      "Evaluación de parámetros y documentación de procesos de depósito.",
+      "Diagnóstico técnico de variaciones en desempeño y repetibilidad.",
+      "Soporte para planeación de pruebas y caracterización.",
+      "Orientación a equipos que disponen de instalaciones de fabricación."
     ],
-    semiconductor:[
-      "Device physics for optoelectronic applications.",
-      "Modeling and feasibility assessment of semiconductor structures.",
-      "Experimental definition and characterization strategies."
+    "semiconductor": [
+      "Análisis de dispositivos semiconductores y detectores inductivos.",
+      "Modelado, definición de parámetros y estudios de factibilidad.",
+      "Definición de estrategias de caracterización y validación.",
+      "Asesoría técnica para desarrollo e integración de dispositivos."
     ],
-    consulting:[
-      "Feasibility and trade-off studies for optical, thin-film, and semiconductor systems.",
-      "R&D structuring: requirements, milestones, and technical risks.",
-      "Technical review of specifications, documentation, and experimental plans.",
-      "Collaboration with research centers, laboratories, and industry."
+    "projects": [
+      "Definición de objetivos, alcance, hitos y entregables técnicos.",
+      "Desarrollo de diseños y documentación para subsistemas o componentes.",
+      "Apoyo en identificación y evaluación técnica de proveedores.",
+      "Acompañamiento al trabajo de fabricación realizado por el cliente o terceros."
+    ],
+    "training": [
+      "Capacitación en fundamentos y diseño óptico.",
+      "Recubrimientos y tecnologías de películas delgadas.",
+      "Introducción a evaluación de dispositivos y detectores.",
+      "Contenidos adaptados a las necesidades de proyectos empresariales."
     ]
   },
-  es: {
-    training:[
-      "Fundamentos de sistemas ópticos: formación de imagen, aberraciones y criterios de evaluación de desempeño.",
-      "Diseño óptico avanzado: optimización, análisis de tolerancias y especificaciones fabricables.",
-      "Recubrimientos multicapa y optimización del desempeño espectral.",
-      "Depósito de películas delgadas para aplicaciones ópticas: control de proceso y ajustes experimentales.",
-      "Dispositivos semiconductores: fundamentos de física de semiconductores y evaluación de sistemas para sensado y energía."
+  "en": {
+    "systems": [
+      "Needs assessment and verifiable requirements definition.",
+      "System and subsystem architectures and interfaces.",
+      "Feasibility, trade-off, and technical-risk studies.",
+      "Verification, validation, and acceptance-criteria planning."
     ],
-    optical:[
-      "Sistemas ópticos para aplicaciones de imagen e iluminación.",
-      "Colimadores, cámaras y sistemas de acoplamiento óptico.",
-      "Evaluación de tolerancias y sensibilidad.",
-      "Definición de interfaces para alineación e integración optomecánica."
+    "optical": [
+      "Design of imaging, illumination, coupling, and measurement systems.",
+      "Optical tolerance, sensitivity, and performance analysis.",
+      "Integration and alignment interface definition.",
+      "Measurement strategies and metrological validation planning."
     ],
-    coatings:[
-      "Recubrimientos multicapa: antirreflejantes, altamente reflejantes, filtros y divisores de haz.",
-      "Sensibilidad y robustez bajo tolerancias de fabricación.",
-      "Entregables: archivos de diseño, reportes de desempeño y recomendaciones técnicas."
+    "coatings": [
+      "Antireflection, reflective, and optical filter design.",
+      "Spectral and angular optimization under manufacturing constraints.",
+      "Tolerance and sensitivity analysis.",
+      "Technical specifications and evaluation of manufacturing results."
     ],
-    thinfilms:[
-      "Evaluación de proceso: materiales, monitoreo y planeación de depósitos.",
-      "Análisis de causa raíz de desviaciones espectrales y ajustes de proceso.",
-      "Estrategias de mejora en estabilidad y reproducibilidad."
+    "films": [
+      "Deposition-process parameter assessment and documentation.",
+      "Technical analysis of performance variation and repeatability.",
+      "Support for test planning and characterization.",
+      "Guidance for teams operating manufacturing facilities."
     ],
-    semiconductor:[
-      "Física de dispositivos para aplicaciones optoelectrónicas.",
-      "Modelado y evaluación de viabilidad de estructuras semiconductoras.",
-      "Definición experimental y estrategias de caracterización."
+    "semiconductor": [
+      "Semiconductor device and inductive-detector analysis.",
+      "Modeling, parameter definition, and feasibility assessment.",
+      "Characterization and validation-strategy definition.",
+      "Technical advice for device development and integration."
     ],
-    consulting:[
-      "Estudios de viabilidad y análisis de compromiso para sistemas ópticos, de películas delgadas y semiconductores.",
-      "Estructuración de I+D: requerimientos, hitos y riesgos técnicos.",
-      "Revisión técnica de especificaciones, documentación y planes experimentales.",
-      "Colaboración con centros de investigación, laboratorios e industria."
+    "projects": [
+      "Project objectives, scope, milestones, and technical deliverables.",
+      "Design development and documentation for subsystems or components.",
+      "Support in supplier identification and technical assessment.",
+      "Technical guidance for manufacturing performed by clients or third parties."
+    ],
+    "training": [
+      "Optical fundamentals and design training.",
+      "Coatings and thin-film technologies.",
+      "Introduction to device and detector evaluation.",
+      "Topics tailored to business project needs."
     ]
   }
 };
-
-const bulletId = {
-  training:'t-bullets', optical:'o-bullets', coatings:'c-bullets',
-  thinfilms:'tf-bullets', semiconductor:'sm-bullets', consulting:'cn-bullets'
-};
-
-let lang = 'en';
-
+const bulletId = {"systems": "sy-bullets", "optical": "o-bullets", "coatings": "c-bullets", "thinfilms": "tf-bullets", "semiconductor": "sm-bullets", "projects": "pr-bullets", "training": "t-bullets"};
+const serviceKeys = ["systems", "optical", "coatings", "thinfilms", "semiconductor", "projects", "training"];
+let lang = 'es';
 function renderBullets(key, l) {
-  const el = document.getElementById(bulletId[key]);
+  const el=document.getElementById(bulletId[key]);
   if (!el) return;
-  el.innerHTML = (bullets[l][key] || []).map(b => `<li>${b}</li>`).join('');
+  // Texts are controlled by the source code; render as textContent, not raw HTML.
+  el.replaceChildren(...(bullets[l][key]||[]).map(line=>{const li=document.createElement('li');li.textContent=line;return li;}));
 }
-
 function setLang(l) {
   lang = l;
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
-  const t = T[l];
-  Object.keys(t).forEach(k => {
-    const el = document.getElementById(k);
-    if (el) el.innerHTML = t[k];
+  document.documentElement.lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    const active=b.dataset.lang===l; b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));
   });
-  const active = document.querySelector('.service-panel.active');
-  if (active) renderBullets(active.id.replace('svc-', ''), l);
+  const t=T[l];
+  Object.keys(t).forEach(k=>{const el=document.getElementById(k);if(el)el.innerHTML=t[k];});
+  serviceKeys.forEach(k=>{
+    const p=document.getElementById('problem-'+k);if(p)p.textContent=t['common-problem-label'];
+  });
+  Object.keys(bulletId).forEach(k=>renderBullets(k,l));
+  document.getElementById('contact-name').placeholder=t.phName;
+  document.getElementById('contact-company').placeholder=t.phCompany;
+  document.getElementById('contact-email').placeholder=t.phEmail;
+  document.getElementById('contact-phone').placeholder=t.phPhone;
+  document.getElementById('contact-message').placeholder=t.phMsg;
+  document.title = l==='es' ? 'ROBERTA | Consultoría, diseño y desarrollo tecnológico' : 'ROBERTA | Engineering Consulting, Design and Development';
+  document.querySelector('meta[name="description"]').content = l==='es'
+   ? 'Consultoría de ingeniería para empresas: sistemas, subsistemas, diseño óptico, recubrimientos, microelectrónica y soporte para fabricación.'
+   : 'Engineering consulting for companies: systems, subsystems, optical design, coatings, microelectronics, and manufacturing support.';
 }
-
 function showSvc(key) {
-  document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.svc-nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('svc-' + key).classList.add('active');
-  document.getElementById('nb-'  + key).classList.add('active');
-  renderBullets(key, lang);
+  document.querySelectorAll('.service-panel').forEach(p=>p.classList.toggle('active',p.id==='svc-'+key));
+  document.querySelectorAll('.svc-nav-btn').forEach(b=>{
+    const active=b.id==='nb-'+key;
+    b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));
+  });
 }
-
-/* ── Scroll reveal ── */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-/* ── Init ── */
-setLang('en');
+setLang('es');
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
